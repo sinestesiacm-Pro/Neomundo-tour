@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Neomundo Tour - Experiences Catalog</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed": "#ffdcbe",
+                        "surface-bright": "#f4fafc",
+                        "surface-tint": "#006876",
+                        "on-surface-variant": "#3c494c",
+                        "on-secondary-fixed": "#002204",
+                        "surface-container-low": "#eff5f6",
+                        "surface-dim": "#d5dbdd",
+                        "outline-variant": "#bbc9cc",
+                        "secondary-fixed": "#94f990",
+                        "error": "#ba1a1a",
+                        "surface-variant": "#dde3e5",
+                        "secondary-container": "#91f78e",
+                        "on-error": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "tertiary-container": "#f79300",
+                        "on-tertiary-container": "#5f3500",
+                        "on-surface": "#161d1e",
+                        "surface": "#f4fafc",
+                        "surface-container-highest": "#dde3e5",
+                        "error-container": "#ffdad6",
+                        "surface-container-high": "#e3e9eb",
+                        "primary-fixed": "#a1efff",
+                        "tertiary": "#8b5000",
+                        "secondary": "#006e1c",
+                        "on-primary-fixed": "#001f25",
+                        "surface-container": "#e9eff0",
+                        "inverse-on-surface": "#ecf2f3",
+                        "on-secondary-container": "#00731e",
+                        "primary-fixed-dim": "#44d8f1",
+                        "on-tertiary-fixed-variant": "#693c00",
+                        "on-primary-fixed-variant": "#004e59",
+                        "secondary-fixed-dim": "#78dc77",
+                        "on-secondary-fixed-variant": "#005313",
+                        "background": "#f4fafc",
+                        "on-tertiary-fixed": "#2c1600",
+                        "primary": "#006876",
+                        "inverse-primary": "#44d8f1",
+                        "tertiary-fixed-dim": "#ffb870",
+                        "on-primary-container": "#004650",
+                        "inverse-surface": "#2b3133",
+                        "on-primary": "#ffffff",
+                        "outline": "#6c797c",
+                        "on-tertiary": "#ffffff",
+                        "on-background": "#161d1e",
+                        "primary-container": "#00bcd4",
+                        "on-error-container": "#93000a",
+                        "surface-container-lowest": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px",
+                        "2xl": "1rem",
+                        "3xl": "1.5rem"
+                    },
+                    "spacing": {
+                        "margin-mobile": "16px",
+                        "base": "8px",
+                        "container-max": "1280px",
+                        "gutter": "24px",
+                        "margin-desktop": "48px"
+                    },
+                    "fontFamily": {
+                        "headline-xl": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "label-md": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "headline-xl": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .icon-fill {
+            font-variation-settings: 'FILL' 1;
+        }
+        
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 8px 32px rgba(0, 188, 212, 0.05);
+        }
+        
+        .cyan-glow {
+            box-shadow: 0 4px 20px rgba(0, 188, 212, 0.3);
+        }
+        
+        .hero-pattern {
+            background-color: #f4fafc;
+            background-image: radial-gradient(#a1efff 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+        
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        #particles-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased overflow-x-hidden selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-inverse-surface/80 backdrop-blur-xl border-b border-outline-variant/20 shadow-sm transition-all duration-300" id="navbar">
+<div class="flex justify-between items-center h-20 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<a class="font-headline-md text-headline-md font-black tracking-tight text-primary dark:text-primary-fixed flex items-center gap-2 transition-transform duration-300 hover:scale-105" href="#">
+<span class="material-symbols-outlined icon-fill text-tertiary-container">flight_takeoff</span>
+                Neomundo Tour
+            </a>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-primary dark:text-primary-fixed border-b-2 border-primary dark:border-primary-fixed pb-1 font-label-md text-label-md transition-all duration-300" href="#">Experiences</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary border-b-2 border-transparent hover:border-primary pb-1 transition-all duration-300 font-label-md text-label-md" href="#">Villas</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary border-b-2 border-transparent hover:border-primary pb-1 transition-all duration-300 font-label-md text-label-md" href="#">Boats</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary border-b-2 border-transparent hover:border-primary pb-1 transition-all duration-300 font-label-md text-label-md" href="#">Contact</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="bg-[#4CAF50] text-white px-6 py-2.5 rounded-full font-label-md text-label-md shadow-md hover:bg-[#45a049] transition-all duration-300 hover:scale-105 cyan-glow hidden sm:block">
+                    Book Now
+                </button>
+<button class="md:hidden text-on-surface p-2 transition-transform duration-300 hover:scale-110">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</nav>
+<main class="pt-24 pb-20">
+<!-- Hero Header -->
+<header class="relative px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto py-12 md:py-20 text-center hero-pattern rounded-3xl mb-12 overflow-hidden">
+<canvas id="particles-canvas"></canvas>
+<div class="relative z-10">
+<h1 class="font-headline-xl text-headline-lg-mobile md:text-headline-xl text-primary mb-6 reveal" style="transition-delay: 100ms;">Discover Guatapé</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-10 reveal" style="transition-delay: 200ms;">Experience the vibrant energy and breathtaking landscapes with our curated selection of premium adventures and luxury stays.</p>
+<!-- Filters -->
+<div class="flex flex-wrap justify-center gap-3 max-w-4xl mx-auto reveal" style="transition-delay: 300ms;">
+<button class="px-6 py-2.5 rounded-full bg-primary text-on-primary font-label-md text-label-md shadow-md cyan-glow hover:-translate-y-0.5 transition-all duration-300">All</button>
+<button class="px-6 py-2.5 rounded-full bg-surface-container-high text-on-surface hover:bg-surface-variant font-label-md text-label-md hover:-translate-y-0.5 transition-all duration-300">Villas</button>
+<button class="px-6 py-2.5 rounded-full bg-surface-container-high text-on-surface hover:bg-surface-variant font-label-md text-label-md hover:-translate-y-0.5 transition-all duration-300">Boats</button>
+<button class="px-6 py-2.5 rounded-full bg-surface-container-high text-on-surface hover:bg-surface-variant font-label-md text-label-md hover:-translate-y-0.5 transition-all duration-300">Adrenaline</button>
+<button class="px-6 py-2.5 rounded-full bg-surface-container-high text-on-surface hover:bg-surface-variant font-label-md text-label-md hover:-translate-y-0.5 transition-all duration-300">Air</button>
+</div>
+</div>
+</header>
+<!-- Experiences Grid -->
+<section class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Card 1: Fincas de Lujo -->
+<article class="group rounded-3xl overflow-hidden bg-white border border-outline-variant/30 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 flex flex-col h-full reveal" style="transition-delay: 100ms;">
+<div class="relative h-64 overflow-hidden">
+<img alt="Luxury Villa" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out" data-alt="A luxurious, modern villa featuring expansive glass windows and a sparkling infinity pool overlooking a stunning tropical reservoir. The architecture is sleek and contemporary with warm wooden accents and white stone. The scene is bathed in bright, optimistic daylight, capturing a premium, high-end travel aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAik6V7T1jVdsLlLGj-cjP2ovMrX3sJG5PLVTlYAHBMenoX2EQ82Hgf-JKl8wx2sxR6wdkT7bZ6-JFEimzIEfi2jrNi_RU_h6ShA2YqxSxivId4rLn04asf6jF35E20nVBaenOCb5MC2wcsXbmfbYDOVkW8PPGQJkvHMrrnQHdZ4o96x19udB4Zic9aAt6ETQkpmw29RMpootacJ8dBmY9dgwSKzDyGnhuoGc0um0oNKtU1JQBEQ4F2vj0-QVrXj9qjOqQVv4-5pAku"/>
+<div class="absolute top-4 right-4 bg-tertiary-container text-on-tertiary-container px-4 py-1.5 rounded-full font-label-md text-label-md font-bold shadow-md">
+                            From $500/night
+                        </div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<div class="flex items-center gap-2 text-primary mb-3">
+<span class="material-symbols-outlined text-sm">villa</span>
+<span class="font-label-md text-label-md tracking-wider uppercase text-xs">Stay</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">Fincas de Lujo</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">Exclusive luxury villas with panoramic views of the Guatapé reservoir, private pools, and premium amenities.</p>
+<button class="w-full py-3 rounded-full border-2 border-primary-container text-primary-container font-label-md text-label-md hover:bg-primary-container hover:text-on-primary transition-all duration-300">
+                            Ver más
+                        </button>
+</div>
+</article>
+<!-- Card 2: Tours en Helicóptero -->
+<article class="group rounded-3xl overflow-hidden bg-white border border-outline-variant/30 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 flex flex-col h-full reveal" style="transition-delay: 200ms;">
+<div class="relative h-64 overflow-hidden">
+<img alt="Helicopter Tour" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out" data-alt="A sleek, modern helicopter flying high above a vast, complex reservoir system with numerous green islands and peninsulas. The water is a brilliant cyan blue reflecting the clear sky. The overall lighting is bright and sunny, conveying an exhilarating, premium aerial adventure in a tropical setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeQLxs8Dajz_6_P4MyPGvQAfaQx3RafpDErGQVSEGXn0txztiLLbGDJ4cWuB4rLua33TFsIJFaeC0VgCUHVN6GDPKzQk6GJdsS7Dwc6iWN9ASAhWuOPNhw9Wef1ZjrIe3e5hZqPWMBxpHk171x6aFcZP6v-qnEFJ4iwOzGps6fT8TNkf6UsvBrZ4NsQLczDQgyoRdUn27AVdV511r_nfp_WHhpSp9luH3qslxqLvxYNXjPIsjYjPHIAwrrpfTlzGo0L3iVNleN-OEn"/>
+<div class="absolute top-4 right-4 bg-tertiary-container text-on-tertiary-container px-4 py-1.5 rounded-full font-label-md text-label-md font-bold shadow-md">
+                            $150/person
+                        </div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<div class="flex items-center gap-2 text-primary mb-3">
+<span class="material-symbols-outlined text-sm">flight</span>
+<span class="font-label-md text-label-md tracking-wider uppercase text-xs">Air Adventure</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">Tours en Helicóptero</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">Experience breathtaking aerial views of El Peñol and the labyrinthine reservoir from a state-of-the-art helicopter.</p>
+<button class="w-full py-3 rounded-full border-2 border-primary-container text-primary-container font-label-md text-label-md hover:bg-primary-container hover:text-on-primary transition-all duration-300">
+                            Ver más
+                        </button>
+</div>
+</article>
+<!-- Card 3: Paseos en Lancha -->
+<article class="group rounded-3xl overflow-hidden bg-white border border-outline-variant/30 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 flex flex-col h-full reveal" style="transition-delay: 300ms;">
+<div class="relative h-64 overflow-hidden">
+<img alt="Pontoon Boat" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out" data-alt="A pristine, luxury pontoon boat cruising gently on a calm, crystal-clear blue lake. The boat is filled with happy travelers enjoying a sunny day. The background features lush green hills characteristic of a tropical paradise. The lighting is bright and vibrant, emphasizing a relaxed, premium leisure experience." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBv5YdsxLGbCZsXB3t6JYFYDb4_ARoe8lOtIbJPFDcQQ2BDrDLRZ_LEWxsD7SKvq-FXS39PkQ0LNhrCyJJ498Ep_zLOrp9JkyXY2tcsJvQ6UyY92pgMdyIyitQVUfxRCZCJ7fQnepOI4HuLhxi6Oc_sBBDz9tBKuD5Gxo0Z70zwnVTkXeZpS_cEX29b0UDQiyMCT_883l0R2B7cGhRV28PaClMDqY7z6v1jc0STE2BrPJ6ObUKBuNq-sQ8hcVbyeN8aqfX7hi9jPuIP"/>
+<div class="absolute top-4 right-4 bg-tertiary-container text-on-tertiary-container px-4 py-1.5 rounded-full font-label-md text-label-md font-bold shadow-md">
+                            $80/hour
+                        </div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<div class="flex items-center gap-2 text-primary mb-3">
+<span class="material-symbols-outlined text-sm">sailing</span>
+<span class="font-label-md text-label-md tracking-wider uppercase text-xs">Water</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">Lanchas y Pontones</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">Relax and party on the water with our premium pontoon rentals. Perfect for groups looking to explore the islands.</p>
+<button class="w-full py-3 rounded-full border-2 border-primary-container text-primary-container font-label-md text-label-md hover:bg-primary-container hover:text-on-primary transition-all duration-300">
+                            Ver más
+                        </button>
+</div>
+</article>
+<!-- Card 4: Jungle Motors -->
+<article class="group rounded-3xl overflow-hidden bg-white border border-outline-variant/30 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 flex flex-col h-full reveal" style="transition-delay: 100ms;">
+<div class="relative h-64 overflow-hidden">
+<img alt="ATV Tour" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out" data-alt="A rugged, powerful ATV driving through a muddy, vibrant green jungle trail. Dust and a slight splash of mud are caught in mid-air, conveying dynamic motion. The sunlight filters through the dense tropical canopy above, creating a high-contrast, exciting atmosphere indicative of a premium outdoor adventure." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-dphtECi1aTCu6axQm6fCVCIDxXaPIiQnDzkQ_TApV_-ZDYI5z84g0n8Rr7Q_qecH8Zj0lMaxTJY9WP2zDamBHLtvSZ3VJF9lkfrb0a_RLl13UP4HkE2aA402zFaSvAwANI5Y3Ky1si6s9sWnCM_CUEZIT1av0cVzSqxuYuOQWId97gSGyxe8Jug27hKmPbSRz5uqeGOj5Pa87q3h6w-qbCRStRT9eFzlC_N6FU3FQr36EeoJGg9sOt8c6fZHBKN4zg-UXv1s88-A"/>
+<div class="absolute top-4 right-4 bg-tertiary-container text-on-tertiary-container px-4 py-1.5 rounded-full font-label-md text-label-md font-bold shadow-md">
+                            $45/hour
+                        </div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<div class="flex items-center gap-2 text-primary mb-3">
+<span class="material-symbols-outlined text-sm">two_wheeler</span>
+<span class="font-label-md text-label-md tracking-wider uppercase text-xs">Adrenaline</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">Jungle Motors (ATV)</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">Navigate thrilling jungle trails and discover hidden viewpoints on our powerful all-terrain vehicles.</p>
+<button class="w-full py-3 rounded-full border-2 border-primary-container text-primary-container font-label-md text-label-md hover:bg-primary-container hover:text-on-primary transition-all duration-300">
+                            Ver más
+                        </button>
+</div>
+</article>
+<!-- Card 5: Parapente -->
+<article class="group rounded-3xl overflow-hidden bg-white border border-outline-variant/30 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 flex flex-col h-full reveal" style="transition-delay: 200ms;">
+<div class="relative h-64 overflow-hidden">
+<img alt="Paragliding" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out" data-alt="A colorful paraglider soaring high above a spectacular, sun-drenched landscape featuring deep blue lakes and vibrant green islands. The sky is clear with a few fluffy white clouds. The perspective is breathtaking, capturing the freedom and exhilaration of flight in a premium, optimistic travel setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDc6FULbVT8151hrMkaZvgSZrOZwS0ocKH3kWwMvxQZo20fLtNsuBnzYlmZNn6UEHO9M4WAD_F1oRc1KjCpjPNhA5QVs56Csk8oX_fhesKBjimXqzDLSFcVCls5tshymmpCcERXHThAXEMsgpTiAHbl3tKFUcqYWMOZaG-MRfVsKWKn4_8Pbrg71vNatB4MxbHeIy6wAFE3y5yEw-plGb1VhosljvHzwTgEMIZ0o1ziUntLgeDH4Zn0_okDaqdU_yCcRSo_l4J8VQg8"/>
+<div class="absolute top-4 right-4 bg-tertiary-container text-on-tertiary-container px-4 py-1.5 rounded-full font-label-md text-label-md font-bold shadow-md">
+                            $65/flight
+                        </div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<div class="flex items-center gap-2 text-primary mb-3">
+<span class="material-symbols-outlined text-sm">air</span>
+<span class="font-label-md text-label-md tracking-wider uppercase text-xs">Air Adventure</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">Parapente</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">Soar peacefully over the reservoir. A tandem flight offering the most serene and majestic perspective of Guatapé.</p>
+<button class="w-full py-3 rounded-full border-2 border-primary-container text-primary-container font-label-md text-label-md hover:bg-primary-container hover:text-on-primary transition-all duration-300">
+                            Ver más
+                        </button>
+</div>
+</article>
+<!-- Card 6: Paseo a Caballo -->
+<article class="group rounded-3xl overflow-hidden bg-white border border-outline-variant/30 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 flex flex-col h-full reveal" style="transition-delay: 300ms;">
+<div class="relative h-64 overflow-hidden">
+<img alt="Horseback Riding" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out" data-alt="A serene horseback riding scene along a picturesque dirt path beside a vibrant blue lake. The horses are majestic and well-groomed, ridden by relaxed travelers. The surrounding landscape is lush green with rolling hills under a bright, sunny sky. The mood is peaceful and authentically connected to nature." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVmDR70zgEz8-i7eYZk630t9Pp11SxUT1kPwlJ02EbPeVbBVcCO-YaGXD4u4QVbPC1OpOIYekZALevIhCRXx7CDDOVrK50nfMy_vRQs0pU3tyhrNfK92CgE0iMFDbC5dUzriF0IpCXsPfQSUlfzEXzldC-iGFeg6SDwfSvCZWr6ETSlQDsV9qD60MBfSn9BT1FRkjmugtoOTGFpmjfJm0WtGkfa3JQvoq78VvqBG2Is3qlk8ZOFZlPsw_BMVXpNWQIn89Tei9uVLj8"/>
+<div class="absolute top-4 right-4 bg-tertiary-container text-on-tertiary-container px-4 py-1.5 rounded-full font-label-md text-label-md font-bold shadow-md">
+                            $30/hour
+                        </div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<div class="flex items-center gap-2 text-primary mb-3">
+<span class="material-symbols-outlined text-sm">directions_walk</span>
+<span class="font-label-md text-label-md tracking-wider uppercase text-xs">Nature</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">Paseo a Caballo</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">Enjoy a tranquil horseback ride along scenic ecological trails bordering the beautiful reservoir.</p>
+<button class="w-full py-3 rounded-full border-2 border-primary-container text-primary-container font-label-md text-label-md hover:bg-primary-container hover:text-on-primary transition-all duration-300">
+                            Ver más
+                        </button>
+</div>
+</article>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest dark:bg-inverse-surface w-full py-16 border-t border-outline-variant/30 reveal">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="col-span-1 md:col-span-1 mb-8 md:mb-0">
+<a class="font-headline-md text-headline-md font-extrabold text-primary dark:text-primary-fixed block mb-4 transition-transform hover:-translate-y-0.5 duration-300" href="#">Neomundo Tour</a>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">Premium Guatapé Experiences.</p>
+<div class="flex gap-4">
+<a class="text-primary hover:scale-110 transition-transform duration-300" href="#"><span class="material-symbols-outlined">photo_camera</span></a>
+<a class="text-primary hover:scale-110 transition-transform duration-300" href="#"><span class="material-symbols-outlined">forum</span></a>
+</div>
+</div>
+<div class="col-span-1">
+<h4 class="font-label-md text-label-md text-on-surface mb-4 uppercase tracking-wider">Company</h4>
+<ul class="space-y-3 font-body-md text-body-md">
+<li><a class="text-on-surface-variant hover:text-primary hover:underline decoration-primary underline-offset-4 transition-all duration-300" href="#">Privacy Policy</a></li>
+<li><a class="text-on-surface-variant hover:text-primary hover:underline decoration-primary underline-offset-4 transition-all duration-300" href="#">Terms of Service</a></li>
+</ul>
+</div>
+<div class="col-span-1">
+<h4 class="font-label-md text-label-md text-on-surface mb-4 uppercase tracking-wider">Support</h4>
+<ul class="space-y-3 font-body-md text-body-md">
+<li><a class="text-on-surface-variant hover:text-primary hover:underline decoration-primary underline-offset-4 transition-all duration-300" href="#">Help Center</a></li>
+<li><a class="text-on-surface-variant hover:text-primary hover:underline decoration-primary underline-offset-4 transition-all duration-300" href="#">Contact Us</a></li>
+</ul>
+</div>
+<div class="col-span-1">
+<h4 class="font-label-md text-label-md text-on-surface mb-4 uppercase tracking-wider">Social</h4>
+<ul class="space-y-3 font-body-md text-body-md">
+<li><a class="text-on-surface-variant hover:text-primary hover:underline decoration-primary underline-offset-4 transition-all duration-300" href="#">Instagram</a></li>
+<li><a class="text-on-surface-variant hover:text-primary hover:underline decoration-primary underline-offset-4 transition-all duration-300" href="#">WhatsApp</a></li>
+</ul>
+</div>
+</div>
+<div class="mt-12 pt-8 border-t border-outline-variant/20 text-center font-body-md text-body-md text-on-surface-variant">
+            © 2024 Neomundo Tour. Premium Guatapé Experiences.
+        </div>
+</footer>
+<script>
+        // Simple navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 10) {
+                nav.classList.add('shadow-md');
+                nav.classList.replace('bg-surface/80', 'bg-surface/95');
+            } else {
+                nav.classList.remove('shadow-md');
+                nav.classList.replace('bg-surface/95', 'bg-surface/80');
+            }
+        });
+
+        // Intersection Observer for scroll revelations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Particles Effect
+        const canvas = document.getElementById('particles-canvas');
+        if (canvas) {
+            const ctx = canvas.getContext('2d');
+            let particles = [];
+
+            function resize() {
+                canvas.width = canvas.parentElement.clientWidth;
+                canvas.height = canvas.parentElement.clientHeight;
+            }
+            window.addEventListener('resize', resize);
+            resize();
+
+            class Particle {
+                constructor() {
+                    this.x = Math.random() * canvas.width;
+                    this.y = Math.random() * canvas.height;
+                    this.size = Math.random() * 2 + 0.5;
+                    this.speedY = Math.random() * -0.5 - 0.1;
+                    this.speedX = Math.random() * 0.4 - 0.2;
+                    this.opacity = Math.random() * 0.5 + 0.1;
+                }
+                update() {
+                    this.y += this.speedY;
+                    this.x += this.speedX;
+                    if (this.y < 0) {
+                        this.y = canvas.height;
+                        this.x = Math.random() * canvas.width;
+                    }
+                }
+                draw() {
+                    ctx.fillStyle = `rgba(0, 188, 212, ${this.opacity})`;
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                    ctx.fill();
+                }
+            }
+
+            function initParticles() {
+                particles = [];
+                for (let i = 0; i < 60; i++) {
+                    particles.push(new Particle());
+                }
+            }
+            initParticles();
+
+            function animateParticles() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                particles.forEach(p => {
+                    p.update();
+                    p.draw();
+                });
+                requestAnimationFrame(animateParticles);
+            }
+            animateParticles();
+        }
+    </script>
+</body></html>

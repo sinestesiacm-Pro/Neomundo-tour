@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: #f4fafc;
+  color: #161d1e;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+}
+
+/* Material Symbols Outlined Custom configurations */
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+.material-symbols-outlined.fill {
+  font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+/* Glassmorphism Cards */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 8px 32px rgba(0, 188, 212, 0.05);
+}
+
+/* Shadows and Glows */
+.cyan-glow {
+  box-shadow: 0 4px 20px rgba(0, 188, 212, 0.3);
+}
+
+.tropical-shadow {
+  box-shadow: 0 10px 40px -10px rgba(0, 188, 212, 0.15);
+}
+
+/* Background Patterns */
+.hero-pattern {
+  background-color: #f4fafc;
+  background-image: radial-gradient(#a1efff 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: #00bcd4;
+  color: #ffffff;
+  box-shadow: 0 4px 14px 0 rgba(0, 188, 212, 0.39);
+  transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+  box-shadow: 0 6px 20px rgba(0, 188, 212, 0.5);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background-color: #4CAF50; /* Tropical Green */
+  color: white;
+  box-shadow: 0 4px 14px 0 rgba(76, 175, 80, 0.39);
+  transition: all 0.2s ease;
+}
+
+.btn-secondary:hover {
+  box-shadow: 0 6px 20px rgba(76, 175, 80, 0.5);
+  transform: translateY(-2px);
+}
+
+/* Custom Nav Link styling */
+.nav-link {
+  position: relative;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: currentColor;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Particle and Animations styling */
+.particle {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 10;
+}
+
+@keyframes float-up {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100px) scale(0);
+    opacity: 0;
+  }
+}
+
+.ken-burns {
+  animation: kenBurns 20s ease-in-out infinite alternate;
+  transform-origin: center;
+}
+
+@keyframes kenBurns {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.08); }
+}

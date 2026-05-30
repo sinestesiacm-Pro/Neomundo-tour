@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Neomundo Tour - Luxury Villa Detail</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "tertiary-fixed": "#ffdcbe",
+                        "surface-bright": "#f4fafc",
+                        "surface-tint": "#006876",
+                        "on-surface-variant": "#3c494c",
+                        "on-secondary-fixed": "#002204",
+                        "surface-container-low": "#eff5f6",
+                        "surface-dim": "#d5dbdd",
+                        "outline-variant": "#bbc9cc",
+                        "secondary-fixed": "#94f990",
+                        "error": "#ba1a1a",
+                        "surface-variant": "#dde3e5",
+                        "secondary-container": "#91f78e",
+                        "on-error": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "tertiary-container": "#f79300",
+                        "on-tertiary-container": "#5f3500",
+                        "on-surface": "#161d1e",
+                        "surface": "#f4fafc",
+                        "surface-container-highest": "#dde3e5",
+                        "error-container": "#ffdad6",
+                        "surface-container-high": "#e3e9eb",
+                        "primary-fixed": "#a1efff",
+                        "tertiary": "#8b5000",
+                        "secondary": "#006e1c",
+                        "on-primary-fixed": "#001f25",
+                        "surface-container": "#e9eff0",
+                        "inverse-on-surface": "#ecf2f3",
+                        "on-secondary-container": "#00731e",
+                        "primary-fixed-dim": "#44d8f1",
+                        "on-tertiary-fixed-variant": "#693c00",
+                        "on-primary-fixed-variant": "#004e59",
+                        "secondary-fixed-dim": "#78dc77",
+                        "on-secondary-fixed-variant": "#005313",
+                        "background": "#f4fafc",
+                        "on-tertiary-fixed": "#2c1600",
+                        "primary": "#006876",
+                        "inverse-primary": "#44d8f1",
+                        "tertiary-fixed-dim": "#ffb870",
+                        "on-primary-container": "#004650",
+                        "inverse-surface": "#2b3133",
+                        "on-primary": "#ffffff",
+                        "outline": "#6c797c",
+                        "on-tertiary": "#ffffff",
+                        "on-background": "#161d1e",
+                        "primary-container": "#00bcd4",
+                        "on-error-container": "#93000a",
+                        "surface-container-lowest": "#ffffff"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "margin-mobile": "16px",
+                        "base": "8px",
+                        "container-max": "1280px",
+                        "gutter": "24px",
+                        "margin-desktop": "48px"
+                    },
+                    fontFamily: {
+                        "headline-xl": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "label-md": ["Plus Jakarta Sans"]
+                    },
+                    fontSize: {
+                        "headline-xl": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        /* Animations */
+        @keyframes fade-in-up {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in-up {
+            animation: fade-in-up 0.8s ease-out forwards;
+        }
+
+        .delay-100 { animation-delay: 100ms; }
+        .delay-200 { animation-delay: 200ms; }
+        .delay-300 { animation-delay: 300ms; }
+
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s cubic-bezier(0.5, 0, 0, 1), transform 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+
+        .reveal-on-scroll.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Particle System */
+        .particle {
+            position: absolute;
+            background-color: rgba(255, 255, 255, 0.6);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        @keyframes float-up {
+            0% {
+                transform: translateY(0) scale(1);
+                opacity: 0;
+            }
+            20% {
+                opacity: 1;
+            }
+            80% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px) scale(0);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased pt-20 relative overflow-x-hidden">
+<!-- Water Particles Container -->
+<div class="fixed inset-0 pointer-events-none z-0 overflow-hidden" id="particle-container"></div>
+<!-- TopNavBar -->
+<header class="bg-surface/80 dark:bg-inverse-surface/80 backdrop-blur-xl fixed top-0 w-full z-50 border-b border-outline-variant/20 shadow-sm transition-all duration-300 hover:bg-surface/95">
+<div class="flex justify-between items-center h-20 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="font-headline-md text-headline-md font-black tracking-tight text-primary dark:text-primary-fixed hover:scale-105 transition-transform duration-300 cursor-pointer">
+                Neomundo Tour
+            </div>
+<nav class="hidden md:flex gap-8 items-center">
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary transition-all duration-300 hover:bg-primary-container/10 dark:hover:bg-primary-fixed/10 rounded-lg p-2 font-label-md text-label-md hover:scale-105" href="#">Experiences</a>
+<a class="text-primary dark:text-primary-fixed border-b-2 border-primary dark:border-primary-fixed pb-1 font-label-md text-label-md transition-all duration-300" href="#">Villas</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary transition-all duration-300 hover:bg-primary-container/10 dark:hover:bg-primary-fixed/10 rounded-lg p-2 font-label-md text-label-md hover:scale-105" href="#">Boats</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary transition-all duration-300 hover:bg-primary-container/10 dark:hover:bg-primary-fixed/10 rounded-lg p-2 font-label-md text-label-md hover:scale-105" href="#">Contact</a>
+</nav>
+<button class="hidden md:block bg-primary-container text-on-primary font-label-md text-label-md px-6 py-3 rounded-full hover:shadow-[0_0_20px_rgba(0,188,212,0.6)] hover:-translate-y-1 transition-all duration-300 scale-95 active:scale-100">
+                Book Now
+            </button>
+<button class="md:hidden text-primary hover:bg-primary-container/10 p-2 rounded-full transition-colors">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+</div>
+</header>
+<!-- Main Content -->
+<main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pb-24 relative z-10">
+<!-- Hero Gallery Bento Grid -->
+<section class="mt-8 mb-12 animate-fade-in-up opacity-0" style="animation-fill-mode: forwards;">
+<div class="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-4 h-[512px] md:h-[716px] rounded-2xl overflow-hidden shadow-lg">
+<div class="md:col-span-2 md:row-span-2 relative group cursor-pointer overflow-hidden">
+<div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 pointer-events-none"></div>
+<img alt="A breathtaking luxury villa in Guatapé, Colombia, featuring modern tropical architecture with expansive glass windows overlooking the stunning Peñol-Guatapé reservoir. The scene is bathed in golden hour sunlight, highlighting a pristine infinity pool and lush green surroundings. The overall aesthetic is high-end, relaxing, and deeply connected to nature, reflecting a premium travel experience." class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110" data-alt="A breathtaking luxury villa in Guatapé, Colombia, featuring modern tropical architecture with expansive glass windows overlooking the stunning Peñol-Guatapé reservoir. The scene is bathed in golden hour sunlight, highlighting a pristine infinity pool and lush green surroundings. The overall aesthetic is high-end, relaxing, and deeply connected to nature, reflecting a premium travel experience." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAm0iLJ26s8N7qZ3Mny1gaohC29qAWRpUbgcpNvaGakD7xJToQJIjXB91vemUs-BQxqdK-gEx635FOjOam85FWHjjUqsMnhbDWExzBxtnvrxM_M_J2u_MXSUf-S_bABwMx0sNblVCrOmC8Fa3Lln92zg0VnmRSjsBNoAa4MtLpjFQD8SJFIGnX1Tu2McT4Do7PSpWA2RsMv5LrajM5nmN0brtDq7KCa-0BJXmnAr9VUpO2T0TY2-HHjTrbFvpK-OtfoY6WhP2x05GQ0"/>
+</div>
+<div class="hidden md:block relative group cursor-pointer overflow-hidden">
+<div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 pointer-events-none"></div>
+<img alt="Interior view of a luxurious living room in a modern tropical villa. The space is bright and airy, with minimalist high-end furniture, light wood accents, and floor-to-ceiling windows offering a panoramic view of a beautiful lake. The lighting is soft and natural, creating a serene and inviting atmosphere perfect for a premium getaway." class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110" data-alt="Interior view of a luxurious living room in a modern tropical villa. The space is bright and airy, with minimalist high-end furniture, light wood accents, and floor-to-ceiling windows offering a panoramic view of a beautiful lake. The lighting is soft and natural, creating a serene and inviting atmosphere perfect for a premium getaway." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCKaxSxrXAilBMbyy3EFjvpf7_v_kOexWjtuTEbNUsqx8xnn0z8uVgaMeUJFE3ROC809k8JCJZyiI4NYtXpXI_4mpmu1skPY3sDjCgVf8XEuboelLHBvYLArYbAfc6rKVlknM-aLyXMTA43c5vtH2imz6778r_vj64nzvJW3WRbXBVK7SiYM9ea0eAGkQxOvn1XrP6C9Z65FKcTDKnDi-TADOmzRE7Nxjug50Bk7u8AyoG3jASoDYCORkzAQs_eobKhpwCi33dpUE-"/>
+</div>
+<div class="hidden md:block relative group cursor-pointer overflow-hidden">
+<div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 pointer-events-none"></div>
+<img alt="A modern outdoor lounge area of a luxury villa, featuring comfortable white sofas and a sleek fire pit. The area is situated on a wooden deck next to a sparkling blue infinity pool, with a stunning backdrop of the Guatapé reservoir and distant green hills under a clear blue sky. The vibe is exclusive and tranquil." class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110" data-alt="A modern outdoor lounge area of a luxury villa, featuring comfortable white sofas and a sleek fire pit. The area is situated on a wooden deck next to a sparkling blue infinity pool, with a stunning backdrop of the Guatapé reservoir and distant green hills under a clear blue sky. The vibe is exclusive and tranquil." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9L41O9P1AMkISRBLJU71ZTG36g3IWIy9RuihE7u4Ierimh4kCCprGoqWzIaJVMNqi68zgU49R_qLMQqqsb4FiqQSdyp5h35PmPVoSoAC47GFg2kBajSZz2wuLXkIZNyYQCPW0iUJlJyYB8ILABnDCw9f5BFGH9Pd5arrXKg_6AIcqgHY7wcULiAIQ5vpFrbkh6skVLkL1SRtrESpM5nzZYfGvoNzZ8rRBoOmiKTCDq9Q0hsrWsfHSQzBzHGabA5jAt6zoQTOfwEug"/>
+</div>
+<div class="hidden md:block md:col-span-2 relative group cursor-pointer overflow-hidden">
+<div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 pointer-events-none"></div>
+<img alt="A beautifully designed modern bedroom in a luxury villa, featuring a plush king-sized bed with crisp white linens. Large glass doors open to a private balcony overlooking a serene lake. The room is styled with natural textures, soft neutral tones, and warm ambient lighting, conveying a sense of ultimate relaxation and premium comfort." class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110" data-alt="A beautifully designed modern bedroom in a luxury villa, featuring a plush king-sized bed with crisp white linens. Large glass doors open to a private balcony overlooking a serene lake. The room is styled with natural textures, soft neutral tones, and warm ambient lighting, conveying a sense of ultimate relaxation and premium comfort." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOWJAlSUq2Hktu_4Sjh-sL-UNYRaQdKU1Zy1nv8niU3X6hCSXmzFY4q2hzlnTgibhMvwg5yduGCxp_ZCzK9SxLSVB3Wja7cN9md-IObupL9Ocmt_Qy9-QKnIcMfMi0xQ__dgzdmkPDkg1MwQ0tK0vWT6ZtmVgUzHr4HAozf3h-yLVy6MVyE6oVSoPLuTX647Wq2k1lOJ-bkk1La74u0_OoOwtgnC02MqTvuX-R_a8n4_8AUWmHUHgjvBFTqpckOkUBkynBp_nFapi0"/>
+<div class="absolute bottom-4 right-4 bg-surface/90 backdrop-blur-md px-4 py-2 rounded-full font-label-md text-label-md text-primary flex items-center gap-2 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300">
+<span class="material-symbols-outlined text-xl">grid_view</span>
+                        Show all photos
+                    </div>
+</div>
+</div>
+</section>
+<!-- Product Details & Booking Split -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+<!-- Left Column: Details -->
+<div class="lg:col-span-2 space-y-12">
+<!-- Header Info -->
+<div class="animate-fade-in-up delay-100 opacity-0" style="animation-fill-mode: forwards;">
+<div class="flex items-center gap-2 text-primary font-label-md text-label-md mb-2">
+<span class="material-symbols-outlined text-lg">location_on</span>
+<span>Guatapé, Antioquia</span>
+</div>
+<h1 class="font-headline-xl text-headline-lg-mobile md:text-headline-xl text-on-surface mb-4">Villa Esmeralda Retreat</h1>
+<div class="flex flex-wrap gap-4 text-on-surface-variant font-body-md text-body-md">
+<span class="flex items-center gap-1 hover:text-primary transition-colors cursor-pointer"><span class="material-symbols-outlined">group</span> 12 Guests</span>
+<span class="flex items-center gap-1 hover:text-primary transition-colors cursor-pointer"><span class="material-symbols-outlined">bed</span> 5 Bedrooms</span>
+<span class="flex items-center gap-1 hover:text-primary transition-colors cursor-pointer"><span class="material-symbols-outlined">bathtub</span> 6 Baths</span>
+</div>
+</div>
+<hr class="border-outline-variant/30 reveal-on-scroll"/>
+<!-- Description -->
+<div class="reveal-on-scroll">
+<h2 class="font-headline-lg text-headline-md md:text-headline-lg text-on-surface mb-4">About this property</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+                        Experience the ultimate tropical modernism at Villa Esmeralda. Nestled on the shores of the breathtaking Peñol-Guatapé reservoir, this architectural masterpiece offers seamless indoor-outdoor living. With floor-to-ceiling glass, an expansive infinity pool, and private dock access, every moment here is designed to connect you with the vibrant energy of Colombia's most beautiful landscape. Perfect for families or groups seeking a premium, sun-drenched escape.
+                    </p>
+</div>
+<hr class="border-outline-variant/30 reveal-on-scroll"/>
+<!-- Amenities -->
+<div class="reveal-on-scroll">
+<h2 class="font-headline-lg text-headline-md md:text-headline-lg text-on-surface mb-6">Premium Amenities</h2>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-y-6 gap-x-4">
+<div class="flex items-center gap-3 text-on-surface-variant hover:-translate-y-1 hover:text-primary transition-all duration-300 cursor-pointer">
+<span class="material-symbols-outlined text-primary text-2xl">pool</span>
+<span class="font-body-md text-body-md">Infinity Pool</span>
+</div>
+<div class="flex items-center gap-3 text-on-surface-variant hover:-translate-y-1 hover:text-primary transition-all duration-300 cursor-pointer">
+<span class="material-symbols-outlined text-primary text-2xl">wifi</span>
+<span class="font-body-md text-body-md">Fast Wi-Fi</span>
+</div>
+<div class="flex items-center gap-3 text-on-surface-variant hover:-translate-y-1 hover:text-primary transition-all duration-300 cursor-pointer">
+<span class="material-symbols-outlined text-primary text-2xl">outdoor_grill</span>
+<span class="font-body-md text-body-md">BBQ Area</span>
+</div>
+<div class="flex items-center gap-3 text-on-surface-variant hover:-translate-y-1 hover:text-primary transition-all duration-300 cursor-pointer">
+<span class="material-symbols-outlined text-primary text-2xl">directions_boat</span>
+<span class="font-body-md text-body-md">Private Dock</span>
+</div>
+<div class="flex items-center gap-3 text-on-surface-variant hover:-translate-y-1 hover:text-primary transition-all duration-300 cursor-pointer">
+<span class="material-symbols-outlined text-primary text-2xl">ac_unit</span>
+<span class="font-body-md text-body-md">Air Conditioning</span>
+</div>
+<div class="flex items-center gap-3 text-on-surface-variant hover:-translate-y-1 hover:text-primary transition-all duration-300 cursor-pointer">
+<span class="material-symbols-outlined text-primary text-2xl">kitchen</span>
+<span class="font-body-md text-body-md">Chef's Kitchen</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Booking Widget -->
+<div class="relative animate-fade-in-up delay-200 opacity-0 z-20" style="animation-fill-mode: forwards;">
+<div class="sticky top-28 glass-panel p-6 rounded-2xl shadow-[0_8px_32px_rgba(0,188,212,0.05)] hover:shadow-[0_12px_40px_rgba(0,188,212,0.1)] transition-shadow duration-300">
+<div class="flex justify-between items-end mb-6">
+<div>
+<span class="font-headline-lg text-headline-lg text-on-surface">$850</span>
+<span class="font-body-md text-body-md text-on-surface-variant">/ night</span>
+</div>
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined fill text-lg">star</span>
+<span class="font-label-md text-label-md">4.98</span>
+</div>
+</div>
+<!-- Inputs -->
+<div class="border border-outline-variant/50 rounded-xl overflow-hidden mb-6 bg-surface/50 transition-all duration-300 hover:border-primary/50 focus-within:border-primary focus-within:shadow-[0_0_10px_rgba(0,188,212,0.2)]">
+<div class="flex border-b border-outline-variant/50">
+<div class="p-3 w-1/2 border-r border-outline-variant/50 hover:bg-surface-container-low transition-colors cursor-pointer group">
+<label class="block font-label-md text-[10px] uppercase text-on-surface-variant group-hover:text-primary transition-colors">Check-in</label>
+<input class="w-full bg-transparent border-none p-0 focus:ring-0 font-body-md text-body-md text-on-surface placeholder-outline cursor-pointer" placeholder="Add date" readonly="" type="text"/>
+</div>
+<div class="p-3 w-1/2 hover:bg-surface-container-low transition-colors cursor-pointer group">
+<label class="block font-label-md text-[10px] uppercase text-on-surface-variant group-hover:text-primary transition-colors">Check-out</label>
+<input class="w-full bg-transparent border-none p-0 focus:ring-0 font-body-md text-body-md text-on-surface placeholder-outline cursor-pointer" placeholder="Add date" readonly="" type="text"/>
+</div>
+</div>
+<div class="p-3 hover:bg-surface-container-low transition-colors cursor-pointer flex justify-between items-center group">
+<div>
+<label class="block font-label-md text-[10px] uppercase text-on-surface-variant group-hover:text-primary transition-colors">Guests</label>
+<span class="font-body-md text-body-md text-on-surface">1 Guest</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors">expand_more</span>
+</div>
+</div>
+<button class="w-full bg-[#4CAF50] text-white font-headline-md text-body-lg py-4 rounded-xl hover:shadow-[0_0_25px_rgba(76,175,80,0.6)] hover:-translate-y-1 transition-all duration-300 scale-[0.98] active:scale-100 mb-4 overflow-hidden relative group">
+<span class="absolute inset-0 w-full h-full bg-white/20 -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]"></span>
+                        Check Availability
+                    </button>
+<p class="text-center font-body-md text-sm text-on-surface-variant">You won't be charged yet</p>
+</div>
+</div>
+</div>
+<hr class="border-outline-variant/30 my-16 reveal-on-scroll"/>
+<!-- Upsell Section -->
+<section class="reveal-on-scroll">
+<h2 class="font-headline-lg text-headline-md md:text-headline-lg text-on-surface mb-8">Elevate Your Stay</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Upsell Card 1 -->
+<div class="group bg-surface rounded-2xl border border-surface-container-high overflow-hidden hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 ease-out">
+<div class="h-48 overflow-hidden relative">
+<div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 pointer-events-none mix-blend-overlay"></div>
+<img alt="A sleek, modern helicopter flying over the vibrant, turquoise waters of the Peñol-Guatapé reservoir. The surrounding landscape features lush green islands and the iconic El Peñón de Guatapé rock formation in the distance. The lighting is bright and sunny, conveying an exciting, premium travel experience." class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110" data-alt="A sleek, modern helicopter flying over the vibrant, turquoise waters of the Peñol-Guatapé reservoir. The surrounding landscape features lush green islands and the iconic El Peñón de Guatapé rock formation in the distance. The lighting is bright and sunny, conveying an exciting, premium travel experience." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGQIF380Xid5O6XC2wPj2F-eJ8G0hR8T0yvc7ftG8BbTRuph1jUSsiHkjhAUN_Mu7W49E_v0cnH3yeOIFxJArMgII_XSWPxUKdXmWeJAyKakpM3UCTJljyyPn8Z-q8alh1KCGKqFNvZuknh2O85pWklgOIkmgre5rTGr7CKipk2g89_35plIhruFXKA0XDmb-KZKo-eDKSZQlNKH9IZ_UCM9JbIwYvSBAh-mrto_eGtaQUyXeSNwS_d9HTXDbPCu_W9TXjC1Fpi5kB"/>
+<div class="absolute top-4 right-4 bg-tertiary-container text-on-tertiary-container font-label-md text-label-md px-3 py-1 rounded-full shadow-md z-20 transition-transform duration-300 group-hover:scale-110">
+                            Popular
+                        </div>
+</div>
+<div class="p-6 relative">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors duration-300">Helicopter Tour</h3>
+<span class="font-headline-md text-body-lg text-primary">$150/pp</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">See Guatapé from above. A breathtaking 15-minute flight over the reservoir and the famous Rock.</p>
+<button class="text-primary font-label-md text-label-md flex items-center gap-1 hover:text-primary-container transition-colors group/btn">
+                            Add to booking <span class="material-symbols-outlined text-sm transition-transform duration-300 group-hover/btn:translate-x-1">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Upsell Card 2 -->
+<div class="group bg-surface rounded-2xl border border-surface-container-high overflow-hidden hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 ease-out">
+<div class="h-48 overflow-hidden relative">
+<div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 pointer-events-none mix-blend-overlay"></div>
+<img alt="A luxury private pontoon boat cruising gently on the smooth, clear waters of a large lake. Passengers are relaxing on plush white seating, enjoying drinks under a bright blue sky. The surrounding scenery includes lush green hills typical of the Guatapé region. The mood is relaxed, exclusive, and fun." class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110" data-alt="A luxury private pontoon boat cruising gently on the smooth, clear waters of a large lake. Passengers are relaxing on plush white seating, enjoying drinks under a bright blue sky. The surrounding scenery includes lush green hills typical of the Guatapé region. The mood is relaxed, exclusive, and fun." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIfJVD3QXEo9pUUjmzHbPqcwvh3tFEGgHrlIf3CiQYff4susADAT3FUBRzSAh_1NbnyIw0D1jRDr3uNoET7Ss0NgqQeEfubg_rnH_hmEBs2kN8APnutid88Ck1EJbQ2rFkQJ_6effAFY4tTyIiAkoiFZkvTvu695_nbxckgVcoKTJuWvbQ0RbipBL8pQ96DfTScYVjMm8ipgKF1jI54oEAbDiQzuzWE93EN0RCsEfV1KUs5HAG0Wuj78zOWt0_8d6f68y34lmdlWKB"/>
+</div>
+<div class="p-6 relative">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors duration-300">Private Pontoon</h3>
+<span class="font-headline-md text-body-lg text-primary">$300/day</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">Explore the reservoir at your own pace. Includes captain, cooler, and sound system for up to 10 people.</p>
+<button class="text-primary font-label-md text-label-md flex items-center gap-1 hover:text-primary-container transition-colors group/btn">
+                            Add to booking <span class="material-symbols-outlined text-sm transition-transform duration-300 group-hover/btn:translate-x-1">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest dark:bg-inverse-surface w-full py-16 border-t border-outline-variant/30 mt-12 relative z-10">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="md:col-span-1 mb-8 md:mb-0">
+<div class="font-headline-md text-headline-md font-extrabold text-primary dark:text-primary-fixed mb-4 hover:scale-105 origin-left transition-transform duration-300">
+                    Neomundo Tour
+                </div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                    © 2024 Neomundo Tour. Premium Guatapé Experiences.
+                </p>
+</div>
+<div class="flex flex-col gap-3">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all duration-300 hover:translate-x-2 opacity-80 hover:opacity-100" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all duration-300 hover:translate-x-2 opacity-80 hover:opacity-100" href="#">Terms of Service</a>
+</div>
+<div class="flex flex-col gap-3">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all duration-300 hover:translate-x-2 opacity-80 hover:opacity-100" href="#">Help Center</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all duration-300 hover:translate-x-2 opacity-80 hover:opacity-100" href="#">Contact Us</a>
+</div>
+<div class="flex flex-col gap-3">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all duration-300 hover:translate-x-2 opacity-80 hover:opacity-100" href="#">Instagram</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all duration-300 hover:translate-x-2 opacity-80 hover:opacity-100" href="#">WhatsApp</a>
+</div>
+</div>
+</footer>
+<style>
+    @keyframes shimmer {
+        100% {
+            transform: translateX(100%);
+        }
+    }
+</style>
+<script>
+    // Scroll Revelation Logic
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.reveal-on-scroll').forEach(el => {
+        observer.observe(el);
+    });
+
+    // Particle System Logic
+    function createParticle() {
+        const container = document.getElementById('particle-container');
+        const particle = document.createElement('div');
+        particle.classList.add('particle');
+        
+        // Randomize properties
+        const size = Math.random() * 6 + 2; // 2px to 8px
+        const xPos = Math.random() * 100; // 0 to 100vw
+        const duration = Math.random() * 4 + 3; // 3s to 7s
+        const delay = Math.random() * 2;
+        
+        particle.style.width = `${size}px`;
+        particle.style.height = `${size}px`;
+        particle.style.left = `${xPos}vw`;
+        particle.style.bottom = `-10px`;
+        particle.style.animation = `float-up ${duration}s ease-in ${delay}s infinite`;
+        
+        container.appendChild(particle);
+
+        // Remove particle after animation to prevent DOM bloating, then recreate
+        setTimeout(() => {
+            particle.remove();
+            createParticle();
+        }, (duration + delay) * 1000);
+    }
+
+    // Initialize particles
+    for (let i = 0; i < 30; i++) {
+        createParticle();
+    }
+</script>
+</body></html>
