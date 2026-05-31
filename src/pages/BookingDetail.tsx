@@ -135,7 +135,7 @@ export default function BookingDetail() {
           {/* Description Block */}
           <div className="space-y-4">
             <h2 className="font-headline text-2xl font-bold text-on-surface">About this experience</h2>
-            <p className="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+            <p className="font-body-lg text-body-lg text-on-surface-variant leading-relaxed whitespace-pre-line">
               {experience.longDescription}
             </p>
           </div>

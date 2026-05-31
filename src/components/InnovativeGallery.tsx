@@ -17,6 +17,8 @@ export default function InnovativeGallery({ images, title }: InnovativeGalleryPr
     displayImages.push(images[0] || 'https://images.unsplash.com/photo-1544644181-1484b3fdfc62');
   }
 
+  const isVideo = (src: string) => src.match(/\.(mp4|webm|ogg)$/i);
+
   const handleNext = (e: React.MouseEvent) => {
     e.stopPropagation();
     if (activeIdx !== null) {
@@ -44,13 +46,23 @@ export default function InnovativeGallery({ images, title }: InnovativeGalleryPr
           className="md:col-span-2 md:row-span-2 relative cursor-pointer overflow-hidden group h-full"
         >
           <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 pointer-events-none" />
-          <motion.img 
-            alt={`${title} - Main View`} 
-            className="w-full h-full object-cover origin-center"
-            src={displayImages[0]}
-            animate={{ scale: hoveredIdx === 0 ? 1.05 : 1 }}
-            transition={{ duration: 0.8, ease: 'easeOut' }}
-          />
+          {isVideo(displayImages[0]) ? (
+            <motion.video 
+              className="w-full h-full object-cover origin-center"
+              src={displayImages[0]}
+              autoPlay muted loop playsInline
+              animate={{ scale: hoveredIdx === 0 ? 1.05 : 1 }}
+              transition={{ duration: 0.8, ease: 'easeOut' }}
+            />
+          ) : (
+            <motion.img 
+              alt={`${title} - Main View`} 
+              className="w-full h-full object-cover origin-center"
+              src={displayImages[0]}
+              animate={{ scale: hoveredIdx === 0 ? 1.05 : 1 }}
+              transition={{ duration: 0.8, ease: 'easeOut' }}
+            />
+          )}
           {/* Overlay details */}
           <div className="absolute bottom-6 left-6 z-20 text-white drop-shadow-md">
             <span className="bg-primary/80 backdrop-blur-md px-3.5 py-1 rounded-full text-xs font-semibold tracking-wider uppercase">
@@ -67,13 +79,23 @@ export default function InnovativeGallery({ images, title }: InnovativeGalleryPr
           className="hidden md:block relative cursor-pointer overflow-hidden group h-full"
         >
           <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 pointer-events-none" />
-          <motion.img 
-            alt={`${title} - Gallery Image 1`} 
-            className="w-full h-full object-cover"
-            src={displayImages[1]}
-            animate={{ scale: hoveredIdx === 1 ? 1.08 : 1 }}
-            transition={{ duration: 0.8, ease: 'easeOut' }}
-          />
+          {isVideo(displayImages[1]) ? (
+            <motion.video 
+              className="w-full h-full object-cover"
+              src={displayImages[1]}
+              autoPlay muted loop playsInline
+              animate={{ scale: hoveredIdx === 1 ? 1.08 : 1 }}
+              transition={{ duration: 0.8, ease: 'easeOut' }}
+            />
+          ) : (
+            <motion.img 
+              alt={`${title} - Gallery Image 1`} 
+              className="w-full h-full object-cover"
+              src={displayImages[1]}
+              animate={{ scale: hoveredIdx === 1 ? 1.08 : 1 }}
+              transition={{ duration: 0.8, ease: 'easeOut' }}
+            />
+          )}
         </div>
 
         {/* Top right image */}
@@ -84,13 +106,23 @@ export default function InnovativeGallery({ images, title }: InnovativeGalleryPr
           className="hidden md:block relative cursor-pointer overflow-hidden group h-full"
         >
           <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 pointer-events-none" />
-          <motion.img 
-            alt={`${title} - Gallery Image 2`} 
-            className="w-full h-full object-cover"
-            src={displayImages[2]}
-            animate={{ scale: hoveredIdx === 2 ? 1.08 : 1 }}
-            transition={{ duration: 0.8, ease: 'easeOut' }}
-          />
+          {isVideo(displayImages[2]) ? (
+            <motion.video 
+              className="w-full h-full object-cover"
+              src={displayImages[2]}
+              autoPlay muted loop playsInline
+              animate={{ scale: hoveredIdx === 2 ? 1.08 : 1 }}
+              transition={{ duration: 0.8, ease: 'easeOut' }}
+            />
+          ) : (
+            <motion.img 
+              alt={`${title} - Gallery Image 2`} 
+              className="w-full h-full object-cover"
+              src={displayImages[2]}
+              animate={{ scale: hoveredIdx === 2 ? 1.08 : 1 }}
+              transition={{ duration: 0.8, ease: 'easeOut' }}
+            />
+          )}
         </div>
 
         {/* Bottom right image (spanning 2 columns) */}
@@ -101,13 +133,23 @@ export default function InnovativeGallery({ images, title }: InnovativeGalleryPr
           className="hidden md:block md:col-span-2 relative cursor-pointer overflow-hidden group h-full"
         >
           <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 pointer-events-none" />
-          <motion.img 
-            alt={`${title} - Gallery Image 3`} 
-            className="w-full h-full object-cover"
-            src={displayImages[3]}
-            animate={{ scale: hoveredIdx === 3 ? 1.05 : 1 }}
-            transition={{ duration: 0.8, ease: 'easeOut' }}
-          />
+          {isVideo(displayImages[3]) ? (
+            <motion.video 
+              className="w-full h-full object-cover"
+              src={displayImages[3]}
+              autoPlay muted loop playsInline
+              animate={{ scale: hoveredIdx === 3 ? 1.05 : 1 }}
+              transition={{ duration: 0.8, ease: 'easeOut' }}
+            />
+          ) : (
+            <motion.img 
+              alt={`${title} - Gallery Image 3`} 
+              className="w-full h-full object-cover"
+              src={displayImages[3]}
+              animate={{ scale: hoveredIdx === 3 ? 1.05 : 1 }}
+              transition={{ duration: 0.8, ease: 'easeOut' }}
+            />
+          )}
           {/* Immersive gallery trigger overlay button */}
           <div className="absolute bottom-6 right-6 z-20">
             <button className="bg-surface/90 backdrop-blur-md px-5 py-2.5 rounded-full font-semibold text-xs md:text-sm text-primary flex items-center gap-2 shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 hover:bg-white">
@@ -161,11 +203,19 @@ export default function InnovativeGallery({ images, title }: InnovativeGalleryPr
                 transition={{ duration: 0.3 }}
                 className="relative max-h-full max-w-full flex items-center justify-center p-2 rounded-2xl overflow-hidden"
               >
-                <img 
-                  alt={`${title} - Zoomed View`}
-                  className="max-h-[70vh] object-contain rounded-xl shadow-2xl select-none"
-                  src={displayImages[activeIdx]}
-                />
+                {isVideo(displayImages[activeIdx]) ? (
+                  <video 
+                    className="max-h-[70vh] object-contain rounded-xl shadow-2xl select-none"
+                    src={displayImages[activeIdx]}
+                    controls autoPlay
+                  />
+                ) : (
+                  <img 
+                    alt={`${title} - Zoomed View`}
+                    className="max-h-[70vh] object-contain rounded-xl shadow-2xl select-none"
+                    src={displayImages[activeIdx]}
+                  />
+                )}
               </motion.div>
 
               {/* Next Button */}
@@ -187,7 +237,11 @@ export default function InnovativeGallery({ images, title }: InnovativeGalleryPr
                     idx === activeIdx ? 'border-primary-container scale-105 shadow-[0_0_12px_rgba(0,188,212,0.6)]' : 'border-transparent opacity-50 hover:opacity-80'
                   }`}
                 >
-                  <img src={img} className="w-full h-full object-cover" alt="thumbnail" />
+                  {isVideo(img) ? (
+                    <video src={img} className="w-full h-full object-cover" muted playsInline />
+                  ) : (
+                    <img src={img} className="w-full h-full object-cover" alt="thumbnail" />
+                  )}
                 </div>
               ))}
             </div>

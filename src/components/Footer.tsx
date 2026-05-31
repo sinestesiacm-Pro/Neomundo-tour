@@ -8,9 +8,13 @@ export default function Footer() {
         
         {/* About column */}
         <div className="col-span-1 md:col-span-1 mb-8 md:mb-0">
-          <Link to="/" className="font-headline text-2xl font-black text-primary dark:text-primary-fixed block mb-4 transition-transform hover:-translate-y-0.5 duration-300">
+          <Link to="/" className="font-headline text-2xl font-black text-primary dark:text-primary-fixed block mb-1 transition-transform hover:-translate-y-0.5 duration-300">
             Neomundo Tour
           </Link>
+          <div className="font-body-sm text-sm text-on-surface-variant mb-4 font-bold flex flex-col gap-0.5">
+            <span>NIT: 11228303-7</span>
+            <span>RNT: 209737</span>
+          </div>
           <p className="font-body-md text-body-md text-on-surface-variant mb-6">
             Premium Guatapé Experiences. Discover the beauty of Colombia with unparalleled service.
           </p>
@@ -81,7 +85,10 @@ export default function Footer() {
           <div className="font-body-md text-body-md text-on-surface-variant space-y-3">
             <div className="flex items-start gap-2.5">
               <MapPin className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-              <span>Guatapé, Antioquia, Colombia</span>
+              <span className="leading-snug">
+                CL 32 # 28 - 65, Av. Malecón<br/>
+                Guatapé, Antioquia, Colombia
+              </span>
             </div>
             <div className="flex items-center gap-2.5">
               <Phone className="w-5 h-5 text-primary shrink-0" />

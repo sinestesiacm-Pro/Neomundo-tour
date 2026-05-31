@@ -1,10 +1,11 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Compass, Calendar, Search, ShieldCheck } from 'lucide-react';
+import { ArrowRight, Compass, Calendar, Search, ShieldCheck, X } from 'lucide-react';
 import { experiences } from '../data/experiences';
 
 export default function Home() {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
 
   // Load particles effect in Canvas
   useEffect(() => {
@@ -138,31 +139,49 @@ export default function Home() {
           </p>
 
           {/* Floating Booking Search Widget */}
-          <div className="bg-surface rounded-3xl md:rounded-full p-2 flex flex-col md:flex-row items-center justify-between shadow-lg max-w-3xl mx-auto border border-outline-variant/30">
-            <div className="flex items-center gap-4 px-6 py-3 w-full md:w-auto border-b md:border-b-0 md:border-r border-outline-variant/30">
-              <Compass className="w-5 h-5 text-primary-container shrink-0" />
-              <div className="text-left">
-                <div className="font-label-md text-label-md text-on-surface">Experience</div>
-                <div className="font-body-md text-body-md text-on-surface-variant text-sm">All Tours & Stays</div>
+          {isSearchOpen ? (
+            <div className="bg-surface rounded-3xl md:rounded-full p-2 flex flex-col md:flex-row items-center justify-between shadow-lg max-w-3xl mx-auto border border-outline-variant/30 animate-fade-in-up">
+              <div className="flex items-center gap-4 px-6 py-3 w-full md:w-auto border-b md:border-b-0 md:border-r border-outline-variant/30">
+                <Compass className="w-5 h-5 text-primary-container shrink-0" />
+                <div className="text-left">
+                  <div className="font-label-md text-label-md text-on-surface">Experience</div>
+                  <div className="font-body-md text-body-md text-on-surface-variant text-sm">All Tours & Stays</div>
+                </div>
+              </div>
+              <div className="flex items-center gap-4 px-6 py-3 w-full md:w-auto border-b md:border-b-0 md:border-r border-outline-variant/30">
+                <Calendar className="w-5 h-5 text-primary-container shrink-0" />
+                <div className="text-left">
+                  <div className="font-label-md text-label-md text-on-surface">Date</div>
+                  <div className="font-body-md text-body-md text-on-surface-variant text-sm">Flexible dates</div>
+                </div>
+              </div>
+              <div className="flex items-center px-2 py-2 w-full md:w-auto mt-2 md:mt-0 gap-2">
+                <button
+                  onClick={() => setIsSearchOpen(false)}
+                  className="w-12 h-12 flex items-center justify-center rounded-full hover:bg-surface-container transition-colors text-outline"
+                >
+                  <X className="w-5 h-5" />
+                </button>
+                <Link
+                  to="/experiences"
+                  className="btn-primary w-full md:w-auto px-8 py-4 rounded-full font-label-md text-label-md flex items-center justify-center gap-2 active:scale-95 transition-transform duration-200"
+                >
+                  <Search className="w-4 h-4" />
+                  <span>Explore</span>
+                </Link>
               </div>
             </div>
-            <div className="flex items-center gap-4 px-6 py-3 w-full md:w-auto border-b md:border-b-0 md:border-r border-outline-variant/30">
-              <Calendar className="w-5 h-5 text-primary-container shrink-0" />
-              <div className="text-left">
-                <div className="font-label-md text-label-md text-on-surface">Date</div>
-                <div className="font-body-md text-body-md text-on-surface-variant text-sm">Flexible dates</div>
-              </div>
-            </div>
-            <div className="px-2 py-2 w-full md:w-auto mt-2 md:mt-0">
-              <Link
-                to="/experiences"
-                className="btn-primary w-full md:w-auto px-8 py-4 rounded-full font-label-md text-label-md flex items-center justify-center gap-2 active:scale-95 transition-transform duration-200"
+          ) : (
+            <div className="flex justify-center animate-fade-in-up delay-300">
+              <button
+                onClick={() => setIsSearchOpen(true)}
+                className="btn-primary px-8 py-4 rounded-full font-label-md text-label-md flex items-center justify-center gap-2 active:scale-95 transition-transform duration-200 shadow-xl"
               >
-                <Search className="w-4 h-4" />
-                <span>Explore</span>
-              </Link>
+                <Search className="w-5 h-5" />
+                <span>Buscar Experiencias</span>
+              </button>
             </div>
-          </div>
+          )}
         </div>
       </section>
 

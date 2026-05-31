@@ -118,40 +118,49 @@ export default function Navbar() {
 
       {/* Mobile Drawer */}
       {!isCheckout && isOpen && (
-        <div className="absolute top-full left-0 w-full bg-white dark:bg-inverse-surface border-b border-outline-variant/20 shadow-xl flex flex-col p-6 gap-4 md:hidden animate-fade-in-up">
+        <div className="fixed inset-0 z-[100] w-full h-full bg-surface dark:bg-inverse-surface flex flex-col items-center justify-center p-6 gap-8 md:hidden animate-fade-in-up">
+          <button
+            onClick={() => setIsOpen(false)}
+            className="absolute top-6 right-margin-mobile md:right-margin-desktop text-primary p-2 transition-transform hover:scale-110 active:scale-90"
+            aria-label="Close menu"
+          >
+            <X className="w-8 h-8" />
+          </button>
+
           <Link
             to="/experiences"
-            className={`font-label-md text-label-md py-2 border-b border-outline-variant/10 ${
-              location.pathname === '/experiences' ? 'text-primary font-bold' : 'text-on-surface-variant'
+            className={`font-headline text-3xl py-2 ${
+              location.pathname === '/experiences' ? 'text-primary font-bold' : 'text-on-surface-variant hover:text-primary transition-colors'
             }`}
           >
             All Experiences
           </Link>
           <Link
             to="/experiences?category=Stay"
-            className="font-label-md text-label-md py-2 border-b border-outline-variant/10 text-on-surface-variant"
+            className="font-headline text-3xl py-2 text-on-surface-variant hover:text-primary transition-colors"
           >
             Luxury Villas
           </Link>
           <Link
             to="/experiences?category=Water"
-            className="font-label-md text-label-md py-2 border-b border-outline-variant/10 text-on-surface-variant"
+            className="font-headline text-3xl py-2 text-on-surface-variant hover:text-primary transition-colors"
           >
             Boats & Pontoon
           </Link>
           <a
             href="#footer"
             onClick={() => setIsOpen(false)}
-            className="font-label-md text-label-md py-2 border-b border-outline-variant/10 text-on-surface-variant"
+            className="font-headline text-3xl py-2 text-on-surface-variant hover:text-primary transition-colors"
           >
             Contact
           </a>
           <Link
             to="/experiences"
-            className="btn-secondary py-3.5 rounded-full text-center flex items-center justify-center gap-2 mt-2"
+            className="btn-secondary py-4 px-10 rounded-full text-center flex items-center justify-center gap-2 mt-4 text-xl"
+            onClick={() => setIsOpen(false)}
           >
             <span>Book Now</span>
-            <ArrowRight className="w-4 h-4" />
+            <ArrowRight className="w-5 h-5" />
           </Link>
         </div>
       )}
