@@ -73,7 +73,10 @@ export default {
       },
       fontFamily: {
         sans: ["Plus Jakarta Sans", "sans-serif"],
-        headline: ["Plus Jakarta Sans", "sans-serif"]
+        headline: ["Plus Jakarta Sans", "sans-serif"],
+        serif: ["Playfair Display", "serif"],
+        handwriting: ["Caveat", "cursive"],
+        display: ["Bebas Neue", "sans-serif"]
       },
       animation: {
         "fade-in-up": "fadeInUp 0.6s ease-out forwards",

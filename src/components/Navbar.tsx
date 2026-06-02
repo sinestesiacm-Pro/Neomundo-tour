@@ -43,7 +43,7 @@ export default function Navbar() {
           <img
             alt="Neomundo Tour Logo"
             className="h-10 w-auto md:h-12 object-contain"
-            src="/logo.png"
+            src="/Logoneotour.png"
             onError={(e) => {
               // Fallback if logo fails to load
               (e.target as HTMLElement).style.display = 'none';
@@ -65,7 +65,7 @@ export default function Navbar() {
                   : 'text-on-surface-variant dark:text-surface-variant hover:text-primary'
               }`}
             >
-              Experiences
+              Experiencias
             </Link>
             <Link
               to="/experiences?category=Stay"
@@ -77,13 +77,13 @@ export default function Navbar() {
               to="/experiences?category=Water"
               className="font-label-md text-label-md text-on-surface-variant dark:text-surface-variant hover:text-primary transition-all duration-300 nav-link"
             >
-              Boats
+              Embarcaciones
             </Link>
             <a
               href="#footer"
               className="font-label-md text-label-md text-on-surface-variant dark:text-surface-variant hover:text-primary transition-all duration-300 nav-link"
             >
-              Contact
+              Contacto
             </a>
           </div>
         )}
@@ -93,7 +93,7 @@ export default function Navbar() {
           {isCheckout ? (
             <div className="flex items-center gap-2 text-secondary font-semibold">
               <ShieldCheck className="w-5 h-5 text-secondary animate-pulse" />
-              <span className="text-sm md:text-base hidden sm:inline">Secure Checkout</span>
+              <span className="text-sm md:text-base hidden sm:inline">Pago Seguro</span>
             </div>
           ) : (
             <>
@@ -101,7 +101,7 @@ export default function Navbar() {
                 to="/experiences"
                 className="btn-secondary font-label-md text-label-md px-6 py-3 rounded-full hidden md:inline-flex items-center gap-2 transition-all hover:scale-105 active:scale-95"
               >
-                <span>Book Now</span>
+                <span>Reservar Ahora</span>
                 <ArrowRight className="w-4 h-4" />
               </Link>
               <button
@@ -118,10 +118,10 @@ export default function Navbar() {
 
       {/* Mobile Drawer */}
       {!isCheckout && isOpen && (
-        <div className="fixed inset-0 z-[100] w-full h-full bg-surface dark:bg-inverse-surface flex flex-col items-center justify-center p-6 gap-8 md:hidden animate-fade-in-up">
+        <div className="fixed inset-0 z-[9999] w-screen h-[100dvh] bg-white dark:bg-gray-950 flex flex-col items-center justify-center p-6 gap-6 md:hidden animate-fade-in-up overflow-y-auto">
           <button
             onClick={() => setIsOpen(false)}
-            className="absolute top-6 right-margin-mobile md:right-margin-desktop text-primary p-2 transition-transform hover:scale-110 active:scale-90"
+            className="absolute top-6 right-6 text-primary p-2 transition-transform hover:scale-110 active:scale-90 bg-primary/10 rounded-full"
             aria-label="Close menu"
           >
             <X className="w-8 h-8" />
@@ -129,37 +129,40 @@ export default function Navbar() {
 
           <Link
             to="/experiences"
-            className={`font-headline text-3xl py-2 ${
-              location.pathname === '/experiences' ? 'text-primary font-bold' : 'text-on-surface-variant hover:text-primary transition-colors'
+            className={`font-headline text-2xl sm:text-3xl py-2 ${
+              location.pathname === '/experiences' ? 'text-primary font-bold' : 'text-gray-800 dark:text-gray-200 hover:text-primary transition-colors'
             }`}
+            onClick={() => setIsOpen(false)}
           >
-            All Experiences
+            Todas las Experiencias
           </Link>
           <Link
             to="/experiences?category=Stay"
-            className="font-headline text-3xl py-2 text-on-surface-variant hover:text-primary transition-colors"
+            className="font-headline text-2xl sm:text-3xl py-2 text-gray-800 dark:text-gray-200 hover:text-primary transition-colors"
+            onClick={() => setIsOpen(false)}
           >
-            Luxury Villas
+            Villas de Lujo
           </Link>
           <Link
             to="/experiences?category=Water"
-            className="font-headline text-3xl py-2 text-on-surface-variant hover:text-primary transition-colors"
+            className="font-headline text-2xl sm:text-3xl py-2 text-gray-800 dark:text-gray-200 hover:text-primary transition-colors"
+            onClick={() => setIsOpen(false)}
           >
-            Boats & Pontoon
+            Lanchas y Pontones
           </Link>
           <a
             href="#footer"
             onClick={() => setIsOpen(false)}
-            className="font-headline text-3xl py-2 text-on-surface-variant hover:text-primary transition-colors"
+            className="font-headline text-2xl sm:text-3xl py-2 text-gray-800 dark:text-gray-200 hover:text-primary transition-colors"
           >
-            Contact
+            Contacto
           </a>
           <Link
             to="/experiences"
-            className="btn-secondary py-4 px-10 rounded-full text-center flex items-center justify-center gap-2 mt-4 text-xl"
+            className="bg-primary text-on-primary font-bold py-4 px-10 rounded-full text-center flex items-center justify-center gap-2 mt-4 text-xl shadow-lg active:scale-95 transition-transform"
             onClick={() => setIsOpen(false)}
           >
-            <span>Book Now</span>
+            <span>Reservar Ahora</span>
             <ArrowRight className="w-5 h-5" />
           </Link>
         </div>

@@ -22,11 +22,11 @@ export default function Experiences() {
   });
 
   const categories = [
-    { name: 'All', label: 'All' },
+    { name: 'All', label: 'Todas' },
     { name: 'Stay', label: 'Villas' },
-    { name: 'Water', label: 'Boats' },
-    { name: 'Adrenaline', label: 'Adrenaline' },
-    { name: 'Air Adventure', label: 'Air' }
+    { name: 'Water', label: 'Embarcaciones' },
+    { name: 'Adrenaline', label: 'Adrenalina' },
+    { name: 'Air Adventure', label: 'Aire' }
   ];
 
   return (
@@ -36,13 +36,14 @@ export default function Experiences() {
         <div className="relative z-10 space-y-6">
           <span className="bg-primary-container/10 text-primary-container px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest inline-flex items-center gap-1.5">
             <Sparkles className="w-3.5 h-3.5 text-primary-container" />
-            <span>Neomundo Catalog</span>
+            <span>Catálogo Neomundo</span>
           </span>
-          <h1 className="font-headline text-4xl md:text-5xl lg:text-6xl font-black text-primary leading-none">
-            Discover Guatapé
+          <h1 className="flex justify-center items-center gap-3 flex-wrap">
+            <span className="font-handwriting text-5xl md:text-6xl lg:text-7xl text-secondary -rotate-2">Descubre</span>
+            <span className="font-display text-4xl md:text-5xl lg:text-6xl text-primary uppercase tracking-wide translate-y-1">Guatapé</span>
           </h1>
           <p className="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
-            Experience the vibrant energy and breathtaking landscapes with our curated selection of premium adventures and luxury stays.
+            Experimenta la energía vibrante y los impresionantes paisajes con nuestra selección de aventuras premium y estancias de lujo.
           </p>
           
           {/* Category Filter Buttons */}
@@ -69,8 +70,8 @@ export default function Experiences() {
         {filtered.length === 0 ? (
           <div className="text-center py-20 bg-white rounded-3xl border border-outline-variant/20 shadow-sm max-w-md mx-auto">
             <span className="material-symbols-outlined text-5xl text-outline mb-4">search_off</span>
-            <h3 className="font-headline text-lg font-bold">No experiences found</h3>
-            <p className="text-on-surface-variant text-sm mt-1">Try selecting a different filter category.</p>
+            <h3 className="font-headline text-lg font-bold">No se encontraron experiencias</h3>
+            <p className="text-on-surface-variant text-sm mt-1">Intenta seleccionar una categoría diferente.</p>
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -81,13 +82,21 @@ export default function Experiences() {
               >
                 {/* Product Image */}
                 <div className="relative h-64 overflow-hidden shrink-0">
-                  <img
-                    alt={exp.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out"
-                    src={exp.image}
-                  />
+                  {exp.image.match(/\.(mp4|webm|ogg)$/i) ? (
+                    <video
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out"
+                      src={exp.image}
+                      autoPlay muted loop playsInline
+                    />
+                  ) : (
+                    <img
+                      alt={exp.title}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out"
+                      src={exp.image}
+                    />
+                  )}
                   <div className="absolute top-4 right-4 bg-tertiary-container text-on-tertiary-container px-4 py-1.5 rounded-full font-label-md text-label-md font-black shadow-md">
-                    From ${exp.price}/{exp.priceUnit}
+                    Desde ${exp.price}/{exp.priceUnit}
                   </div>
                 </div>
 
@@ -124,7 +133,7 @@ export default function Experiences() {
                     to={`/booking/${exp.id}`}
                     className="w-full py-3.5 rounded-full border-2 border-primary-container text-primary-container font-label-md text-label-md hover:bg-primary-container hover:text-on-primary transition-all duration-300 font-bold text-center active:scale-95 shadow-sm hover:shadow-md"
                   >
-                    View Details
+                    Ver Detalles
                   </Link>
                 </div>
               </article>

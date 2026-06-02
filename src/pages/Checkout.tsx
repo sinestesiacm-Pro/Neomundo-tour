@@ -50,24 +50,24 @@ export default function Checkout() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!firstName || !lastName || !email || !phone) {
-      alert('Please fill out all guest details.');
+      alert('Por favor, completa todos los datos del huésped.');
       return;
     }
     setIsSuccess(true);
   };
 
-  if (!booking) {
-    return (
-      <div className="pt-32 pb-24 text-center max-w-md mx-auto px-4">
-        <span className="material-symbols-outlined text-5xl text-outline mb-4">shopping_cart</span>
-        <h2 className="font-headline text-2xl font-bold">Your booking cart is empty</h2>
-        <p className="text-on-surface-variant mt-2 mb-6">Choose an experience or stay to configure availability and proceed to checkout.</p>
-        <Link to="/experiences" className="btn-secondary px-6 py-3.5 rounded-full font-bold inline-flex items-center gap-2">
-          Browse Experiences
-        </Link>
-      </div>
-    );
-  }
+    if (!booking) {
+      return (
+        <div className="pt-32 pb-24 text-center max-w-md mx-auto px-4">
+          <span className="material-symbols-outlined text-5xl text-outline mb-4">shopping_cart</span>
+          <h2 className="font-headline text-2xl font-bold">Tu carrito de reserva está vacío</h2>
+          <p className="text-on-surface-variant mt-2 mb-6">Elige una experiencia o estadía para configurar la disponibilidad y proceder al pago.</p>
+          <Link to="/experiences" className="btn-secondary px-6 py-3.5 rounded-full font-bold inline-flex items-center gap-2">
+            Explorar Experiencias
+          </Link>
+        </div>
+      );
+    }
 
   return (
     <div className="pt-28 pb-20 relative">
@@ -88,38 +88,38 @@ export default function Checkout() {
             <div className="space-y-2">
               <span className="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-xs font-black uppercase tracking-widest inline-flex items-center gap-1.5">
                 <Sparkles className="w-3.5 h-3.5" />
-                <span>Confirmed</span>
+                <span>Confirmada</span>
               </span>
               <h2 className="font-headline text-2xl md:text-3xl font-black text-on-surface">
                 ¡Reserva Confirmada!
               </h2>
               <p className="text-on-surface-variant text-sm">
-                Thank you, {firstName}! Your trip is secure. We have sent the confirmation voucher to <span className="font-bold text-primary">{email}</span>.
+                ¡Gracias, {firstName}! Tu viaje está seguro. Hemos enviado el voucher de confirmación a <span className="font-bold text-primary">{email}</span>.
               </p>
             </div>
 
             {/* Booking Details Summary box */}
             <div className="bg-surface-container-low dark:bg-inverse-surface/30 p-5 rounded-2xl border border-outline-variant/20 text-left text-sm space-y-2">
               <div className="flex justify-between">
-                <span className="text-outline">Booking Code:</span>
+                <span className="text-outline">Código de Reserva:</span>
                 <span className="font-bold text-on-surface">{bookingCode}</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-outline">Experience:</span>
+                <span className="text-outline">Experiencia:</span>
                 <span className="font-bold text-on-surface">{booking.experienceTitle}</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-outline">Check-In Date:</span>
+                <span className="text-outline">Fecha de Check-In:</span>
                 <span className="font-bold text-on-surface">{booking.checkIn}</span>
               </div>
               {booking.checkOut && (
                 <div className="flex justify-between">
-                  <span className="text-outline">Check-Out Date:</span>
+                  <span className="text-outline">Fecha de Check-Out:</span>
                   <span className="font-bold text-on-surface">{booking.checkOut}</span>
                 </div>
               )}
               <div className="flex justify-between pt-2 border-t border-outline-variant/20 font-bold text-primary">
-                <span>Total Paid:</span>
+                <span>Total Pagado:</span>
                 <span>${total.toLocaleString(undefined, { minimumFractionDigits: 2 })}</span>
               </div>
             </div>
@@ -132,13 +132,13 @@ export default function Checkout() {
                 className="w-full btn-secondary text-white font-bold py-3.5 rounded-xl text-center shadow-md flex items-center justify-center gap-2 hover:scale-[1.02] active:scale-100 transition-all cursor-pointer"
               >
                 <Phone className="w-4 h-4" />
-                <span>Chat via WhatsApp</span>
+                <span>Chatear por WhatsApp</span>
               </a>
               <button
                 onClick={() => navigate('/')}
                 className="w-full py-3.5 border-2 border-outline-variant rounded-xl font-bold hover:bg-surface-container-high transition-all"
               >
-                Back to Home
+                Volver al Inicio
               </button>
             </div>
 
@@ -150,12 +150,14 @@ export default function Checkout() {
       <main className="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto relative z-10">
         
         {/* Title */}
-        <div className="mb-10 text-center md:text-left animate-fade-in-up">
-          <h1 className="font-headline text-3xl md:text-5xl font-black text-primary mb-2">
-            Complete your booking
+        <div className="mb-12 text-center md:text-left animate-fade-in-up">
+          <h1 className="flex flex-wrap items-center justify-center md:justify-start gap-3 mb-4">
+            <span className="font-sans font-bold text-3xl md:text-4xl text-on-surface">Completa</span>
+            <span className="font-serif italic font-black text-4xl md:text-5xl text-primary">tu</span>
+            <span className="font-handwriting text-5xl md:text-6xl text-secondary -rotate-3 translate-y-1">reserva</span>
           </h1>
-          <p className="font-body-lg text-body-lg text-on-surface-variant">
-            Almost there! We just need a few details to secure your premium Guatapé experience.
+          <p className="font-body-lg text-body-lg text-on-surface-variant max-w-xl">
+            ¡Casi listo! Solo necesitamos algunos detalles para asegurar tu experiencia premium en Guatapé.
           </p>
         </div>
 
@@ -171,12 +173,12 @@ export default function Checkout() {
               
               <h2 className="font-headline text-2xl font-bold text-on-surface flex items-center gap-3">
                 <span className="material-symbols-outlined text-primary-container text-3xl" style={{ fontVariationSettings: "'FILL' 1" }}>person</span>
-                <span>Guest Details</span>
+                <span>Detalles del Huésped</span>
               </h2>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-1.5">
-                  <label className="text-xs font-bold uppercase tracking-wider text-on-surface-variant" htmlFor="firstName">First Name</label>
+                  <label className="text-xs font-bold uppercase tracking-wider text-on-surface-variant" htmlFor="firstName">Nombre</label>
                   <input 
                     id="firstName" 
                     placeholder="Jane" 
@@ -188,7 +190,7 @@ export default function Checkout() {
                   />
                 </div>
                 <div className="space-y-1.5">
-                  <label className="text-xs font-bold uppercase tracking-wider text-on-surface-variant" htmlFor="lastName">Last Name</label>
+                  <label className="text-xs font-bold uppercase tracking-wider text-on-surface-variant" htmlFor="lastName">Apellido</label>
                   <input 
                     id="lastName" 
                     placeholder="Doe" 
@@ -203,7 +205,7 @@ export default function Checkout() {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-1.5">
-                  <label className="text-xs font-bold uppercase tracking-wider text-on-surface-variant" htmlFor="email">Email Address</label>
+                  <label className="text-xs font-bold uppercase tracking-wider text-on-surface-variant" htmlFor="email">Correo Electrónico</label>
                   <div className="relative">
                     <input 
                       id="email" 
@@ -216,10 +218,10 @@ export default function Checkout() {
                     />
                     <Mail className="w-5 h-5 text-outline absolute left-4 top-1/2 -translate-y-1/2" />
                   </div>
-                  <p className="text-[11px] text-outline">Booking confirmation and vouchers will be sent here.</p>
+                  <p className="text-[11px] text-outline">La confirmación de la reserva y los vouchers se enviarán aquí.</p>
                 </div>
                 <div className="space-y-1.5">
-                  <label className="text-xs font-bold uppercase tracking-wider text-on-surface-variant" htmlFor="phone">Phone Number</label>
+                  <label className="text-xs font-bold uppercase tracking-wider text-on-surface-variant" htmlFor="phone">Número de Teléfono</label>
                   <div className="flex rounded-xl border border-outline-variant overflow-hidden bg-white focus-within:border-primary focus-within:ring-4 focus-within:ring-primary/10 transition-all duration-300">
                     <select 
                       value={countryCode} 
@@ -250,7 +252,7 @@ export default function Checkout() {
               
               <h2 className="font-headline text-2xl font-bold text-on-surface flex items-center gap-3">
                 <span className="material-symbols-outlined text-secondary text-3xl" style={{ fontVariationSettings: "'FILL' 1" }}>payments</span>
-                <span>Payment Method</span>
+                <span>Método de Pago</span>
               </h2>
 
               <div className="space-y-4">
@@ -266,7 +268,7 @@ export default function Checkout() {
                   <div className="p-5 border border-outline-variant rounded-2xl peer-checked:border-primary-container peer-checked:bg-primary-fixed/5 hover:border-primary-container/50 hover:bg-surface-container-low transition-all duration-300 flex items-center justify-between">
                     <div className="flex items-center gap-4 group-hover:translate-x-1 transition-transform">
                       <CreditCard className="w-5 h-5 text-outline peer-checked:text-primary-container" />
-                      <span className="font-bold text-on-surface text-base">Credit / Debit Card</span>
+                      <span className="font-bold text-on-surface text-base">Tarjeta de Crédito / Débito</span>
                     </div>
                     <div className="flex gap-2">
                       <div className="w-8 h-5 bg-surface-dim rounded flex items-center justify-center text-[10px] font-black text-outline shadow-sm">VISA</div>
@@ -276,7 +278,7 @@ export default function Checkout() {
                   {/* Expanded Card Details form */}
                   <div className={`overflow-hidden transition-all duration-500 ease-in-out px-4 ${paymentMethod === 'card' ? 'max-h-96 opacity-100 py-4 space-y-4' : 'max-h-0 opacity-0'}`}>
                     <div className="space-y-1.5">
-                      <label className="text-xs font-bold uppercase tracking-wider text-on-surface-variant" htmlFor="cardNumber">Card Number</label>
+                      <label className="text-xs font-bold uppercase tracking-wider text-on-surface-variant" htmlFor="cardNumber">Número de Tarjeta</label>
                       <input 
                         id="cardNumber" 
                         placeholder="0000 0000 0000 0000" 
@@ -288,7 +290,7 @@ export default function Checkout() {
                     </div>
                     <div className="grid grid-cols-2 gap-4">
                       <div className="space-y-1.5">
-                        <label className="text-xs font-bold uppercase tracking-wider text-on-surface-variant" htmlFor="expiry">Expiry Date</label>
+                        <label className="text-xs font-bold uppercase tracking-wider text-on-surface-variant" htmlFor="expiry">Fecha de Vencimiento</label>
                         <input 
                           id="expiry" 
                           placeholder="MM/YY" 
@@ -325,7 +327,7 @@ export default function Checkout() {
                   <div className="p-5 border border-outline-variant rounded-2xl peer-checked:border-primary-container peer-checked:bg-primary-fixed/5 hover:border-primary-container/50 hover:bg-surface-container-low transition-all duration-300 flex items-center justify-between">
                     <div className="flex items-center gap-4 group-hover:translate-x-1 transition-transform">
                       <Landmark className="w-5 h-5 text-outline" />
-                      <span className="font-bold text-on-surface text-base">PSE (Bank Transfer)</span>
+                      <span className="font-bold text-on-surface text-base">PSE (Transferencia Bancaria)</span>
                     </div>
                     <span className="text-[10px] bg-primary-container text-white px-2 py-0.5 rounded-full font-bold uppercase">COL</span>
                   </div>
@@ -343,9 +345,9 @@ export default function Checkout() {
                   <div className="p-5 border border-outline-variant rounded-2xl peer-checked:border-secondary peer-checked:bg-secondary-fixed/5 hover:border-secondary/50 hover:bg-surface-container-low transition-all duration-300 flex items-center justify-between">
                     <div className="flex items-center gap-4 group-hover:translate-x-1 transition-transform">
                       <span className="material-symbols-outlined text-outline" style={{ fontVariationSettings: "'FILL' 1" }}>chat</span>
-                      <span className="font-bold text-on-surface text-base">Book and pay via WhatsApp</span>
+                      <span className="font-bold text-on-surface text-base">Reserva y paga vía WhatsApp</span>
                     </div>
-                    <span className="text-[10px] bg-tertiary-container text-on-tertiary-container px-2 py-0.5 rounded-full font-bold uppercase">Fastest</span>
+                    <span className="text-[10px] bg-tertiary-container text-on-tertiary-container px-2 py-0.5 rounded-full font-bold uppercase">Más rápido</span>
                   </div>
                 </label>
               </div>
@@ -353,9 +355,9 @@ export default function Checkout() {
 
             {/* Special Request */}
             <section className="glass-panel p-6 md:p-8 rounded-3xl tropical-shadow space-y-4">
-              <h2 className="font-headline text-xl font-bold text-on-surface">Special Requests (Optional)</h2>
+              <h2 className="font-headline text-xl font-bold text-on-surface">Peticiones Especiales (Opcional)</h2>
               <textarea 
-                placeholder="Any dietary requirements, celebrations, or special needs?"
+                placeholder="¿Algún requerimiento dietético, celebración o necesidad especial?"
                 value={specialRequests}
                 onChange={(e) => setSpecialRequests(e.target.value)}
                 className="w-full p-4 rounded-xl border border-outline-variant bg-white font-medium text-sm focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/10 transition-all resize-y min-h-[100px]"
@@ -377,7 +379,7 @@ export default function Checkout() {
                   alt={booking.experienceTitle}
                 />
                 <div className="absolute bottom-4 left-6 z-20">
-                  <h3 className="font-headline text-xl font-bold text-white">Your Itinerary</h3>
+                  <h3 className="font-headline text-xl font-bold text-white">Tu Itinerario</h3>
                 </div>
               </div>
 
@@ -391,14 +393,14 @@ export default function Checkout() {
                   </div>
                   <div className="space-y-1">
                     <h4 className="font-headline font-bold text-on-surface text-base">{booking.experienceTitle}</h4>
-                    <p className="text-xs font-semibold text-outline">Category: {booking.experienceCategory}</p>
+                    <p className="text-xs font-semibold text-outline">Categoría: {booking.experienceCategory}</p>
                     <p className="text-xs font-semibold text-outline">Check-In: {booking.checkIn}</p>
                     {booking.checkOut && (
                       <p className="text-xs font-semibold text-outline">Check-Out: {booking.checkOut}</p>
                     )}
                     <p className="text-xs font-bold text-secondary flex items-center gap-1 mt-1">
                       <Clock className="w-3.5 h-3.5 shrink-0" />
-                      <span>{nights} {booking.priceUnit === 'night' ? 'Nights' : 'Qty'} • {booking.guests} Guests</span>
+                      <span>{nights} {booking.priceUnit === 'night' ? 'Noches' : 'Cant'} • {booking.guests} Huéspedes</span>
                     </p>
                   </div>
                 </div>
@@ -410,7 +412,7 @@ export default function Checkout() {
                     <span>${subtotal.toLocaleString(undefined, { minimumFractionDigits: 2 })}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span>Taxes & Fees (19% IVA)</span>
+                    <span>Impuestos y Cargos (19% IVA)</span>
                     <span>${taxes.toLocaleString(undefined, { minimumFractionDigits: 2 })}</span>
                   </div>
                   <hr className="border-outline-variant/30 pt-2" />
@@ -428,11 +430,11 @@ export default function Checkout() {
                   className="w-full bg-secondary hover:bg-[#008a23] active:bg-[#005415] text-white font-bold py-4 rounded-2xl shadow-lg hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0.5 transition-all duration-200 flex items-center justify-center gap-2 group relative overflow-hidden cursor-pointer"
                 >
                   <ShieldCheck className="w-5 h-5 shrink-0 transform group-hover:scale-105" />
-                  <span>Confirm & Secure Booking</span>
+                  <span>Confirmar y Asegurar Reserva</span>
                 </button>
                 
                 <p className="text-center text-[10px] text-outline leading-relaxed">
-                  By completing the booking, you agree to Neomundo Tour's Terms of Service and refund policies.
+                  Al completar la reserva, aceptas los Términos de Servicio y políticas de reembolso de Neomundo Tour.
                 </p>
 
               </div>

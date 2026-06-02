@@ -16,7 +16,7 @@ export default function Footer() {
             <span>RNT: 209737</span>
           </div>
           <p className="font-body-md text-body-md text-on-surface-variant mb-6">
-            Premium Guatapé Experiences. Discover the beauty of Colombia with unparalleled service.
+            Experiencias Premium en Guatapé. Descubre la belleza de Colombia con un servicio inigualable.
           </p>
           <div className="flex gap-4">
             <a 
@@ -42,21 +42,21 @@ export default function Footer() {
 
         {/* Quick Links Column */}
         <div>
-          <h4 className="font-label-md text-label-md text-on-surface font-bold mb-4 uppercase tracking-wider">Company</h4>
+          <h4 className="font-label-md text-label-md text-on-surface font-bold mb-4 uppercase tracking-wider">Empresa</h4>
           <ul className="space-y-3 font-body-md text-body-md text-on-surface-variant">
             <li>
               <a href="#" className="hover:underline decoration-primary underline-offset-4 hover:text-primary transition-colors">
-                Privacy Policy
+                Política de Privacidad
               </a>
             </li>
             <li>
               <a href="#" className="hover:underline decoration-primary underline-offset-4 hover:text-primary transition-colors">
-                Terms of Service
+                Términos de Servicio
               </a>
             </li>
             <li>
               <a href="#" className="hover:underline decoration-primary underline-offset-4 hover:text-primary transition-colors">
-                Help Center
+                Centro de Ayuda
               </a>
             </li>
           </ul>
@@ -64,7 +64,7 @@ export default function Footer() {
 
         {/* Connect Column */}
         <div>
-          <h4 className="font-label-md text-label-md text-on-surface font-bold mb-4 uppercase tracking-wider">Connect</h4>
+          <h4 className="font-label-md text-label-md text-on-surface font-bold mb-4 uppercase tracking-wider">Conectar</h4>
           <ul className="space-y-3 font-body-md text-body-md text-on-surface-variant">
             <li>
               <a href="https://instagram.com" target="_blank" rel="noreferrer" className="hover:underline decoration-primary underline-offset-4 hover:text-primary transition-colors">
@@ -73,7 +73,7 @@ export default function Footer() {
             </li>
             <li>
               <a href="https://wa.me/573226054919" target="_blank" rel="noreferrer" className="hover:underline decoration-primary underline-offset-4 hover:text-primary transition-colors">
-                WhatsApp Chat
+                Chat de WhatsApp
               </a>
             </li>
           </ul>
@@ -81,7 +81,7 @@ export default function Footer() {
 
         {/* Contact Column */}
         <div>
-          <h4 className="font-label-md text-label-md text-on-surface font-bold mb-4 uppercase tracking-wider">Contact Us</h4>
+          <h4 className="font-label-md text-label-md text-on-surface font-bold mb-4 uppercase tracking-wider">Contáctanos</h4>
           <div className="font-body-md text-body-md text-on-surface-variant space-y-3">
             <div className="flex items-start gap-2.5">
               <MapPin className="w-5 h-5 text-primary shrink-0 mt-0.5" />
@@ -99,7 +99,7 @@ export default function Footer() {
       </div>
 
       <div className="mt-16 pt-8 border-t border-outline-variant/20 text-center px-margin-mobile text-on-surface-variant">
-        <p>© 2024 Neomundo Tour. Premium Guatapé Experiences.</p>
+        <p>© 2024 Neomundo Tour. Experiencias Premium en Guatapé.</p>
       </div>
     </footer>
   );

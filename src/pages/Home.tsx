@@ -100,88 +100,95 @@ export default function Home() {
         <canvas ref={canvasRef} className="absolute inset-0 pointer-events-none z-10" />
 
         {/* Background Bento Gallery layout */}
-        <div className="absolute inset-0 grid grid-cols-3 grid-rows-2 gap-2 p-2 opacity-90 scale-105 transform origin-center animate-pulse-slow">
+        <div className="absolute inset-0 grid grid-cols-3 grid-rows-2 gap-2 p-2 opacity-90 scale-105 transform origin-center">
           <div className="col-span-2 row-span-2 rounded-2xl overflow-hidden relative">
             <img
               alt="El Peñol Monolith"
               className="w-full h-full object-cover ken-burns"
               src="/images/el_penol_real.png"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-black/10"></div>
           </div>
-          <div className="rounded-2xl overflow-hidden">
+          <div className="rounded-2xl overflow-hidden relative">
             <img
               alt="Luxury Villa lakeside"
               className="w-full h-full object-cover ken-burns"
               src="/images/villa_lujo_real.png"
             />
+            <div className="absolute inset-0 bg-black/20"></div>
           </div>
-          <div className="rounded-2xl overflow-hidden">
+          <div className="rounded-2xl overflow-hidden relative">
             <img
               alt="Speedboat Wake"
               className="w-full h-full object-cover ken-burns"
               src="/images/lancha_pontones_real.png"
             />
+            <div className="absolute inset-0 bg-black/20"></div>
           </div>
         </div>
 
-        {/* Hero glassmorphic content overlay */}
-        <div className="relative z-20 text-center px-margin-mobile md:px-margin-desktop max-w-4xl mx-auto glass-card p-8 md:p-12 rounded-[2rem] shadow-2xl animate-fade-in-up">
-          <span className="font-label-md text-label-md text-primary uppercase tracking-widest mb-4 block">
-            Premium Experiences
-          </span>
-          <h1 className="font-headline text-headline-xl md:text-[64px] md:leading-[72px] text-on-surface mb-6">
-            Discover the Magic of <br />
-            <span className="text-primary-container font-black">Guatapé</span>
+        {/* Hero content overlay - Minimalist */}
+        <div className="relative z-20 w-full px-4 flex flex-col items-center justify-center animate-fade-in-up mt-12">
+          <h1 className="flex flex-wrap justify-center items-center gap-x-4 gap-y-2 mb-12 drop-shadow-2xl text-center">
+            <span className="font-display text-5xl md:text-7xl lg:text-[80px] text-white uppercase tracking-tight font-black leading-none drop-shadow-[2px_2px_0_black] md:drop-shadow-[4px_4px_0_black]">
+              Despierta
+            </span>
+            <span className="font-display text-4xl md:text-6xl lg:text-[70px] text-white uppercase tracking-tight font-black leading-none drop-shadow-[2px_2px_0_black] md:drop-shadow-[4px_4px_0_black]">
+              tu
+            </span>
+            <span className="font-handwriting font-bold text-6xl md:text-8xl lg:text-[100px] text-secondary -rotate-3 translate-y-1 md:translate-y-2 leading-none drop-shadow-[2px_2px_0_white] md:drop-shadow-[4px_4px_0_white] [-webkit-text-stroke:1px_white] md:[-webkit-text-stroke:2px_white] glitch-effect">
+              Aventura
+            </span>
           </h1>
-          <p className="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-2xl mx-auto">
-            Immerse yourself in breathtaking landscapes, luxury accommodations, and thrilling adventures. Your unforgettable Colombian journey starts here.
-          </p>
 
-          {/* Floating Booking Search Widget */}
-          {isSearchOpen ? (
-            <div className="bg-surface rounded-3xl md:rounded-full p-2 flex flex-col md:flex-row items-center justify-between shadow-lg max-w-3xl mx-auto border border-outline-variant/30 animate-fade-in-up">
-              <div className="flex items-center gap-4 px-6 py-3 w-full md:w-auto border-b md:border-b-0 md:border-r border-outline-variant/30">
-                <Compass className="w-5 h-5 text-primary-container shrink-0" />
-                <div className="text-left">
-                  <div className="font-label-md text-label-md text-on-surface">Experience</div>
-                  <div className="font-body-md text-body-md text-on-surface-variant text-sm">All Tours & Stays</div>
+          {/* Apple iOS Style Glassmorphic Search */}
+          <div className="w-full max-w-md mx-auto relative z-30">
+            {isSearchOpen ? (
+              <div className="bg-white/10 dark:bg-black/20 backdrop-filter backdrop-blur-xl transform-gpu rounded-[2rem] p-4 flex flex-col gap-3 shadow-[0_8px_32px_rgba(0,0,0,0.25)] border border-white/20 transition-all duration-500 animate-fade-in-up">
+                <div className="flex items-center gap-4 px-5 py-3.5 bg-white/10 dark:bg-black/20 rounded-2xl border border-white/10">
+                  <Compass className="w-6 h-6 text-white" />
+                  <div className="text-left">
+                    <div className="text-white font-semibold text-sm">Experiencia</div>
+                    <div className="text-white/70 text-xs">Todos los tours</div>
+                  </div>
+                </div>
+                <div className="flex items-center gap-4 px-5 py-3.5 bg-white/10 dark:bg-black/20 rounded-2xl border border-white/10">
+                  <Calendar className="w-6 h-6 text-white" />
+                  <div className="text-left">
+                    <div className="text-white font-semibold text-sm">Fecha</div>
+                    <div className="text-white/70 text-xs">Fechas flexibles</div>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3 mt-3">
+                  <button
+                    onClick={() => setIsSearchOpen(false)}
+                    className="w-14 h-14 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors border border-white/20"
+                  >
+                    <X className="w-6 h-6" />
+                  </button>
+                  <Link
+                    to="/experiences"
+                    className="flex-1 bg-white text-black py-4 rounded-full font-bold flex items-center justify-center gap-2 hover:scale-[1.02] active:scale-95 transition-all shadow-lg text-lg"
+                  >
+                    <Search className="w-5 h-5" />
+                    <span>Explorar</span>
+                  </Link>
                 </div>
               </div>
-              <div className="flex items-center gap-4 px-6 py-3 w-full md:w-auto border-b md:border-b-0 md:border-r border-outline-variant/30">
-                <Calendar className="w-5 h-5 text-primary-container shrink-0" />
-                <div className="text-left">
-                  <div className="font-label-md text-label-md text-on-surface">Date</div>
-                  <div className="font-body-md text-body-md text-on-surface-variant text-sm">Flexible dates</div>
-                </div>
-              </div>
-              <div className="flex items-center px-2 py-2 w-full md:w-auto mt-2 md:mt-0 gap-2">
-                <button
-                  onClick={() => setIsSearchOpen(false)}
-                  className="w-12 h-12 flex items-center justify-center rounded-full hover:bg-surface-container transition-colors text-outline"
-                >
-                  <X className="w-5 h-5" />
-                </button>
-                <Link
-                  to="/experiences"
-                  className="btn-primary w-full md:w-auto px-8 py-4 rounded-full font-label-md text-label-md flex items-center justify-center gap-2 active:scale-95 transition-transform duration-200"
-                >
-                  <Search className="w-4 h-4" />
-                  <span>Explore</span>
-                </Link>
-              </div>
-            </div>
-          ) : (
-            <div className="flex justify-center animate-fade-in-up delay-300">
+            ) : (
               <button
                 onClick={() => setIsSearchOpen(true)}
-                className="btn-primary px-8 py-4 rounded-full font-label-md text-label-md flex items-center justify-center gap-2 active:scale-95 transition-transform duration-200 shadow-xl"
+                className="w-full mx-auto max-w-[340px] bg-white/10 dark:bg-black/20 backdrop-filter backdrop-blur-xl transform-gpu border border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.2)] rounded-full py-3 px-4 flex items-center justify-between group hover:bg-white/20 transition-all duration-300 active:scale-95"
               >
-                <Search className="w-5 h-5" />
-                <span>Buscar Experiencias</span>
+                <div className="flex items-center gap-4">
+                  <div className="bg-white/20 p-3 rounded-full shadow-inner">
+                    <Search className="w-5 h-5 text-white" />
+                  </div>
+                  <span className="text-white font-medium text-lg tracking-wide drop-shadow-md">Buscar experiencias...</span>
+                </div>
               </button>
-            </div>
-          )}
+            )}
+          </div>
         </div>
       </section>
 
@@ -189,20 +196,23 @@ export default function Home() {
       <section className="py-24 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className="space-y-6">
-            <h2 className="font-headline text-3xl md:text-4xl lg:text-5xl font-black text-on-surface leading-tight">
-              Vive Guatapé with Neomundo
+            <h2 className="flex flex-wrap items-baseline gap-3 mb-6">
+              <span className="font-display text-4xl md:text-5xl lg:text-6xl text-primary tracking-wide uppercase leading-none">Vive</span>
+              <span className="font-handwriting text-5xl md:text-6xl lg:text-7xl text-secondary -rotate-3 translate-y-2 leading-none">Guatapé</span>
+              <span className="font-sans font-light text-2xl md:text-3xl text-on-surface leading-none">con</span>
+              <span className="font-serif italic font-black text-4xl md:text-5xl lg:text-6xl text-on-surface leading-none">Neomundo</span>
             </h2>
             <p className="font-body-lg text-body-lg text-on-surface-variant">
-              We don't just show you Guatapé; we immerse you in its vibrant soul. From the towering heights of the Peñol rock to the serene, crystalline waters of the reservoir, our curated experiences are designed for those who seek the extraordinary.
+              No solo te mostramos Guatapé; te sumergimos en su alma vibrante. Desde las imponentes alturas de la Piedra del Peñol hasta las serenas y cristalinas aguas del embalse, nuestras experiencias han sido diseñadas para aquellos que buscan lo extraordinario.
             </p>
             <p className="font-body-md text-body-md text-outline">
-              Whether you're craving high-octane adventure, unparalleled luxury, or a seamless blend of both, Neomundo Tour provides professional, tailored services that capture the sun-drenched energy of Colombia's most beautiful destination.
+              Ya sea que busques aventuras llenas de adrenalina, lujo incomparable o una mezcla perfecta de ambos, Neomundo Tour ofrece servicios profesionales y personalizados que capturan la energía de uno de los destinos más hermosos de Colombia.
             </p>
             <Link
               to="/experiences"
               className="inline-flex items-center gap-2 font-label-md text-label-md text-primary-container hover:text-primary transition-colors border-b-2 border-primary-container pb-1 font-bold"
             >
-              <span>Discover Our Story</span>
+              <span>Descubre Nuestra Historia</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
@@ -216,8 +226,8 @@ export default function Home() {
             />
             <div className="absolute bottom-8 left-8 right-8 glass-card p-6 rounded-2xl flex items-center justify-between">
               <div>
-                <div className="font-headline text-2xl font-extrabold text-on-surface">10+ Years</div>
-                <div className="font-body-md text-body-md text-on-surface-variant">Local Expertise</div>
+                <div className="font-headline text-2xl font-extrabold text-on-surface">Más de 10 Años</div>
+                <div className="font-body-md text-body-md text-on-surface-variant">Experiencia Local</div>
               </div>
               <div className="w-12 h-12 rounded-full bg-primary-container/20 flex items-center justify-center text-primary-container">
                 <ShieldCheck className="w-6 h-6" />
@@ -231,11 +241,12 @@ export default function Home() {
       <section className="py-24 bg-surface-container-low">
         <div className="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
           <div className="text-center mb-16 space-y-4">
-            <h2 className="font-headline text-3xl md:text-4xl font-extrabold text-on-surface">
-              Top Adventures
+            <h2 className="flex flex-wrap justify-center items-end gap-3 mb-4">
+              <span className="font-serif italic font-black text-4xl md:text-5xl text-primary">Mejores</span>
+              <span className="font-display text-4xl md:text-5xl text-on-surface tracking-wider">Aventuras</span>
             </h2>
             <p className="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
-              Curated thrills to elevate your Guatapé experience.
+              Emociones seleccionadas para elevar tu experiencia en Guatapé.
             </p>
           </div>
 
@@ -247,13 +258,21 @@ export default function Home() {
                 className="bg-surface rounded-3xl overflow-hidden border border-outline-variant/30 group cursor-pointer hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col h-full"
               >
                 <div className="relative h-64 overflow-hidden shrink-0">
-                  <img
-                    alt={exp.title}
-                    className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
-                    src={exp.image}
-                  />
+                  {exp.image.match(/\.(mp4|webm|ogg)$/i) ? (
+                    <video
+                      className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+                      src={exp.image}
+                      autoPlay muted loop playsInline
+                    />
+                  ) : (
+                    <img
+                      alt={exp.title}
+                      className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+                      src={exp.image}
+                    />
+                  )}
                   <div className="absolute top-4 right-4 bg-tertiary-container text-on-tertiary-container font-label-md text-label-md font-bold px-4 py-1.5 rounded-full shadow-md">
-                    From ${exp.price}
+                    Desde ${exp.price}
                   </div>
                 </div>
                 <div className="p-6 flex flex-col flex-grow">
@@ -271,7 +290,7 @@ export default function Home() {
                     to={`/booking/${exp.id}`}
                     className="w-full py-3 text-center rounded-xl border-2 border-primary-container text-primary-container font-label-md text-label-md hover:bg-primary-container hover:text-on-primary active:scale-95 transition-all duration-200 font-bold block"
                   >
-                    View Details
+                    Ver Detalles
                   </Link>
                 </div>
               </div>
