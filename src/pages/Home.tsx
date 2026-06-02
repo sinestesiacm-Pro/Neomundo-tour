@@ -148,8 +148,7 @@ export default function Home() {
           <div className="w-full max-w-md mx-auto relative z-30">
             {isSearchOpen ? (
               <div 
-                className="bg-white/10 dark:bg-black/20 rounded-[2rem] p-4 flex flex-col gap-3 shadow-[0_8px_32px_rgba(0,0,0,0.25)] border border-white/20 transition-all duration-500 animate-fade-in-up"
-                style={{ backdropFilter: 'blur(20px)', WebkitBackdropFilter: 'blur(20px)' }}
+                className="search-glass rounded-[2rem] p-4 flex flex-col gap-3 shadow-[0_8px_32px_rgba(0,0,0,0.25)] border border-white/20 transition-all duration-500 animate-fade-in-up"
               >
                 <div className="flex items-center gap-4 px-5 py-3.5 bg-white/10 dark:bg-black/20 rounded-2xl border border-white/10">
                   <Compass className="w-6 h-6 text-white" />
@@ -184,8 +183,7 @@ export default function Home() {
             ) : (
               <button
                 onClick={() => setIsSearchOpen(true)}
-                className="w-full mx-auto max-w-[340px] bg-white/10 dark:bg-black/20 border border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.2)] rounded-full py-3 px-4 flex items-center justify-between group hover:bg-white/20 transition-all duration-300 active:scale-95"
-                style={{ backdropFilter: 'blur(20px)', WebkitBackdropFilter: 'blur(20px)' }}
+                className="search-glass w-full mx-auto max-w-[340px] border border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.2)] rounded-full py-3 px-4 flex items-center justify-between group hover:bg-white/30 transition-all duration-300 active:scale-95"
               >
                 <div className="flex items-center gap-4">
                   <div className="bg-white/20 p-3 rounded-full shadow-inner">
