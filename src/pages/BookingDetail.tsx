@@ -3,7 +3,7 @@ import { useParams, useNavigate, Link } from 'react-router-dom';
 import { experiences } from '../data/experiences';
 import InnovativeGallery from '../components/InnovativeGallery';
 import AvailabilityCalendar from '../components/AvailabilityCalendar';
-import { MapPin, Users, CalendarDays, Compass, Star, ChevronLeft, ArrowRight, Check, Clock, DollarSign, Route, Plane, CircleDot } from 'lucide-react';
+import { MapPin, Users, CalendarDays, Compass, Star, ChevronLeft, ArrowRight, Check, DollarSign, Route, Plane, CircleDot } from 'lucide-react';
 
 export default function BookingDetail() {
   const { id } = useParams<{ id: string }>();
