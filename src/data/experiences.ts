@@ -259,5 +259,202 @@ Importante: No se permiten mascotas. No está permitido el ingreso de alimentos 
     amenities: ["Botellas de Agua", "Wi-Fi en algunos vehículos", "Asistencia con Equipaje"],
     duration: "Aprox. 2 horas",
     rating: 5.0
+  },
+  {
+    id: "bulgatti-jetcar",
+    title: "Bulgatti Jetcar Experience",
+    category: "Water",
+    categoryLabel: "Agua",
+    icon: "directions_boat",
+    price: 550000,
+    priceUnit: "COP (starts at)",
+    description: "Vive más. Colecciona momentos. La experiencia Bulgatti Jetcar de forma relajada y accesible o VIP.",
+    longDescription: `Bulgatti Jetcar Experience
+Vive más. Colecciona momentos.
+
+Nuestros planes:
+
+━━━ PLAN ADVENTURE (Con capitán incluido) ━━━
+La opción perfecta para disfrutar la experiencia Bulgatti Jetcar de forma relajada y accesible.
+Incluye: Capitán privado, Paseo en el mar, Música y experiencia luxury.
+TARIFAS:
+• 30 minutos — $550.000 COP
+• 45 minutos — $770.000 COP
+
+━━━ PLAN INFLUENCER (Tú manejas el jetcar) ━━━
+Ideal para quienes quieren vivir la experiencia completa y crear contenido increíble.
+Incluye: Manejo del Bulgatti Jetcar, Inducción y acompañamiento del capitán, GoPro incluida, Tiempo para fotos y videos.
+TARIFAS:
+• 30 minutos — $715.000 COP
+• 45 minutos — $880.000 COP
+
+━━━ PLAN BOSS (Experiencia VIP completa) ━━━
+La experiencia más exclusiva y premium del Bulgatti Jetcar.
+Incluye: Manejo del Bulgatti Jetcar, Inducción personalizada, GoPro incluida, Tomas aéreas con dron, Videos cinematic premium, Atención VIP.
+TARIFAS:
+• 1 HORA — $1.430.000 COP
+
+Ideal para parejas, amigos y grupos.`,
+    image: "/images/villa_lujo_real.png",
+    additionalImages: [],
+    features: ["Plan Adventure", "Plan Influencer", "Plan Boss"],
+    amenities: ["Seguridad primero", "Experiencia premium", "Recuerdos inolvidables"],
+    duration: "30 min - 1 hora",
+    rating: 5.0
+  },
+  {
+    id: "g-wagon-jetcar",
+    title: "G-Wagon Jetcar Experience",
+    category: "Water",
+    categoryLabel: "Agua",
+    icon: "directions_boat",
+    price: 550000,
+    priceUnit: "COP (starts at)",
+    description: "Vive Guatapé desde una perspectiva única con el G-Wagon Jetcar.",
+    longDescription: `G-Wagon Jetcar Experience
+Vive Guatapé desde una perspectiva única.
+
+Nuestros planes:
+
+━━━ PLAN ADVENTURE (Con capitán incluido) ━━━
+La opción perfecta para disfrutar la experiencia G-Wagon Jetcar de forma cómoda, divertida y accesible.
+Incluye: Capitán privado, Paseo en el mar, Música y experiencia luxury.
+TARIFAS:
+• 30 minutos — $550.000 COP
+• 45 minutos — $770.000 COP
+
+━━━ PLAN INFLUENCER (Tú manejas el jetcar) ━━━
+Vive la experiencia completa manejando el G-Wagon Jetcar mientras creas contenido increíble.
+Incluye: Manejo del G-Wagon Jetcar, Inducción y acompañamiento del capitán, GoPro incluida, Tiempo para fotos y videos.
+TARIFAS:
+• 30 minutos — $825.000 COP
+• 45 minutos — $990.000 COP
+
+━━━ PLAN BOSS (Experiencia VIP completa) ━━━
+La experiencia más exclusiva y premium del G-Wagon Jetcar.
+Incluye: Manejo del G-Wagon Jetcar, Inducción personalizada, GoPro incluida, Tomas aéreas con dron, Videos cinematic premium, Atención VIP.
+TARIFAS:
+• 1 HORA — $1.650.000 COP
+
+Rutas increíbles y paisajes espectaculares.`,
+    image: "/images/villa_lujo_real.png",
+    additionalImages: [],
+    features: ["Plan Adventure", "Plan Influencer", "Plan Boss"],
+    amenities: ["Seguridad primero", "Experiencia premium", "Recuerdos inolvidables"],
+    duration: "30 min - 1 hora",
+    rating: 5.0
+  },
+  {
+    id: "buggy-neomundo",
+    title: "Buggy",
+    category: "Adrenaline",
+    categoryLabel: "Adrenalina",
+    icon: "two_wheeler",
+    price: 330000,
+    priceUnit: "COP (starts at)",
+    description: "Descubre y disfruta de nuestras emocionantes experiencias en Buggy.",
+    longDescription: `Descubre y disfruta de nuestras emocionantes experiencias en Buggy.
+
+TARIFAS:
+• 2 Personas — $330.000 COP
+• 4 Personas (max 300kg) — $495.000 COP
+
+Duración: 45 minutos de recorrido.`,
+    image: "/images/atv_1.jpeg",
+    additionalImages: [],
+    features: ["45 Minutos de recorrido", "Hasta 4 Personas", "Off-road"],
+    amenities: ["Seguridad", "Guía Turístico", "Aventura garantizada"],
+    duration: "45 minutos",
+    rating: 4.8
+  },
+  {
+    id: "aventura-4x4-neomundo",
+    title: "Aventura 4x4",
+    category: "Adrenaline",
+    categoryLabel: "Adrenalina",
+    icon: "directions_car",
+    price: 495000,
+    priceUnit: "COP (starts at)",
+    description: "Recorrido emocionante en Jeep 4x4 para vivir la mejor aventura.",
+    longDescription: `Descubre y disfruta de nuestras emocionantes experiencias en Aventura 4x4.
+
+TARIFAS JEEP:
+• 4 Personas — $495.000 COP
+• 2 Personas — $660.000 COP
+
+Duración: 45 minutos de recorrido.`,
+    image: "/images/atv_2.jpeg",
+    additionalImages: [],
+    features: ["45 Minutos de recorrido", "Jeep 4x4", "Hasta 4 Personas"],
+    amenities: ["Seguridad", "Guía Turístico", "Aventura garantizada"],
+    duration: "45 minutos",
+    rating: 4.9
+  },
+  {
+    id: "can-am-neomundo",
+    title: "Can-Am",
+    category: "Adrenaline",
+    categoryLabel: "Adrenalina",
+    icon: "two_wheeler",
+    price: 660000,
+    priceUnit: "COP",
+    description: "La experiencia más extrema en Can-Am para 2 personas.",
+    longDescription: `Descubre y disfruta de nuestras emocionantes experiencias en Can-Am.
+
+TARIFAS:
+• 2 Personas — $660.000 COP
+
+Duración: 45 minutos de recorrido.`,
+    image: "/images/atv_3.jpeg",
+    additionalImages: [],
+    features: ["45 Minutos de recorrido", "2 Personas", "Extremo"],
+    amenities: ["Seguridad", "Guía Turístico", "Adrenalina pura"],
+    duration: "45 minutos",
+    rating: 5.0
+  },
+  {
+    id: "cuatrimoto-neomundo",
+    title: "Cuatrimoto",
+    category: "Adrenaline",
+    categoryLabel: "Adrenalina",
+    icon: "two_wheeler",
+    price: 242000,
+    priceUnit: "COP",
+    description: "Diversión asegurada en cuatrimoto para 1 o 2 personas.",
+    longDescription: `Descubre y disfruta de nuestras emocionantes experiencias en Cuatrimoto.
+
+TARIFAS:
+• 1 Persona — $242.000 COP
+• 2 Personas (max 150kg) — Incluido en el precio del vehículo (o consultar).
+
+Duración del recorrido según disponibilidad.`,
+    image: "/images/atv_1.jpeg",
+    additionalImages: [],
+    features: ["1 o 2 Personas", "Off-road", "Aventura"],
+    amenities: ["Seguridad", "Guía Turístico", "Diversión"],
+    duration: "Variable",
+    rating: 4.7
+  },
+  {
+    id: "jetski-neomundo",
+    title: "Jetski",
+    category: "Water",
+    categoryLabel: "Agua",
+    icon: "surfing",
+    price: 330000,
+    priceUnit: "COP",
+    description: "Siente la velocidad y adrenalina en el agua con nuestros Jetski.",
+    longDescription: `Descubre y disfruta de nuestras emocionantes experiencias en Jetski.
+
+TARIFAS:
+• Max 3 Personas — $330.000 COP
+
+Duración: 60 minutos.`,
+    image: "/images/lancha_pontones_real.png",
+    additionalImages: [],
+    features: ["60 Minutos", "Max 3 Personas", "Velocidad"],
+    amenities: ["Chalecos Salvavidas", "Guía Turístico", "Seguridad"],
+    duration: "60 minutos",
+    rating: 4.9
   }
 ];
