@@ -9,6 +9,8 @@ export default function Home() {
   const [selectedExperience, setSelectedExperience] = useState<string>('');
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [date, setDate] = useState<string>('');
+  const [isDatePickerOpen, setIsDatePickerOpen] = useState(false);
+  const [currentDate, setCurrentDate] = useState(new Date());
 
   // Load particles effect in Canvas
   useEffect(() => {
@@ -151,11 +153,14 @@ export default function Home() {
           <div className="w-full max-w-md mx-auto relative z-30">
             {isSearchOpen ? (
               <div 
-                className="search-glass rounded-[2rem] p-4 flex flex-col gap-3 shadow-[0_8px_32px_rgba(0,0,0,0.25)] border border-white/20 transition-all duration-500 animate-fade-in-up"
+                className="bg-white/30 backdrop-blur-2xl rounded-[2rem] p-4 flex flex-col gap-3 shadow-[0_8px_32px_rgba(0,0,0,0.25)] border border-white/30 transition-all duration-500 animate-fade-in-up"
               >
                 <div className="relative">
                   <button 
-                    onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                    onClick={() => {
+                      setIsDropdownOpen(!isDropdownOpen);
+                      setIsDatePickerOpen(false);
+                    }}
                     className="w-full flex items-center gap-4 px-5 py-3.5 bg-white/10 dark:bg-black/20 rounded-2xl border border-white/10 hover:bg-white/20 transition-colors cursor-pointer"
                   >
                     <Compass className="w-6 h-6 text-white" />
@@ -188,23 +193,89 @@ export default function Home() {
                   )}
                 </div>
 
-                <div className="flex items-center gap-4 px-5 py-3.5 bg-white/10 dark:bg-black/20 rounded-2xl border border-white/10">
-                  <Calendar className="w-6 h-6 text-white" />
-                  <div className="text-left flex-1 relative">
-                    <div className="text-white font-semibold text-sm">Fecha</div>
-                    <input 
-                      type="date"
-                      value={date}
-                      onChange={(e) => setDate(e.target.value)}
-                      className={`bg-transparent text-xs outline-none w-full cursor-pointer [&::-webkit-calendar-picker-indicator]:filter [&::-webkit-calendar-picker-indicator]:invert ${date ? 'text-white' : 'text-white/70'}`}
-                      style={{ colorScheme: 'dark' }}
-                    />
-                  </div>
+                <div className="relative">
+                  <button 
+                    onClick={() => {
+                      setIsDatePickerOpen(!isDatePickerOpen);
+                      setIsDropdownOpen(false);
+                    }}
+                    className="w-full flex items-center gap-4 px-5 py-3.5 bg-white/10 dark:bg-black/20 rounded-2xl border border-white/10 hover:bg-white/20 transition-colors cursor-pointer"
+                  >
+                    <Calendar className="w-6 h-6 text-white" />
+                    <div className="text-left flex-1 relative">
+                      <div className="text-white font-semibold text-sm">Fecha</div>
+                      <div className="text-white/70 text-xs">
+                        {date ? date : 'Fechas flexibles'}
+                      </div>
+                    </div>
+                  </button>
+
+                  {isDatePickerOpen && (
+                    <div className="absolute top-[105%] left-0 w-full bg-white/90 dark:bg-black/90 backdrop-blur-xl rounded-3xl p-4 shadow-2xl z-50 border border-white/20">
+                      <div className="flex justify-between items-center mb-4 text-black dark:text-white">
+                        <button 
+                          onClick={(e) => { e.stopPropagation(); setCurrentDate(new Date(currentDate.getFullYear(), currentDate.getMonth() - 1, 1)); }}
+                          className="p-2 hover:bg-black/10 dark:hover:bg-white/10 rounded-full transition-colors"
+                        >
+                          &lt;
+                        </button>
+                        <div className="font-semibold text-sm uppercase tracking-wide">
+                          {currentDate.toLocaleString('es-ES', { month: 'long', year: 'numeric' })}
+                        </div>
+                        <button 
+                          onClick={(e) => { e.stopPropagation(); setCurrentDate(new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 1)); }}
+                          className="p-2 hover:bg-black/10 dark:hover:bg-white/10 rounded-full transition-colors"
+                        >
+                          &gt;
+                        </button>
+                      </div>
+                      <div className="grid grid-cols-7 gap-1 text-center mb-2">
+                        {['Do', 'Lu', 'Ma', 'Mi', 'Ju', 'Vi', 'Sa'].map(day => (
+                          <div key={day} className="text-xs font-bold text-gray-500">{day}</div>
+                        ))}
+                      </div>
+                      <div className="grid grid-cols-7 gap-1 text-center">
+                        {(() => {
+                          const year = currentDate.getFullYear();
+                          const month = currentDate.getMonth();
+                          const daysInMonth = new Date(year, month + 1, 0).getDate();
+                          const firstDayIndex = new Date(year, month, 1).getDay();
+                          
+                          const days = [];
+                          for (let i = 0; i < firstDayIndex; i++) {
+                            days.push(<div key={`empty-${i}`} className="p-2"></div>);
+                          }
+                          for (let i = 1; i <= daysInMonth; i++) {
+                            const dateStr = `${year}-${String(month + 1).padStart(2, '0')}-${String(i).padStart(2, '0')}`;
+                            const isSelected = date === dateStr;
+                            days.push(
+                              <button 
+                                key={i}
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  setDate(dateStr);
+                                  setIsDatePickerOpen(false);
+                                }}
+                                className={`p-2 text-sm rounded-full transition-colors ${
+                                  isSelected 
+                                    ? 'bg-primary text-white font-bold shadow-md' 
+                                    : 'hover:bg-black/10 dark:hover:bg-white/10 text-black dark:text-white'
+                                }`}
+                              >
+                                {i}
+                              </button>
+                            );
+                          }
+                          return days;
+                        })()}
+                      </div>
+                    </div>
+                  )}
                 </div>
 
                 <div className="flex items-center gap-3 mt-3">
                   <button
-                    onClick={() => { setIsSearchOpen(false); setIsDropdownOpen(false); }}
+                    onClick={() => { setIsSearchOpen(false); setIsDropdownOpen(false); setIsDatePickerOpen(false); }}
                     className="w-14 h-14 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors border border-white/20"
                   >
                     <X className="w-6 h-6" />
@@ -221,7 +292,7 @@ export default function Home() {
             ) : (
               <button
                 onClick={() => setIsSearchOpen(true)}
-                className="search-glass w-full mx-auto max-w-[340px] border border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.2)] rounded-full py-3 px-4 flex items-center justify-between group hover:bg-white/30 transition-all duration-300 active:scale-95"
+                className="bg-white/30 backdrop-blur-2xl w-full mx-auto max-w-[340px] border border-white/30 shadow-[0_8px_32px_rgba(0,0,0,0.2)] rounded-full py-3 px-4 flex items-center justify-between group hover:bg-white/40 transition-all duration-300 active:scale-95"
               >
                 <div className="flex items-center gap-4">
                   <div className="bg-white/20 p-3 rounded-full shadow-inner">
