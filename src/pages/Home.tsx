@@ -6,6 +6,9 @@ import { experiences } from '../data/experiences';
 export default function Home() {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [selectedExperience, setSelectedExperience] = useState<string>('');
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [date, setDate] = useState<string>('');
 
   // Load particles effect in Canvas
   useEffect(() => {
@@ -150,29 +153,64 @@ export default function Home() {
               <div 
                 className="search-glass rounded-[2rem] p-4 flex flex-col gap-3 shadow-[0_8px_32px_rgba(0,0,0,0.25)] border border-white/20 transition-all duration-500 animate-fade-in-up"
               >
-                <div className="flex items-center gap-4 px-5 py-3.5 bg-white/10 dark:bg-black/20 rounded-2xl border border-white/10">
-                  <Compass className="w-6 h-6 text-white" />
-                  <div className="text-left">
-                    <div className="text-white font-semibold text-sm">Experiencia</div>
-                    <div className="text-white/70 text-xs">Todos los tours</div>
-                  </div>
+                <div className="relative">
+                  <button 
+                    onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                    className="w-full flex items-center gap-4 px-5 py-3.5 bg-white/10 dark:bg-black/20 rounded-2xl border border-white/10 hover:bg-white/20 transition-colors cursor-pointer"
+                  >
+                    <Compass className="w-6 h-6 text-white" />
+                    <div className="text-left flex-1">
+                      <div className="text-white font-semibold text-sm">Experiencia</div>
+                      <div className="text-white/70 text-xs">
+                        {selectedExperience ? experiences.find(e => e.id === selectedExperience)?.title : 'Todos los tours'}
+                      </div>
+                    </div>
+                  </button>
+                  
+                  {isDropdownOpen && (
+                    <div className="absolute top-[105%] left-0 w-full bg-white/90 dark:bg-black/90 backdrop-blur-xl rounded-2xl p-2 shadow-2xl z-50 border border-white/20 max-h-60 overflow-y-auto">
+                      <button
+                        onClick={() => { setSelectedExperience(''); setIsDropdownOpen(false); }}
+                        className="w-full text-left px-4 py-2 hover:bg-black/5 dark:hover:bg-white/5 rounded-xl text-sm font-medium transition-colors text-black dark:text-white"
+                      >
+                        Todos los tours
+                      </button>
+                      {experiences.map(exp => (
+                        <button
+                          key={exp.id}
+                          onClick={() => { setSelectedExperience(exp.id); setIsDropdownOpen(false); }}
+                          className="w-full text-left px-4 py-2 hover:bg-black/5 dark:hover:bg-white/5 rounded-xl text-sm font-medium transition-colors text-black dark:text-white line-clamp-1"
+                        >
+                          {exp.title}
+                        </button>
+                      ))}
+                    </div>
+                  )}
                 </div>
+
                 <div className="flex items-center gap-4 px-5 py-3.5 bg-white/10 dark:bg-black/20 rounded-2xl border border-white/10">
                   <Calendar className="w-6 h-6 text-white" />
-                  <div className="text-left">
+                  <div className="text-left flex-1 relative">
                     <div className="text-white font-semibold text-sm">Fecha</div>
-                    <div className="text-white/70 text-xs">Fechas flexibles</div>
+                    <input 
+                      type="date"
+                      value={date}
+                      onChange={(e) => setDate(e.target.value)}
+                      className={`bg-transparent text-xs outline-none w-full cursor-pointer [&::-webkit-calendar-picker-indicator]:filter [&::-webkit-calendar-picker-indicator]:invert ${date ? 'text-white' : 'text-white/70'}`}
+                      style={{ colorScheme: 'dark' }}
+                    />
                   </div>
                 </div>
+
                 <div className="flex items-center gap-3 mt-3">
                   <button
-                    onClick={() => setIsSearchOpen(false)}
+                    onClick={() => { setIsSearchOpen(false); setIsDropdownOpen(false); }}
                     className="w-14 h-14 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors border border-white/20"
                   >
                     <X className="w-6 h-6" />
                   </button>
                   <Link
-                    to="/experiences"
+                    to={selectedExperience ? `/booking/${selectedExperience}` : "/experiences"}
                     className="flex-1 bg-white text-black py-4 rounded-full font-bold flex items-center justify-center gap-2 hover:scale-[1.02] active:scale-95 transition-all shadow-lg text-lg"
                   >
                     <Search className="w-5 h-5" />
