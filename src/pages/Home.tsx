@@ -133,7 +133,7 @@ export default function Home() {
         </div>
 
         {/* Hero content overlay - Minimalist */}
-        <div className="relative z-20 w-full px-4 flex flex-col items-center justify-center animate-fade-in-up mt-12">
+        <div className="relative z-20 w-full px-4 flex flex-col items-center justify-center mt-12">
           <h1 className="flex flex-wrap justify-center items-center gap-x-4 gap-y-2 mb-12 drop-shadow-2xl text-center">
             <span className="font-display text-5xl md:text-7xl lg:text-[80px] text-white uppercase tracking-tight font-black leading-none drop-shadow-[2px_2px_0_black] md:drop-shadow-[4px_4px_0_black]">
               Despierta
@@ -153,7 +153,7 @@ export default function Home() {
           <div className="w-full max-w-md mx-auto relative z-30">
             {isSearchOpen ? (
               <div 
-                className="bg-white/30 backdrop-blur-2xl rounded-[2rem] p-4 flex flex-col gap-3 shadow-[0_8px_32px_rgba(0,0,0,0.25)] border border-white/30 transition-all duration-500 animate-fade-in-up"
+                className="bg-white/30 backdrop-blur-2xl rounded-[2rem] p-4 flex flex-col gap-3 shadow-[0_8px_32px_rgba(0,0,0,0.25)] border border-white/30 transition-all duration-500"
               >
                 <div className="relative">
                   <button 
