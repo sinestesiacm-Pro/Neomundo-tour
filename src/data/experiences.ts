@@ -456,5 +456,33 @@ Duración: 60 minutos.`,
     amenities: ["Chalecos Salvavidas", "Guía Turístico", "Seguridad"],
     duration: "60 minutos",
     rating: 4.9
+  },
+  {
+    id: "finca-tres-marias",
+    title: "Finca Tres Marias",
+    category: "Stay",
+    categoryLabel: "Finca",
+    icon: "villa",
+    price: 450000,
+    priceUnit: "COP (aprox / noche)",
+    description: "Hermosa Finca Tres Marias, ideal para descansar y conectar con la naturaleza en Guatapé.",
+    longDescription: "Disfruta de la tranquilidad y comodidad de la Finca Tres Marias. Totalmente equipada para brindarte una estancia inolvidable en medio de los impresionantes paisajes de Guatapé. Perfecta para familias o grupos de amigos que buscan privacidad y relax absoluto.\n\n*Nota: Contáctanos para consultar disponibilidad y precios exactos según la temporada y número de personas.*",
+    image: "/images/tres_marias_1.jpeg",
+    additionalImages: [
+      "/images/tres_marias_2.jpeg",
+      "/images/tres_marias_3.jpeg",
+      "/images/tres_marias_4.jpeg",
+      "/images/tres_marias_5.jpeg",
+      "/images/tres_marias_6.jpeg",
+      "/images/tres_marias_7.jpeg",
+      "/images/tres_marias_8.jpeg",
+      "/images/tres_marias_9.jpeg",
+      "/images/tres_marias_10.jpeg",
+      "/images/tres_marias_11.jpeg"
+    ],
+    features: ["10+ Guests", "Naturaleza", "Privacidad"],
+    amenities: ["Zonas Verdes", "BBQ Area", "Parqueadero"],
+    maxGuests: 15,
+    rating: 4.8
   }
 ];
