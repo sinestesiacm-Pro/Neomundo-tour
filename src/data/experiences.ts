@@ -463,10 +463,25 @@ Duración: 60 minutos.`,
     category: "Stay",
     categoryLabel: "Finca",
     icon: "villa",
-    price: 450000,
-    priceUnit: "COP (aprox / noche)",
-    description: "Hermosa Finca Tres Marias, ideal para descansar y conectar con la naturaleza en Guatapé.",
-    longDescription: "Disfruta de la tranquilidad y comodidad de la Finca Tres Marias. Totalmente equipada para brindarte una estancia inolvidable en medio de los impresionantes paisajes de Guatapé. Perfecta para familias o grupos de amigos que buscan privacidad y relax absoluto.\n\n*Nota: Contáctanos para consultar disponibilidad y precios exactos según la temporada y número de personas.*",
+    price: 2875000,
+    priceUnit: "COP / noche",
+    description: "Espectacular Finca Tres Marias con capacidad para 16 personas, piscina, jacuzzi y amplias zonas de entretenimiento.",
+    longDescription: `Disfruta de la máxima comodidad y entretenimiento en la Finca Tres Marias, un espacio diseñado para grupos grandes y familias que buscan un escape perfecto en Guatapé.
+
+✨ **Detalles de la Propiedad:**
+• Capacidad máxima: 16 personas
+• 7 baños completos
+• Sala, comedor y cocina totalmente integrados
+
+🏊 **Entretenimiento y Relax:**
+• Piscina y Jacuzzi
+• Mesa de billar
+• Juegos de niños
+• Parqueadero privado amplio
+
+💰 **Tarifas:**
+• Valor por noche: $2.875.000 COP
+• Tasa de aseo: $230.000 COP`,
     image: "/images/tres_marias_1.jpeg",
     additionalImages: [
       "/images/tres_marias_2.jpeg",
@@ -480,9 +495,9 @@ Duración: 60 minutos.`,
       "/images/tres_marias_10.jpeg",
       "/images/tres_marias_11.jpeg"
     ],
-    features: ["10+ Guests", "Naturaleza", "Privacidad"],
-    amenities: ["Zonas Verdes", "BBQ Area", "Parqueadero"],
-    maxGuests: 15,
-    rating: 4.8
+    features: ["16 Personas", "7 Baños", "Piscina y Jacuzzi"],
+    amenities: ["Cocina Integrada", "Juegos de Billar", "Piscina", "Jacuzzi", "Juegos de Niños", "Parqueadero"],
+    maxGuests: 16,
+    rating: 4.9
   }
 ];
