@@ -60,19 +60,7 @@ export default function BookingDetail() {
 
   return (
     <div className="pt-20 pb-24">
-      {/* Header Back Button */}
-      <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-4 flex items-center justify-between">
-        <Link 
-          to="/experiences" 
-          className="inline-flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors text-sm font-semibold group"
-        >
-          <ChevronLeft className="w-4 h-4 transform group-hover:-translate-x-0.5 transition-transform" />
-          <span>Volver al Catálogo</span>
-        </Link>
-        <span className="text-xs text-outline font-medium uppercase tracking-widest hidden sm:inline-block">
-          Aventuras Premium en Guatapé
-        </span>
-      </div>
+
 
       {/* Bento Gallery Component */}
       <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-12">
