@@ -499,5 +499,71 @@ Duración: 60 minutos.`,
     amenities: ["Cocina Integrada", "Juegos de Billar", "Piscina", "Jacuzzi", "Juegos de Niños", "Parqueadero"],
     maxGuests: 16,
     rating: 4.9
+  },
+  {
+    id: "efoil-guatape",
+    title: "Efoil Experiencia",
+    category: "Water",
+    categoryLabel: "Agua",
+    icon: "surfing",
+    price: 350000,
+    priceUnit: "COP / hora",
+    description: "Vuela sobre el agua en Guatapé con la tabla de surf eléctrica (Efoil). Pura adrenalina y libertad sin necesidad de olas.",
+    longDescription: `¡Experimenta la sensación de volar sobre el embalse de Guatapé con el Efoil!
+
+La tabla de surf eléctrica con hidroala (Efoil) es la última tendencia en deportes acuáticos. No necesitas olas ni viento, solo tu equilibrio y ganas de divertirte.
+
+━━━ PLAN INDIVIDUAL (1 HORA) ━━━
+• Duración — 1 hora de instrucción y práctica
+• Equipamiento completo — Chaleco, casco y radio comunicación
+• Instructor personalizado — Para guiarte en todo momento
+• Fotos y videos opcionales con GoPro
+
+Nuestras tarifas:
+• Valor por sesión — $350.000 COP
+
+Importante: Apto para mayores de 12 años. Se requiere saber nadar. Peso máximo de 100 kg.`,
+    image: "/images/efoil_video.mp4",
+    additionalImages: [
+      "/images/efoil_1.jpeg",
+      "/images/efoil_2.jpeg"
+    ],
+    features: ["1 Hora de Sesión", "Instructor Guía", "Equipo Completo"],
+    amenities: ["Chaleco Salvavidas", "Casco de Seguridad", "Instrucciones de Vuelo", "Video GoPro Opcional"],
+    duration: "1 hora",
+    rating: 5.0
+  },
+  {
+    id: "glamping-san-bernardo",
+    title: "Glamping San Bernardo",
+    category: "Stay",
+    categoryLabel: "Glamping",
+    icon: "villa",
+    price: 650000,
+    priceUnit: "noche",
+    description: "Un escape de lujo en la naturaleza. Domo geodésico premium con jacuzzi privado climatizado y vista al embalse.",
+    longDescription: `Descubre Glamping San Bernardo, un refugio exclusivo diseñado para desconectarte del mundo y conectarte con el lujo y la naturaleza en Guatapé.
+
+Ubicado estratégicamente frente al embalse, nuestro domo geodésico combina el confort de una suite de cinco estrellas con la magia de acampar bajo las estrellas.
+
+✨ **Detalles de la Estadía:**
+• Capacidad máxima: 2 personas (ideal para parejas)
+• Jacuzzi climatizado privado en el deck exterior
+• Malla catamarán suspendida con vistas increíbles
+• Zona de fogata privada
+
+💰 **Tarifas:**
+• Valor por noche — $650.000 COP
+• Desayuno tipo gourmet incluido
+• Check-in: 3:00 pm | Check-out: 11:00 am`,
+    image: "/images/glamping_san_bernardo_video.mp4",
+    additionalImages: [
+      "/images/glamping_san_bernardo_1.jpeg",
+      "/images/glamping_san_bernardo_2.jpeg"
+    ],
+    features: ["2 Personas", "Jacuzzi Privado", "Desayuno Gourmet"],
+    amenities: ["Cama King-Size", "Jacuzzi Climatizado", "Malla Catamarán", "Fogata Privada", "Wi-Fi Rápido", "Baño Privado con Ducha Caliente"],
+    maxGuests: 2,
+    rating: 4.9
   }
 ];
