@@ -3,7 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { experiences } from '../data/experiences';
 import InnovativeGallery from '../components/InnovativeGallery';
 import AvailabilityCalendar from '../components/AvailabilityCalendar';
-import { MapPin, Users, CalendarDays, Compass, Star, ArrowRight, Check, DollarSign, Route, Plane, CircleDot } from 'lucide-react';
+import { MapPin, Users, CalendarDays, Compass, Star, Check, DollarSign, Route, Plane, CircleDot } from 'lucide-react';
 
 export default function BookingDetail() {
   const { id } = useParams<{ id: string }>();
@@ -11,7 +11,6 @@ export default function BookingDetail() {
 
   const [checkInDate, setCheckInDate] = useState<Date | null>(null);
   const [checkOutDate, setCheckOutDate] = useState<Date | null>(null);
-  const [numNights, setNumNights] = useState<number>(0);
   const [numGuests, setNumGuests] = useState<number>(1);
 
   if (!experience) {
@@ -27,10 +26,9 @@ export default function BookingDetail() {
     );
   }
 
-  const handleSelectDates = (checkIn: Date | null, checkOut: Date | null, nights: number) => {
+  const handleSelectDates = (checkIn: Date | null, checkOut: Date | null, _nights: number) => {
     setCheckInDate(checkIn);
     setCheckOutDate(checkOut);
-    setNumNights(nights);
   };
 
   const handleProceedToWhatsApp = () => {
