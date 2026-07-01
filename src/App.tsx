@@ -5,8 +5,6 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import Experiences from './pages/Experiences';
 import BookingDetail from './pages/BookingDetail';
-import Checkout from './pages/Checkout';
-
 // Utility component to scroll to top on page navigation
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -29,7 +27,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/experiences" element={<Experiences />} />
             <Route path="/booking/:id" element={<BookingDetail />} />
-            <Route path="/checkout" element={<Checkout />} />
+
           </Routes>
         </div>
         <Footer />

@@ -18,27 +18,7 @@ export interface Experience {
 }
 
 export const experiences: Experience[] = [
-  {
-    id: "finca-esmeralda",
-    title: "Retiro Villa Esmeralda",
-    category: "Stay",
-    categoryLabel: "Estadía",
-    icon: "villa",
-    price: 575,
-    priceUnit: "night",
-    description: "Exclusiva villa de lujo con vistas panorámicas del embalse de Guatapé, piscina privada y comodidades premium.",
-    longDescription: "Experimenta el máximo modernismo tropical en Villa Esmeralda. Ubicada en las orillas del impresionante embalse Peñol-Guatapé, esta obra maestra arquitectónica ofrece una vida interior-exterior fluida. Con vidrios de piso a techo, una amplia piscina infinita y acceso a muelle privado, cada momento aquí está diseñado para conectarte con la energía vibrante del paisaje más hermoso de Colombia. Perfecto para familias o grupos que buscan un escape soleado y premium.",
-    image: "/images/villa_lujo_real.png",
-    additionalImages: [
-      "/images/el_penol_real.png",
-      "/images/lancha_pontones_real.png",
-      "/images/jungle_motors_real.png"
-    ],
-    features: ["12 Huéspedes", "5 Habitaciones", "6 Baños"],
-    amenities: ["Piscina Infinita", "Wi-Fi Rápido", "Zona BBQ", "Muelle Privado", "Jacuzzi", "Cine en Casa"],
-    maxGuests: 12,
-    rating: 4.9
-  },
+
   {
     id: "helicoptero-penol",
     title: "Tours en Helicóptero",
@@ -81,56 +61,16 @@ MEDELLÍN — PEÑOL — MEDELLÍN
 Vuela desde los hangares del Aeropuerto Olaya Herrera en Medellín, directamente hasta la Isla de la Fantasía o base Montecielo Fly en El Peñol. Allí te transportamos hacia el bote en el malecón de Guatapé y te esperamos una hora. Luego regresamos al muelle y transportados al helicóptero de nuevo, para finalmente volver al Aeropuerto Olaya Herrera en Medellín.
 
 ¡Contáctanos para personalizar tus vuelos, tus rutas, tus deseos!`,
-    image: "/images/el_penol_real.png",
+    image: "/images/helicopter_tour_guatape.png",
     additionalImages: [
-      "/images/parapente_real.png",
-      "/images/lancha_pontones_real.png"
+      "/images/el_penol_real.png"
     ],
     features: ["Vuelos de 6 a 15 Min", "Piloto Bilingüe", "Panorámicas"],
     amenities: ["Equipo de Seguridad", "Auriculares con Cancelación de Ruido", "Servicio de Fotografía HD", "Acceso a Sala VIP"],
     duration: "Varias opciones",
     rating: 5.0
   },
-  {
-    id: "lancha-pontones",
-    title: "Lanchas y Pontones",
-    category: "Water",
-    categoryLabel: "Agua",
-    icon: "sailing",
-    price: 92,
-    priceUnit: "hour",
-    description: "Relájate y diviértete en el agua con nuestros alquileres de pontones premium. Perfecto para grupos que buscan explorar las islas.",
-    longDescription: "Navega por las cristalinas aguas del embalse de Guatapé con estilo. Nuestros pontones y lanchas rápidas de primera línea vienen equipados con capitanes experimentados, sistemas de sonido de alta calidad, cómodas áreas de descanso y neveras para tus refrigerios. Detente en hermosas islas, nada en aguas refrescantes o visita atracciones locales junto al lago durante tu itinerario personalizado.",
-    image: "/images/lancha_pontones_real.png",
-    additionalImages: [
-      "/images/el_penol_real.png",
-      "/images/villa_lujo_real.png"
-    ],
-    features: ["Hasta 15 Pax", "Capitán Privado", "Audio Bluetooth"],
-    amenities: ["Chalecos Salvavidas", "Parrilla BBQ a Bordo", "Hielo y Neveras", "Juguetes Acuáticos"],
-    duration: "Flexible (Mínimo 2 horas)",
-    rating: 4.8
-  },
-  {
-    id: "jungle-motors",
-    title: "Jungle Motors (ATV)",
-    category: "Adrenaline",
-    categoryLabel: "Adrenalina",
-    icon: "two_wheeler",
-    price: 52,
-    priceUnit: "hour",
-    description: "Navega por emocionantes senderos en la selva y descubre miradores escondidos en nuestros potentes vehículos todo terreno.",
-    longDescription: "Prepárate para embarrarte y experimentar la belleza natural de los paisajes que rodean a Guatapé. Nuestros tours en cuatrimoto (ATV) Jungle Motors te llevan fuera de los caminos trillados, a través de bosques profundos, pistas de tierra accidentadas y miradores secretos junto al lago. Guiada por guías locales profesionales, esta aventura es perfecta para los buscadores de adrenalina que desean conectarse con el exuberante campo de Colombia.",
-    image: "/images/atv_1.jpeg",
-    additionalImages: [
-      "/images/atv_2.jpeg",
-      "/images/atv_3.jpeg"
-    ],
-    features: ["Cuatrimotos 4x4", "Guía Experto", "Charla de Seguridad"],
-    amenities: ["Cascos y Gafas de Seguridad", "Casilleros", "Agua Embotellada", "Ropa de Lluvia (si es necesario)"],
-    duration: "2 - 4 horas",
-    rating: 4.7
-  },
+
   {
     id: "parapente",
     title: "Parapente",
@@ -144,7 +84,7 @@ Vuela desde los hangares del Aeropuerto Olaya Herrera en Medellín, directamente
     image: "/images/parapente_real.png",
     additionalImages: [
       "/images/el_penol_real.png",
-      "/images/villa_lujo_real.png"
+      "/images/guatape_pueblo.png"
     ],
     features: ["Vuelo en Tándem", "Instructor Certificado", "Video GoPro"],
     amenities: ["Todo el Equipo de Vuelo", "Seguro de Vuelo", "Video Digital y Fotos", "Transporte al Sitio de Lanzamiento"],
@@ -164,7 +104,7 @@ Vuela desde los hangares del Aeropuerto Olaya Herrera en Medellín, directamente
     image: "/images/caballo_real.png",
     additionalImages: [
       "/images/el_penol_real.png",
-      "/images/villa_lujo_real.png"
+      "/images/guatape_pueblo.png"
     ],
     features: ["Caballos Mansos", "Guía Local", "Senderos Ecológicos"],
     amenities: ["Cascos de Equitación", "Sesión de Entrenamiento Básico", "Snacks y Refrescos", "Alforjas para Objetos Personales"],
@@ -235,31 +175,14 @@ Precio:
 • Valor por persona — $195.500 COP (pago directo menos 48 horas antes)
 
 Importante: No se permiten mascotas. No está permitido el ingreso de alimentos y bebidas ajenas al establecimiento.`,
-    image: "/images/villa_lujo_real.png",
+    image: "/images/yate_majestic_video.mp4",
     additionalImages: [],
     features: ["2 Horas", "Comidas Incluidas", "Bebidas Incluidas"],
     amenities: ["Restaurante", "Bar", "Solárium", "4 Jacuzzis"],
     duration: "2 horas",
     rating: 4.9
   },
-  {
-    id: "transporte-aeropuerto",
-    title: "Transporte Aeropuerto - Guatapé",
-    category: "Stay", // Added Stay or create a Transport category if needed. Wait, type is 'Stay' | 'Air Adventure' | 'Water' | 'Adrenaline' | 'Nature'
-    // I will just use 'Stay' for now or add 'Transport' to the interface and use it. I will add it to the interface.
-    categoryLabel: "Transporte",
-    icon: "directions_car",
-    price: 50,
-    priceUnit: "USD",
-    description: "Servicio exclusivo y seguro de traslados desde Medellín (José María Córdova u Olaya Herrera) hacia Guatapé y viceversa.",
-    longDescription: "Viaja con comodidad, seguridad y estilo. Ofrecemos traslados privados desde el Aeropuerto Internacional José María Córdova (MDE) o el Aeropuerto Olaya Herrera directamente a tu hotel o villa en Guatapé.\n\nNuestra flota cuenta con vehículos modernos, aire acondicionado y conductores profesionales que conocen la zona a la perfección.\n\n* Opciones de vehículos para parejas o grupos grandes.\n* Servicio disponible 24/7 con reserva previa.\n* Precios sujetos a tamaño del grupo y vehículo.\n\nContáctanos para cotizar tu transporte y asegurar un inicio de viaje perfecto.",
-    image: "/images/villa_lujo_real.png", // placeholder
-    additionalImages: [],
-    features: ["Traslado Privado", "Vehículos con Aire Acondicionado", "Conductores Profesionales"],
-    amenities: ["Botellas de Agua", "Wi-Fi en algunos vehículos", "Asistencia con Equipaje"],
-    duration: "Aprox. 2 horas",
-    rating: 5.0
-  },
+
   {
     id: "bulgatti-jetcar",
     title: "Bulgatti Jetcar Experience",
@@ -295,8 +218,11 @@ TARIFAS:
 • 1 HORA — $1.430.000 COP
 
 Ideal para parejas, amigos y grupos.`,
-    image: "/images/villa_lujo_real.png",
-    additionalImages: [],
+    image: "/images/jetcar_1.jpeg",
+    additionalImages: [
+      "/images/jetcar_2.jpeg",
+      "/images/jetcar_3.jpeg"
+    ],
     features: ["Plan Adventure", "Plan Influencer", "Plan Boss"],
     amenities: ["Seguridad primero", "Experiencia premium", "Recuerdos inolvidables"],
     duration: "30 min - 1 hora",
@@ -337,8 +263,11 @@ TARIFAS:
 • 1 HORA — $1.650.000 COP
 
 Rutas increíbles y paisajes espectaculares.`,
-    image: "/images/villa_lujo_real.png",
-    additionalImages: [],
+    image: "/images/jetcar_2.jpeg",
+    additionalImages: [
+      "/images/jetcar_1.jpeg",
+      "/images/jetcar_4.jpeg"
+    ],
     features: ["Plan Adventure", "Plan Influencer", "Plan Boss"],
     amenities: ["Seguridad primero", "Experiencia premium", "Recuerdos inolvidables"],
     duration: "30 min - 1 hora",
