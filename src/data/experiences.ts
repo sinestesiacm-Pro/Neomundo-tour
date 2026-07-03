@@ -1,7 +1,7 @@
 export interface Experience {
   id: string;
   title: string;
-  category: 'Stay' | 'Air Adventure' | 'Water' | 'Adrenaline' | 'Nature' | 'Transport';
+  category: 'Stay' | 'Air Adventure' | 'Water' | 'Land' | 'Nature' | 'Transport';
   categoryLabel: string;
   icon: string;
   price: number;
@@ -94,8 +94,8 @@ Vuela desde los hangares del Aeropuerto Olaya Herrera en Medellín, directamente
   {
     id: "paseo-caballo",
     title: "Paseo a Caballo",
-    category: "Nature",
-    categoryLabel: "Naturaleza",
+    category: "Land",
+    categoryLabel: "Tierra",
     icon: "directions_walk",
     price: 35,
     priceUnit: "hour",
@@ -274,78 +274,10 @@ Rutas increíbles y paisajes espectaculares.`,
     rating: 5.0
   },
   {
-    id: "buggy-neomundo",
-    title: "Buggy",
-    category: "Adrenaline",
-    categoryLabel: "Adrenalina",
-    icon: "two_wheeler",
-    price: 330000,
-    priceUnit: "COP (starts at)",
-    description: "Descubre y disfruta de nuestras emocionantes experiencias en Buggy.",
-    longDescription: `Descubre y disfruta de nuestras emocionantes experiencias en Buggy.
-
-TARIFAS:
-• 2 Personas — $330.000 COP
-• 4 Personas (max 300kg) — $495.000 COP
-
-Duración: 45 minutos de recorrido.`,
-    image: "/images/atv_1.jpeg",
-    additionalImages: [],
-    features: ["45 Minutos de recorrido", "Hasta 4 Personas", "Off-road"],
-    amenities: ["Seguridad", "Guía Turístico", "Aventura garantizada"],
-    duration: "45 minutos",
-    rating: 4.8
-  },
-  {
-    id: "aventura-4x4-neomundo",
-    title: "Aventura 4x4",
-    category: "Adrenaline",
-    categoryLabel: "Adrenalina",
-    icon: "directions_car",
-    price: 495000,
-    priceUnit: "COP (starts at)",
-    description: "Recorrido emocionante en Jeep 4x4 para vivir la mejor aventura.",
-    longDescription: `Descubre y disfruta de nuestras emocionantes experiencias en Aventura 4x4.
-
-TARIFAS JEEP:
-• 4 Personas — $495.000 COP
-• 2 Personas — $660.000 COP
-
-Duración: 45 minutos de recorrido.`,
-    image: "/images/atv_2.jpeg",
-    additionalImages: [],
-    features: ["45 Minutos de recorrido", "Jeep 4x4", "Hasta 4 Personas"],
-    amenities: ["Seguridad", "Guía Turístico", "Aventura garantizada"],
-    duration: "45 minutos",
-    rating: 4.9
-  },
-  {
-    id: "can-am-neomundo",
-    title: "Can-Am",
-    category: "Adrenaline",
-    categoryLabel: "Adrenalina",
-    icon: "two_wheeler",
-    price: 660000,
-    priceUnit: "COP",
-    description: "La experiencia más extrema en Can-Am para 2 personas.",
-    longDescription: `Descubre y disfruta de nuestras emocionantes experiencias en Can-Am.
-
-TARIFAS:
-• 2 Personas — $660.000 COP
-
-Duración: 45 minutos de recorrido.`,
-    image: "/images/atv_3.jpeg",
-    additionalImages: [],
-    features: ["45 Minutos de recorrido", "2 Personas", "Extremo"],
-    amenities: ["Seguridad", "Guía Turístico", "Adrenalina pura"],
-    duration: "45 minutos",
-    rating: 5.0
-  },
-  {
     id: "cuatrimoto-neomundo",
     title: "Cuatrimoto",
-    category: "Adrenaline",
-    categoryLabel: "Adrenalina",
+    category: "Land",
+    categoryLabel: "Tierra",
     icon: "two_wheeler",
     price: 242000,
     priceUnit: "COP",
@@ -357,8 +289,11 @@ TARIFAS:
 • 2 Personas (max 150kg) — Incluido en el precio del vehículo (o consultar).
 
 Duración del recorrido según disponibilidad.`,
-    image: "/images/atv_1.jpeg",
-    additionalImages: [],
+    image: "/images/cuatrimoto_1.jpeg",
+    additionalImages: [
+      "/images/cuatrimoto_2.jpeg",
+      "/images/cuatrimoto_3.jpeg"
+    ],
     features: ["1 o 2 Personas", "Off-road", "Aventura"],
     amenities: ["Seguridad", "Guía Turístico", "Diversión"],
     duration: "Variable",

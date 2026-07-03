@@ -25,7 +25,7 @@ export default function Experiences() {
     { name: 'All', label: 'Todas' },
     { name: 'Stay', label: 'Villas' },
     { name: 'Water', label: 'Embarcaciones' },
-    { name: 'Adrenaline', label: 'Adrenalina' },
+    { name: 'Land', label: 'Tierra' },
     { name: 'Air Adventure', label: 'Aire' }
   ];
 
