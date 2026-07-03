@@ -4,7 +4,7 @@ import { ArrowRight, Compass, Calendar, Search, ShieldCheck, X } from 'lucide-re
 import { experiences } from '../data/experiences';
 
 export default function Home() {
-  const canvasRef = useRef<HTMLCanvasElement | null>(null);
+
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [selectedExperience, setSelectedExperience] = useState<string>('');
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -12,87 +12,7 @@ export default function Home() {
   const [isDatePickerOpen, setIsDatePickerOpen] = useState(false);
   const [currentDate, setCurrentDate] = useState(new Date());
 
-  // Load particles effect in Canvas
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
 
-    const ctx = canvas.getContext('2d');
-    if (!ctx) return;
-
-    let animationFrameId: number;
-    let particles: Particle[] = [];
-
-    const handleResize = () => {
-      if (canvas.parentElement) {
-        canvas.width = canvas.parentElement.clientWidth;
-        canvas.height = canvas.parentElement.clientHeight;
-      }
-    };
-    window.addEventListener('resize', handleResize);
-    handleResize();
-
-    class Particle {
-      x: number = 0;
-      y: number = 0;
-      size: number = 0;
-      speedY: number = 0;
-      speedX: number = 0;
-      opacity: number = 0;
-
-      constructor() {
-        if (!canvas) return;
-        this.x = Math.random() * canvas.width;
-        this.y = Math.random() * canvas.height;
-        this.size = Math.random() * 2 + 0.5;
-        this.speedY = Math.random() * -0.5 - 0.1;
-        this.speedX = Math.random() * 0.4 - 0.2;
-        this.opacity = Math.random() * 0.5 + 0.1;
-      }
-
-      update() {
-        if (!canvas) return;
-        this.y += this.speedY;
-        this.x += this.speedX;
-        if (this.y < 0) {
-          this.y = canvas.height;
-          this.x = Math.random() * canvas.width;
-        }
-      }
-
-      draw() {
-        if (!ctx) return;
-        ctx.fillStyle = `rgba(0, 188, 212, ${this.opacity})`;
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-        ctx.fill();
-      }
-    }
-
-    const initParticles = () => {
-      particles = [];
-      for (let i = 0; i < 60; i++) {
-        particles.push(new Particle());
-      }
-    };
-    initParticles();
-
-    const animate = () => {
-      if (!ctx || !canvas) return;
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      particles.forEach((p) => {
-        p.update();
-        p.draw();
-      });
-      animationFrameId = requestAnimationFrame(animate);
-    };
-    animate();
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-      cancelAnimationFrame(animationFrameId);
-    };
-  }, []);
 
   // Filter top 3 featured experiences
   const featured = experiences.slice(0, 3);
@@ -101,9 +21,6 @@ export default function Home() {
     <div className="pt-20">
       {/* Immersive Hero Section */}
       <section className="relative h-[90vh] min-h-[600px] flex items-center justify-center overflow-hidden">
-        {/* Particle Canvas Background */}
-        <canvas ref={canvasRef} className="absolute inset-0 pointer-events-none z-10" />
-
         {/* Background Bento Gallery layout */}
         <div className="absolute inset-0 grid grid-cols-3 grid-rows-2 gap-2 p-2 opacity-90 scale-105 transform origin-center">
           <div className="col-span-2 row-span-2 rounded-2xl overflow-hidden relative">

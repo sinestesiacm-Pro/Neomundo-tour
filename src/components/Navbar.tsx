@@ -173,18 +173,7 @@ export default function Navbar() {
 
       {/* Mobile Drawer */}
       {!isCheckout && isOpen && (
-        <div className="fixed inset-0 z-[9999] w-screen h-[100dvh] bg-white dark:bg-gray-950 flex flex-col items-center justify-center p-6 gap-6 md:hidden animate-fade-in-up overflow-y-auto">
-          <button
-            onClick={() => setIsOpen(false)}
-            className="absolute top-6 right-6 text-primary p-2 transition-transform hover:scale-110 active:scale-90 bg-primary/10 rounded-full"
-            aria-label="Close menu"
-          >
-            {/* X icon via CSS bars inside drawer close too */}
-            <div className="w-8 h-8 relative flex items-center justify-center">
-              <span className="block absolute w-6 h-[2.5px] bg-current rounded-full rotate-45" />
-              <span className="block absolute w-6 h-[2.5px] bg-current rounded-full -rotate-45" />
-            </div>
-          </button>
+        <div className="fixed inset-0 z-40 pt-24 w-screen h-[100dvh] bg-white dark:bg-gray-950 flex flex-col items-center justify-center p-6 gap-6 md:hidden animate-fade-in-up overflow-y-auto">
 
           <Link
             to="/experiences"
