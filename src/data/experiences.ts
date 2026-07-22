@@ -398,6 +398,77 @@ Importante: Apto para mayores de 12 años. Se requiere saber nadar. Peso máximo
     rating: 5.0
   },
   {
+    id: "finca-baruch",
+    title: "Finca Baruch",
+    category: "Stay",
+    categoryLabel: "Finca",
+    icon: "villa",
+    price: 2875000,
+    priceUnit: "COP / noche",
+    description: "Hermosa finca en la vereda Los Naranjos, a solo 5 min de Guatapé y la Piedra. Jacuzzi climatizado para 15, acceso al lago y vistas espectaculares.",
+    longDescription: `Descubre la Finca Baruch, un paraíso escondido en la vereda Los Naranjos de Guatapé. A solo 5 minutos del pueblo y 5 minutos de la imponente Piedra del Peñol, su ubicación es simplemente inmejorable.
+
+✨ **Detalles de la Propiedad:**
+• Capacidad máxima: 15 personas
+• 5 habitaciones
+• 3 baños completos
+• Cocina totalmente dotada
+• Parqueadero para 5 vehículos
+• WiFi y TV
+
+🌿 **Áreas Exteriores y Naturaleza:**
+• Jacuzzi climatizado con capacidad para 15 personas
+• Acceso directo al lago con muelle privado
+• Deck con vista panorámica a la represa
+• Vista directa a la Piedra del Peñol
+• Hermosos senderos ecológicos
+• Amplias zonas verdes
+
+🏡 **Entretenimiento:**
+• Zona BBQ completamente equipada
+• Malla catamarán para relajarse sobre la naturaleza
+• Juegos para niños
+• Lavandería disponible
+
+💰 **Tarifas:**
+• Valor por noche: $2.875.000 COP`,
+    image: "/images/baruch_1.jpeg",
+    additionalImages: [
+      "/images/baruch_2.jpeg",
+      "/images/baruch_3.jpeg",
+      "/images/baruch_4.jpeg",
+      "/images/baruch_5.jpeg",
+      "/images/baruch_6.jpeg",
+      "/images/baruch_7.jpeg",
+      "/images/baruch_8.jpeg",
+      "/images/baruch_9.jpeg",
+      "/images/baruch_10.jpeg",
+      "/images/baruch_11.jpeg",
+      "/images/baruch_12.jpeg",
+      "/images/baruch_13.jpeg",
+      "/images/baruch_14.jpeg",
+      "/images/baruch_15.jpeg",
+      "/images/baruch_16.jpeg",
+      "/images/baruch_17.jpeg",
+      "/images/baruch_18.jpeg",
+      "/images/baruch_19.jpeg",
+      "/images/baruch_20.jpeg",
+      "/images/baruch_21.jpeg",
+      "/images/baruch_22.jpeg",
+      "/images/baruch_23.jpeg",
+      "/images/baruch_24.jpeg",
+      "/images/baruch_25.jpeg",
+      "/images/baruch_26.jpeg",
+      "/images/baruch_27.jpeg",
+      "/images/baruch_28.jpeg",
+      "/images/baruch_29.jpeg"
+    ],
+    features: ["15 Personas", "5 Habitaciones", "Jacuzzi Climatizado"],
+    amenities: ["Jacuzzi para 15", "Acceso al Lago y Muelle", "Zona BBQ", "Malla Catamarán", "Deck Panorámico", "Cocina Dotada", "WiFi", "TV", "Parqueadero", "Juegos para Niños", "Senderos Ecológicos", "Lavandería"],
+    maxGuests: 15,
+    rating: 4.8
+  },
+  {
     id: "glamping-san-bernardo",
     title: "Glamping San Bernardo",
     category: "Stay",

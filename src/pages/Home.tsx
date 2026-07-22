@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Compass, Calendar, Search, ShieldCheck, X } from 'lucide-react';
 import { experiences } from '../data/experiences';
