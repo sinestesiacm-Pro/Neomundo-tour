@@ -25,48 +25,36 @@ export const experiences: Experience[] = [
     category: "Air Adventure",
     categoryLabel: "Aventura Aérea",
     icon: "flight",
-    price: 104,
-    priceUnit: "person (from)",
-    description: "Experimenta impresionantes vistas aéreas de El Peñol y el embalse laberíntico desde un helicóptero de última generación.",
+    price: 330000,
+    priceUnit: "COP / persona",
+    description: "Sobrevuela los destinos más increíbles de la región. La Piedra del Peñol, embalses, fincas de famosos y más desde un helicóptero de última generación.",
     longDescription: `¡Vuela con nosotros y vive la experiencia de conocer El Peñol y Guatapé desde el aire!
 
+En todos nuestros recorridos sobrevolamos los destinos más increíbles de la región:
+• La Piedra del Peñol
+• Zona de Embalses
+• Fincas de Famosos
+• Réplica del Viejo Peñol
+
 ━━━ VUELO 6 MINUTOS ━━━
-Precio oficial
-• Por pasajero — $379.500 COP / $104 USD
-• Vuelo privado — $1.897.500 COP / $518 USD
-Recorrido: Despegue directo desde nuestra base sobre el embalse hacia la Piedra de El Peñol con giro de 180° sobre la misma, sobrevuelo el embalse Peñol-Guatapé, fincas icónicas como La Manuela la extinta de Pablo Escobar y la del jugador de la selección Colombia James Rodríguez, condominio Vivanti, Cruz del Embalse y la Réplica del Viejo Peñol.
+• Por pasajero — $330.000 COP
 
 ━━━ VUELO 8 MINUTOS ━━━
-Precio oficial
-• Por pasajero — $471.500 COP / $127 USD
-• Vuelo privado — $2.357.500 COP / $633 USD
-Recorrido: Despegue directo desde nuestra base sobre el embalse hacia la Piedra de El Peñol con giro de 180° sobre la misma, sobrevuelo el embalse Peñol-Guatapé, fincas icónicas como La Manuela la extinta de Pablo Escobar con giro de 360° sobre ella y la del jugador de la selección Colombia James Rodríguez, condominio Vivanti, condominio Luxé, Isla de la Fantasía, Cruz del Embalse y la Réplica del Viejo Peñol.
+• Por pasajero — $410.000 COP
 
 ━━━ VUELO 12 MINUTOS ━━━
-Precio oficial
-• Por pasajero — $759.000 COP / $207 USD
-• Vuelo privado — $3.795.000 COP / $1035 USD
-Recorrido: Despegue directo desde nuestra base sobre el embalse hacia la Piedra de El Peñol con giro de 360° sobre la misma, sobrevuelo el embalse Peñol-Guatapé, fincas icónicas como La Manuela la extinta de Pablo Escobar y la del jugador de la selección Colombia James Rodríguez, condominio Vivanti, condominio Luxé, Isla de la Fantasía, Municipio de Guatapé y su malecón, Cruz del Embalse y la Réplica del Viejo Peñol.
+• Por pasajero — $660.000 COP
 
 ━━━ VUELO 15 MINUTOS ━━━
-Precio oficial
-• Por pasajero — $948.750 COP / $257 USD
-• Vuelo privado — $4.743.750 COP / $1283 USD
-Recorrido: Despegue directo desde nuestra base sobre el embalse hacia la Piedra de El Peñol con giro de 360° sobre la misma, sobrevuelo el embalse Peñol-Guatapé, fincas icónicas como La Manuela la extinta de Pablo Escobar y la del jugador de la selección Colombia James Rodríguez, condominio Vivanti, condominio Luxé, Isla de la Fantasía, Municipio de Guatapé y su malecón, Vertedero de la hidroeléctrica, Cruz del Embalse y la Réplica del Viejo Peñol.
-
-━━━ VUELO 1 HORA ━━━
-Contáctanos para detalles y precios
-
-MEDELLÍN — PEÑOL — MEDELLÍN
-Vuela desde los hangares del Aeropuerto Olaya Herrera en Medellín, directamente hasta la Isla de la Fantasía o base Montecielo Fly en El Peñol. Allí te transportamos hacia el bote en el malecón de Guatapé y te esperamos una hora. Luego regresamos al muelle y transportados al helicóptero de nuevo, para finalmente volver al Aeropuerto Olaya Herrera en Medellín.
+• Por pasajero — $825.000 COP
 
 ¡Contáctanos para personalizar tus vuelos, tus rutas, tus deseos!`,
     image: "/images/helicopter_tour_guatape.png",
     additionalImages: [
       "/images/el_penol_real.png"
     ],
-    features: ["Vuelos de 6 a 15 Min", "Piloto Bilingüe", "Panorámicas"],
-    amenities: ["Equipo de Seguridad", "Auriculares con Cancelación de Ruido", "Servicio de Fotografía HD", "Acceso a Sala VIP"],
+    features: ["Vuelos de 6 a 15 Min", "Seguridad Certificada", "Vistas Inigualables"],
+    amenities: ["Seguridad Certificada", "Atención Personalizada", "Vistas Inigualables", "Experiencia Premium"],
     duration: "Varias opciones",
     rating: 5.0
   },
@@ -77,18 +65,41 @@ Vuela desde los hangares del Aeropuerto Olaya Herrera en Medellín, directamente
     category: "Air Adventure",
     categoryLabel: "Aventura Aérea",
     icon: "air",
-    price: 75,
-    priceUnit: "flight",
-    description: "Vuela pacíficamente sobre el embalse. Un vuelo en tándem que ofrece la perspectiva más serena y majestuosa de Guatapé.",
-    longDescription: "Flota por encima del embalse en completa serenidad. Nuestros vuelos en parapente en tándem se lanzan desde las alturas escénicas que dominan la región, permitiéndote deslizarte silenciosamente sobre corrientes térmicas. Vuela junto a un piloto profesional certificado y disfruta de vistas panorámicas inigualables e impresionantes de todo el laberinto de agua y la dramática piedra de El Peñol.",
+    price: 360000,
+    priceUnit: "COP",
+    description: "Vive la libertad desde el cielo. Adrenalina, paisajes y libertad en un solo vuelo sobre la imponente represa de Guatapé.",
+    longDescription: `¡Vive la libertad desde el cielo!
+
+Adrenalina, paisajes y libertad en un solo vuelo. Emoción pura, vistas increíbles y recuerdos que duran para siempre.
+
+🛥️ **La Experiencia:**
+Tour en yate desde el malecón de Guatapé hasta la pista de despegue (ida y regreso, aproximadamente 30 minutos de recorrido). Luego te preparas con nuestro equipo logístico para realizar el tour aéreo en parapente con un piloto certificado.
+
+🪂 **El Vuelo:**
+Duración aproximada de 15 a 20 minutos, de acuerdo a las condiciones climáticas y del viento. No vendemos un tiempo determinado de vuelo, ofrecemos una experiencia única de volar en parapente sobre el lago.
+
+✅ **¿Qué Incluye?**
+• Tour en lancha: Aproximadamente 30 minutos ida y regreso
+• Vuelo tándem inductivo con piloto certificado: 15 a 20 minutos
+• Póliza de asistencia médica
+• Fotos y videos
+
+🏆 **¿Por qué Volar con Nosotros?**
+• Pilotos Certificados
+• Equipo de Alta Calidad
+• Las Mejores Vistas de Guatapé
+• Experiencia Segura y Confiable
+
+💰 **Tarifa:**
+• Valor por persona — $360.000 COP`,
     image: "/images/parapente_real.png",
     additionalImages: [
       "/images/el_penol_real.png",
       "/images/guatape_pueblo.png"
     ],
-    features: ["Vuelo en Tándem", "Instructor Certificado", "Video GoPro"],
-    amenities: ["Todo el Equipo de Vuelo", "Seguro de Vuelo", "Video Digital y Fotos", "Transporte al Sitio de Lanzamiento"],
-    duration: "20 minutos de vuelo",
+    features: ["Tour en Yate + Vuelo", "Piloto Certificado", "Fotos y Video"],
+    amenities: ["Tour en Lancha", "Póliza de Asistencia Médica", "Equipo de Alta Calidad", "Pilotos Certificados"],
+    duration: "15 - 20 min de vuelo",
     rating: 4.9
   },
   {
