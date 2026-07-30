@@ -51,7 +51,9 @@ En todos nuestros recorridos sobrevolamos los destinos más increíbles de la re
 ¡Contáctanos para personalizar tus vuelos, tus rutas, tus deseos!`,
     image: "/images/helicopter_tour_guatape.png",
     additionalImages: [
-      "/images/el_penol_real.png"
+      "/images/helicoptero_1.png",
+      "/images/helicoptero_2.jpeg",
+      "/images/helicoptero_3.jpeg"
     ],
     features: ["Vuelos de 6 a 15 Min", "Seguridad Certificada", "Vistas Inigualables"],
     amenities: ["Seguridad Certificada", "Atención Personalizada", "Vistas Inigualables", "Experiencia Premium"],
@@ -94,8 +96,9 @@ Duración aproximada de 15 a 20 minutos, de acuerdo a las condiciones climática
 • Valor por persona — $360.000 COP`,
     image: "/images/parapente_real.png",
     additionalImages: [
-      "/images/el_penol_real.png",
-      "/images/guatape_pueblo.png"
+      "/images/parapente_1.jpeg",
+      "/images/parapente_2.jpeg",
+      "/images/parapente_3.jpeg"
     ],
     features: ["Tour en Yate + Vuelo", "Piloto Certificado", "Fotos y Video"],
     amenities: ["Tour en Lancha", "Póliza de Asistencia Médica", "Equipo de Alta Calidad", "Pilotos Certificados"],
