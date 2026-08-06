@@ -92,6 +92,16 @@ export default function Navbar() {
         {!isCheckout && (
           <div className="hidden md:flex items-center gap-8">
             <Link
+              to="/vuelos"
+              className={`font-label-md text-label-md transition-all duration-300 nav-link ${
+                location.pathname.startsWith('/vuelos')
+                  ? 'text-primary dark:text-primary-fixed font-bold'
+                  : 'text-on-surface-variant dark:text-surface-variant hover:text-primary'
+              }`}
+            >
+              Vuelos
+            </Link>
+            <Link
               to="/experiences"
               className={`font-label-md text-label-md transition-all duration-300 nav-link ${
                 location.pathname === '/experiences'
@@ -175,6 +185,15 @@ export default function Navbar() {
       {!isCheckout && isOpen && (
         <div className="fixed inset-0 z-40 pt-24 w-screen h-[100dvh] bg-white dark:bg-gray-950 flex flex-col items-center justify-center p-6 gap-6 md:hidden animate-fade-in-up overflow-y-auto">
 
+          <Link
+            to="/vuelos"
+            className={`font-headline text-2xl sm:text-3xl py-2 ${
+              location.pathname.startsWith('/vuelos') ? 'text-primary font-bold' : 'text-gray-800 dark:text-gray-200 hover:text-primary transition-colors'
+            }`}
+            onClick={() => setIsOpen(false)}
+          >
+            Buscar Vuelos
+          </Link>
           <Link
             to="/experiences"
             className={`font-headline text-2xl sm:text-3xl py-2 ${
