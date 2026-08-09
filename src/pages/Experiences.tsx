@@ -1,6 +1,6 @@
 import { useSearchParams, Link } from 'react-router-dom';
 import { experiences } from '../data/experiences';
-import { Sparkles } from 'lucide-react';
+import { Sparkles, ArrowRight } from 'lucide-react';
 
 export default function Experiences() {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -22,39 +22,38 @@ export default function Experiences() {
   });
 
   const categories = [
-    { name: 'All', label: 'Todas' },
-    { name: 'Stay', label: 'Villas' },
-    { name: 'Water', label: 'Embarcaciones' },
-    { name: 'Land', label: 'Tierra' },
-    { name: 'Air Adventure', label: 'Aire' }
+    { name: 'All', label: 'Todas las Aventuras' },
+    { name: 'Stay', label: 'Villas & Glamping' },
+    { name: 'Water', label: 'Jetcar & Embarcaciones' },
+    { name: 'Adrenaline', label: 'Adrenalina & ATV' },
+    { name: 'Air Adventure', label: 'Vuelos Helicóptero' }
   ];
 
   return (
-    <div className="pt-24 pb-20">
+    <div className="pt-24 pb-24 bg-background text-on-background">
       {/* Header with Pattern Background */}
-      <header className="relative px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto py-16 md:py-24 text-center hero-pattern rounded-3xl mb-12 overflow-hidden shadow-sm">
+      <header className="relative px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto py-16 md:py-20 text-center hero-pattern rounded-3xl mb-12 overflow-hidden shadow-sm border border-outline-variant/30">
         <div className="relative z-10 space-y-6">
-          <span className="bg-primary-container/10 text-primary-container px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest inline-flex items-center gap-1.5">
-            <Sparkles className="w-3.5 h-3.5 text-primary-container" />
-            <span>Catálogo Neomundo</span>
+          <span className="bg-primary/10 text-primary px-5 py-2 rounded-full font-outfit text-xs font-extrabold uppercase tracking-[0.2em] inline-flex items-center gap-2 border border-primary/20">
+            <Sparkles className="w-4 h-4 text-primary animate-pulse" />
+            <span>Catálogo Completo Neomundo</span>
           </span>
-          <h1 className="flex justify-center items-center gap-3 flex-wrap">
-            <span className="font-handwriting text-5xl md:text-6xl lg:text-7xl text-secondary -rotate-2">Descubre</span>
-            <span className="font-display text-4xl md:text-5xl lg:text-6xl text-primary uppercase tracking-wide translate-y-1">Guatapé</span>
+          <h1 className="font-outfit font-black text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-on-surface tracking-tight uppercase">
+            Descubre <span className="text-gradient-cyan font-syne lowercase italic">Guatapé</span>
           </h1>
-          <p className="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
-            Experimenta la energía vibrante y los impresionantes paisajes con nuestra selección de aventuras premium y estancias de lujo.
+          <p className="font-sans text-base sm:text-lg text-on-surface-variant max-w-2xl mx-auto leading-relaxed">
+            Experimenta la energía vibrante y los paisajes más espectaculares de Colombia con nuestra selección de experiencias VIP.
           </p>
           
           {/* Category Filter Buttons */}
-          <div className="flex flex-wrap justify-center gap-3 max-w-4xl mx-auto pt-4">
+          <div className="flex flex-wrap justify-center gap-3 max-w-5xl mx-auto pt-4">
             {categories.map((cat) => (
               <button
                 key={cat.name}
                 onClick={() => setCategory(cat.name)}
-                className={`px-6 py-2.5 rounded-full font-label-md text-label-md font-bold hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 ${
+                className={`px-6 py-3 rounded-full font-outfit text-xs font-extrabold uppercase tracking-wider transition-all duration-300 ${
                   activeCategory === cat.name
-                    ? 'bg-primary text-on-primary shadow-md cyan-glow'
+                    ? 'bg-primary text-on-primary shadow-lg emerald-glow scale-105'
                     : 'bg-surface-container-high text-on-surface hover:bg-surface-variant'
                 }`}
               >
@@ -68,60 +67,58 @@ export default function Experiences() {
       {/* Grid List Section */}
       <section className="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
         {filtered.length === 0 ? (
-          <div className="text-center py-20 bg-white rounded-3xl border border-outline-variant/20 shadow-sm max-w-md mx-auto">
-            <span className="material-symbols-outlined text-5xl text-outline mb-4">search_off</span>
-            <h3 className="font-headline text-lg font-bold">No se encontraron experiencias</h3>
-            <p className="text-on-surface-variant text-sm mt-1">Intenta seleccionar una categoría diferente.</p>
+          <div className="text-center py-20 bg-surface rounded-3xl border border-outline-variant/30 max-w-md mx-auto space-y-3">
+            <span className="material-symbols-outlined text-5xl text-outline mb-2">search_off</span>
+            <h3 className="font-outfit text-xl font-bold text-on-surface">No se encontraron experiencias</h3>
+            <p className="text-on-surface-variant text-xs">Intenta seleccionar una categoría diferente.</p>
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filtered.map((exp) => (
               <article
                 key={exp.id}
-                className="group rounded-[2rem] overflow-hidden bg-white border border-outline-variant/30 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 flex flex-col h-full"
+                className="glass-card rounded-[2.5rem] overflow-hidden border border-outline-variant/30 hover:shadow-glass-hover hover:-translate-y-2 transition-all duration-500 flex flex-col h-full group"
               >
                 {/* Product Image */}
                 <div className="relative h-64 overflow-hidden shrink-0">
                   {exp.image.match(/\.(mp4|webm|ogg)$/i) ? (
                     <video
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out"
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
                       src={exp.image}
                       autoPlay muted loop playsInline
                     />
                   ) : (
                     <img
                       alt={exp.title}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out"
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
                       src={exp.image}
                     />
                   )}
-                  <div className="absolute top-4 right-4 bg-tertiary-container text-on-tertiary-container px-4 py-1.5 rounded-full font-label-md text-label-md font-black shadow-md">
-                    Desde ${exp.price}/{exp.priceUnit}
+                  <div className="absolute top-4 right-4 bg-slate-950/80 backdrop-blur-md border border-white/20 text-emerald-400 font-outfit text-xs font-black px-4 py-2 rounded-full shadow-lg">
+                    Desde ${exp.price.toLocaleString('es-CO')} {exp.priceUnit}
                   </div>
                 </div>
 
                 {/* Card Details */}
-                <div className="p-6 flex flex-col flex-grow">
-                  <div className="flex items-center gap-2 text-primary mb-3">
+                <div className="p-8 flex flex-col flex-grow">
+                  <div className="flex items-center gap-2 text-primary mb-3 font-outfit font-extrabold text-xs tracking-wider uppercase">
                     <span className="material-symbols-outlined text-base">{exp.icon}</span>
-                    <span className="font-label-md text-label-md tracking-wider uppercase text-xs font-bold">
-                      {exp.categoryLabel}
-                    </span>
+                    <span>{exp.categoryLabel}</span>
                   </div>
-                  <h3 className="font-headline text-2xl font-bold text-on-surface mb-2 leading-snug group-hover:text-primary transition-colors">
+                  <h3 className="font-outfit text-2xl font-black text-on-surface mb-3 leading-tight group-hover:text-primary transition-colors">
                     {exp.title}
                   </h3>
-                  <p className="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow leading-relaxed">
+                  <p className="font-sans text-sm text-on-surface-variant mb-6 flex-grow leading-relaxed line-clamp-3">
                     {exp.description}
                   </p>
                   
                   {/* Additional features details if available */}
                   {exp.features && exp.features.length > 0 && (
-                    <div className="flex gap-3 mb-6 flex-wrap">
+                    <div className="flex gap-2 mb-6 flex-wrap">
                       {exp.features.map((feat, idx) => (
                         <span 
                           key={idx} 
-                          className="bg-surface-container-low text-on-surface-variant px-3 py-1 rounded-full text-xs font-semibold"
+                          className="bg-surface-container-low text-on-surface-variant px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-wide border border-outline-variant/20"
                         >
                           {feat}
                         </span>
@@ -131,9 +128,10 @@ export default function Experiences() {
 
                   <Link
                     to={`/booking/${exp.id}`}
-                    className="w-full py-3.5 rounded-full border-2 border-primary-container text-primary-container font-label-md text-label-md hover:bg-primary-container hover:text-on-primary transition-all duration-300 font-bold text-center active:scale-95 shadow-sm hover:shadow-md"
+                    className="btn-primary w-full py-3.5 rounded-2xl font-outfit font-extrabold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-md hover:shadow-lg active:scale-95 transition-all text-center"
                   >
-                    Ver Detalles
+                    <span>Ver Detalles y Reservar</span>
+                    <ArrowRight className="w-4 h-4" />
                   </Link>
                 </div>
               </article>

@@ -73,19 +73,38 @@ export default {
       },
       fontFamily: {
         sans: ["Plus Jakarta Sans", "sans-serif"],
-        headline: ["Plus Jakarta Sans", "sans-serif"],
+        headline: ["Outfit", "Plus Jakarta Sans", "sans-serif"],
+        outfit: ["Outfit", "sans-serif"],
+        syne: ["Syne", "sans-serif"],
+        space: ["Space Grotesk", "sans-serif"],
         serif: ["Playfair Display", "serif"],
         handwriting: ["Caveat", "cursive"],
         display: ["Bebas Neue", "sans-serif"]
       },
+      boxShadow: {
+        'glow-emerald': '0 0 30px -5px rgba(16, 185, 129, 0.35)',
+        'glow-cyan': '0 0 30px -5px rgba(6, 182, 212, 0.35)',
+        'epic-card': '0 20px 50px -10px rgba(0, 104, 118, 0.12)',
+        'glass-hover': '0 25px 60px -15px rgba(0, 188, 212, 0.25)',
+      },
       animation: {
-        "fade-in-up": "fadeInUp 0.6s ease-out forwards",
+        "fade-in-up": "fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards",
         "pulse-slow": "pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+        "float": "float 6s ease-in-out infinite",
+        "glow-pulse": "glowPulse 3s ease-in-out infinite alternate"
       },
       keyframes: {
         fadeInUp: {
-          "0%": { opacity: "0", transform: "translateY(20px)" },
+          "0%": { opacity: "0", transform: "translateY(24px)" },
           "100%": { opacity: "1", transform: "translateY(0)" }
+        },
+        float: {
+          "0%, 100%": { transform: "translateY(0px)" },
+          "50%": { transform: "translateY(-10px)" }
+        },
+        glowPulse: {
+          "0%": { opacity: "0.4", filter: "blur(20px)" },
+          "100%": { opacity: "0.8", filter: "blur(35px)" }
         }
       },
       transitionDuration: {
