@@ -81,11 +81,17 @@ body {
   box-shadow: 0 15px 45px -10px rgba(0, 104, 118, 0.12);
 }
 
-/* Background Patterns */
 .hero-pattern {
-  background-color: #f4fafc;
-  background-image: radial-gradient(#00bcd4 1.2px, transparent 1.2px);
-  background-size: 28px 28px;
+  background: linear-gradient(135deg, rgba(240, 253, 250, 0.95) 0%, rgba(236, 254, 255, 0.9) 50%, rgba(245, 243, 255, 0.95) 100%);
+  position: relative;
+}
+
+.glass-card-light {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 20px 50px rgba(0, 104, 118, 0.06);
 }
 
 /* Buttons with Emil Kowalski spring physics */

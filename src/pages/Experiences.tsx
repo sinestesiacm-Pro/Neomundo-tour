@@ -1,6 +1,6 @@
 import { useSearchParams, Link } from 'react-router-dom';
 import { experiences } from '../data/experiences';
-import { Sparkles, ArrowRight } from 'lucide-react';
+import { Compass, ArrowRight } from 'lucide-react';
 
 export default function Experiences() {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -34,9 +34,9 @@ export default function Experiences() {
       {/* Header with Pattern Background */}
       <header className="relative px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto py-16 md:py-20 text-center hero-pattern rounded-3xl mb-12 overflow-hidden shadow-sm border border-outline-variant/30">
         <div className="relative z-10 space-y-6">
-          <span className="bg-primary/10 text-primary px-5 py-2 rounded-full font-outfit text-xs font-extrabold uppercase tracking-[0.2em] inline-flex items-center gap-2 border border-primary/20">
-            <Sparkles className="w-4 h-4 text-primary animate-pulse" />
-            <span>Catálogo Completo Neomundo</span>
+          <span className="bg-primary/10 text-primary px-5 py-2.5 rounded-full font-outfit text-xs font-extrabold uppercase tracking-[0.2em] inline-flex items-center gap-2 border border-primary/20 shadow-sm">
+            <Compass className="w-4 h-4 text-primary" />
+            <span>Experiencias Exclusivas en Guatapé</span>
           </span>
           <h1 className="font-outfit font-black text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-on-surface tracking-tight uppercase">
             Descubre <span className="text-gradient-cyan font-syne lowercase italic">Guatapé</span>

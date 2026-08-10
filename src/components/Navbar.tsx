@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { ArrowLeft, ArrowRight, ShieldCheck } from 'lucide-react';
+import { ArrowLeft, ArrowRight, ShieldCheck, Plane, Compass, Home, Waves, MessageSquare } from 'lucide-react';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -27,6 +27,41 @@ export default function Navbar() {
 
   const isCheckout = location.pathname === '/checkout';
   const isHome = location.pathname === '/';
+
+  // Navigation items with path matching
+  const navItems = [
+    {
+      name: 'Vuelos',
+      path: '/vuelos',
+      icon: Plane,
+      isActive: location.pathname.startsWith('/vuelos')
+    },
+    {
+      name: 'Experiencias',
+      path: '/experiences',
+      icon: Compass,
+      isActive: location.pathname === '/experiences' && (!location.search || location.search === '?category=All')
+    },
+    {
+      name: 'Villas',
+      path: '/experiences?category=Stay',
+      icon: Home,
+      isActive: location.pathname === '/experiences' && location.search.includes('category=Stay')
+    },
+    {
+      name: 'Embarcaciones',
+      path: '/experiences?category=Water',
+      icon: Waves,
+      isActive: location.pathname === '/experiences' && location.search.includes('category=Water')
+    },
+    {
+      name: 'Contacto',
+      path: '#footer',
+      icon: MessageSquare,
+      isExternal: true,
+      isActive: location.hash === '#footer'
+    }
+  ];
 
   return (
     <nav
@@ -83,45 +118,31 @@ export default function Navbar() {
 
         {/* Desktop Navigation Links */}
         {!isCheckout && (
-          <div className="hidden md:flex items-center gap-1 bg-surface-container-low/70 dark:bg-surface-container-high/60 px-4 py-1.5 rounded-full border border-outline-variant/30 backdrop-blur-md shadow-sm">
-            <Link
-              to="/vuelos"
-              className={`px-4 py-2 rounded-full font-outfit text-xs font-bold uppercase tracking-wider transition-all duration-300 ${
-                location.pathname.startsWith('/vuelos')
-                  ? 'bg-primary text-on-primary shadow-md'
+          <div className="hidden md:flex items-center gap-1 bg-surface-container-low/70 dark:bg-surface-container-high/60 px-3 py-1.5 rounded-full border border-outline-variant/30 backdrop-blur-md shadow-sm">
+            {navItems.map((item) => {
+              const IconComponent = item.icon;
+              const linkClasses = `px-3.5 py-2 rounded-full font-outfit text-xs font-bold uppercase tracking-wider flex items-center gap-1.5 transition-all duration-300 ${
+                item.isActive
+                  ? 'bg-primary text-on-primary shadow-md scale-105'
                   : 'text-on-surface-variant hover:text-primary hover:bg-surface-variant/50'
-              }`}
-            >
-              ✈️ Vuelos
-            </Link>
-            <Link
-              to="/experiences"
-              className={`px-4 py-2 rounded-full font-outfit text-xs font-bold uppercase tracking-wider transition-all duration-300 ${
-                location.pathname === '/experiences'
-                  ? 'bg-primary text-on-primary shadow-md'
-                  : 'text-on-surface-variant hover:text-primary hover:bg-surface-variant/50'
-              }`}
-            >
-              Experiencias
-            </Link>
-            <Link
-              to="/experiences?category=Stay"
-              className="px-4 py-2 rounded-full font-outfit text-xs font-bold uppercase tracking-wider text-on-surface-variant hover:text-primary hover:bg-surface-variant/50 transition-all duration-300"
-            >
-              Villas
-            </Link>
-            <Link
-              to="/experiences?category=Water"
-              className="px-4 py-2 rounded-full font-outfit text-xs font-bold uppercase tracking-wider text-on-surface-variant hover:text-primary hover:bg-surface-variant/50 transition-all duration-300"
-            >
-              Embarcaciones
-            </Link>
-            <a
-              href="#footer"
-              className="px-4 py-2 rounded-full font-outfit text-xs font-bold uppercase tracking-wider text-on-surface-variant hover:text-primary hover:bg-surface-variant/50 transition-all duration-300"
-            >
-              Contacto
-            </a>
+              }`;
+
+              if (item.isExternal) {
+                return (
+                  <a key={item.name} href={item.path} className={linkClasses}>
+                    <IconComponent className="w-3.5 h-3.5" />
+                    <span>{item.name}</span>
+                  </a>
+                );
+              }
+
+              return (
+                <Link key={item.name} to={item.path} className={linkClasses}>
+                  <IconComponent className="w-3.5 h-3.5" />
+                  <span>{item.name}</span>
+                </Link>
+              );
+            })}
           </div>
         )}
 
@@ -171,51 +192,34 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Fullscreen Drawer */}
+      {/* Fullscreen Mobile Drawer */}
       {!isCheckout && isOpen && (
-        <div className="fixed inset-0 z-40 pt-20 w-screen h-[100dvh] bg-surface/98 dark:bg-inverse-surface/98 backdrop-blur-2xl flex flex-col items-center justify-center p-6 gap-6 md:hidden animate-fade-in-up overflow-y-auto">
-          <Link
-            to="/vuelos"
-            className={`font-outfit text-3xl font-extrabold py-2 ${
-              location.pathname.startsWith('/vuelos') ? 'text-primary' : 'text-on-surface hover:text-primary transition-colors'
-            }`}
-            onClick={() => setIsOpen(false)}
-          >
-            ✈️ Buscar Vuelos
-          </Link>
-          <Link
-            to="/experiences"
-            className={`font-outfit text-3xl font-extrabold py-2 ${
-              location.pathname === '/experiences' ? 'text-primary' : 'text-on-surface hover:text-primary transition-colors'
-            }`}
-            onClick={() => setIsOpen(false)}
-          >
-            Todas las Experiencias
-          </Link>
-          <Link
-            to="/experiences?category=Stay"
-            className="font-outfit text-3xl font-extrabold py-2 text-on-surface hover:text-primary transition-colors"
-            onClick={() => setIsOpen(false)}
-          >
-            Villas de Lujo
-          </Link>
-          <Link
-            to="/experiences?category=Water"
-            className="font-outfit text-3xl font-extrabold py-2 text-on-surface hover:text-primary transition-colors"
-            onClick={() => setIsOpen(false)}
-          >
-            Embarcaciones
-          </Link>
-          <a
-            href="#footer"
-            onClick={() => setIsOpen(false)}
-            className="font-outfit text-3xl font-extrabold py-2 text-on-surface hover:text-primary transition-colors"
-          >
-            Contacto
-          </a>
+        <div className="fixed inset-0 top-[73px] bg-surface/98 dark:bg-inverse-surface/98 backdrop-blur-2xl z-40 flex flex-col items-center justify-start pt-10 px-6 space-y-6 md:hidden animate-fade-in-up border-t border-outline-variant/20 h-[calc(100vh-73px)] overflow-y-auto">
+          {navItems.map((item) => {
+            const IconComponent = item.icon;
+            const mobileClasses = `font-outfit text-2xl font-extrabold py-3 flex items-center gap-3 w-full justify-center rounded-2xl transition-colors ${
+              item.isActive ? 'text-primary bg-primary/10' : 'text-on-surface hover:text-primary'
+            }`;
+
+            if (item.isExternal) {
+              return (
+                <a key={item.name} href={item.path} onClick={() => setIsOpen(false)} className={mobileClasses}>
+                  <IconComponent className="w-6 h-6" />
+                  <span>{item.name}</span>
+                </a>
+              );
+            }
+
+            return (
+              <Link key={item.name} to={item.path} onClick={() => setIsOpen(false)} className={mobileClasses}>
+                <IconComponent className="w-6 h-6" />
+                <span>{item.name}</span>
+              </Link>
+            );
+          })}
           <Link
             to="/experiences"
-            className="btn-secondary py-4 px-10 rounded-full text-center flex items-center justify-center gap-2 mt-4 text-lg font-outfit font-extrabold shadow-xl active:scale-95 transition-transform"
+            className="btn-secondary py-4 px-10 rounded-full text-center flex items-center justify-center gap-2 mt-4 text-base font-outfit font-extrabold shadow-xl active:scale-95 transition-transform w-full"
             onClick={() => setIsOpen(false)}
           >
             <span>Reservar Ahora</span>

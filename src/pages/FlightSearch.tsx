@@ -102,18 +102,18 @@ export default function FlightSearch() {
   });
 
   return (
-    <div className="pt-24 pb-20">
+    <div className="pt-24 pb-20 bg-background text-on-background">
       {/* Header Sección Vuelos */}
-      <header className="relative px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto py-12 text-center hero-pattern rounded-3xl mb-8 overflow-hidden">
+      <header className="relative px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto py-12 md:py-16 text-center hero-pattern rounded-3xl mb-8 overflow-hidden border border-outline-variant/30">
         <div className="relative z-10 space-y-4">
-          <span className="bg-primary-container/10 text-primary-container px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest inline-flex items-center gap-1.5">
-            <Sparkles className="w-3.5 h-3.5" />
+          <span className="bg-primary/10 text-primary px-5 py-2 rounded-full font-outfit text-xs font-extrabold uppercase tracking-[0.2em] inline-flex items-center gap-2 border border-primary/20">
+            <Sparkles className="w-4 h-4 text-primary animate-pulse" />
             <span>Neomundo Air Travel</span>
           </span>
-          <h1 className="font-display text-4xl md:text-5xl lg:text-6xl text-primary uppercase tracking-wide">
-            Busca y Reserva tus Vuelos
+          <h1 className="font-outfit font-black text-4xl sm:text-5xl lg:text-6xl text-on-surface uppercase tracking-tight">
+            Busca y Reserva <span className="text-gradient-cyan font-syne lowercase italic">tus Vuelos</span>
           </h1>
-          <p className="font-body-lg text-on-surface-variant max-w-2xl mx-auto text-sm md:text-base">
+          <p className="font-sans text-base sm:text-lg text-on-surface-variant max-w-2xl mx-auto">
             Conecta con más de 500 aerolíneas en el mundo al mejor precio garantizado.
           </p>
         </div>
@@ -128,22 +128,22 @@ export default function FlightSearch() {
       <section className="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
         {/* Barra de Filtros */}
         {flights.length > 0 && (
-          <div className="flex flex-wrap items-center justify-between gap-4 mb-8 bg-surface dark:bg-inverse-surface p-4 rounded-2xl border border-outline-variant/30">
+          <div className="flex flex-wrap items-center justify-between gap-4 mb-8 glass-card p-5 rounded-3xl border border-white/20">
             <div className="flex items-center gap-3">
-              <Filter className="w-4 h-4 text-primary" />
-              <span className="text-xs font-bold uppercase tracking-wider text-on-surface">Escalas:</span>
+              <Filter className="w-4 h-4 text-cyan-400" />
+              <span className="text-xs font-outfit font-extrabold uppercase tracking-wider text-white">Escalas:</span>
               <button
                 onClick={() => setStopsFilter('ALL')}
-                className={`px-3 py-1.5 rounded-full text-xs font-bold transition-all ${
-                  stopsFilter === 'ALL' ? 'bg-primary text-on-primary' : 'bg-surface-container-high text-on-surface-variant'
+                className={`px-4 py-2 rounded-full text-xs font-outfit font-extrabold transition-all uppercase tracking-wider ${
+                  stopsFilter === 'ALL' ? 'bg-primary text-on-primary shadow-md emerald-glow' : 'bg-white/10 text-gray-300 hover:bg-white/20'
                 }`}
               >
                 Todos ({flights.length})
               </button>
               <button
                 onClick={() => setStopsFilter('DIRECT')}
-                className={`px-3 py-1.5 rounded-full text-xs font-bold transition-all ${
-                  stopsFilter === 'DIRECT' ? 'bg-primary text-on-primary' : 'bg-surface-container-high text-on-surface-variant'
+                className={`px-4 py-2 rounded-full text-xs font-outfit font-extrabold transition-all uppercase tracking-wider ${
+                  stopsFilter === 'DIRECT' ? 'bg-primary text-on-primary shadow-md emerald-glow' : 'bg-white/10 text-gray-300 hover:bg-white/20'
                 }`}
               >
                 Solo Directos
@@ -151,13 +151,13 @@ export default function FlightSearch() {
             </div>
 
             <div className="flex items-center gap-2">
-              <span className="text-xs font-bold uppercase tracking-wider text-on-surface">Ordenar por:</span>
+              <span className="text-xs font-outfit font-extrabold uppercase tracking-wider text-white">Ordenar por:</span>
               <select
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value as any)}
-                className="bg-surface-container-high text-on-surface font-bold text-xs px-3 py-1.5 rounded-full border border-outline-variant/30 focus:outline-none"
+                className="bg-white/10 text-white font-outfit font-extrabold text-xs px-4 py-2 rounded-full border border-white/15 focus:outline-none cursor-pointer"
               >
-                <option value="PRICE">Menor Precio</option>
+                <option value="PRICE" className="bg-slate-900 text-white">Menor Precio</option>
               </select>
             </div>
           </div>
@@ -165,22 +165,22 @@ export default function FlightSearch() {
 
         {/* Cargando */}
         {loading && (
-          <div className="text-center py-20 bg-surface rounded-3xl border border-outline-variant/30 shadow-sm max-w-md mx-auto space-y-4">
-            <Loader2 className="w-10 h-10 animate-spin text-primary mx-auto" />
-            <h3 className="font-headline text-lg font-bold">Consultando la API de Amadeus...</h3>
-            <p className="text-on-surface-variant text-xs">Buscando las mejores tarifas para tu ruta.</p>
+          <div className="text-center py-20 glass-card rounded-3xl border border-white/20 max-w-md mx-auto space-y-4">
+            <Loader2 className="w-10 h-10 animate-spin text-cyan-400 mx-auto" />
+            <h3 className="font-outfit text-xl font-bold text-white">Consultando vuelos en tiempo real...</h3>
+            <p className="text-gray-400 text-xs font-sans">Conectando con la red global Amadeus.</p>
           </div>
         )}
 
         {/* Error */}
         {error && !loading && (
-          <div className="text-center py-16 bg-error-container/10 rounded-3xl border border-error/20 max-w-lg mx-auto space-y-4">
-            <AlertCircle className="w-10 h-10 text-error mx-auto" />
-            <h3 className="font-headline text-lg font-bold text-error">No pudimos obtener los vuelos</h3>
-            <p className="text-on-surface-variant text-xs px-6">{error}</p>
+          <div className="text-center py-16 bg-rose-950/40 rounded-3xl border border-rose-500/30 max-w-lg mx-auto space-y-4 text-white">
+            <AlertCircle className="w-10 h-10 text-rose-400 mx-auto" />
+            <h3 className="font-outfit text-xl font-bold text-rose-300">No pudimos obtener los vuelos</h3>
+            <p className="text-gray-300 text-xs px-6 font-sans">{error}</p>
             <button
               onClick={() => fetchFlightOffers(initialParams)}
-              className="btn-secondary px-6 py-2 rounded-full text-xs font-bold inline-flex items-center gap-2"
+              className="btn-secondary px-6 py-2.5 rounded-full text-xs font-outfit font-extrabold inline-flex items-center gap-2"
             >
               <RefreshCw className="w-3.5 h-3.5" />
               <span>Reintentar Búsqueda</span>
@@ -190,10 +190,10 @@ export default function FlightSearch() {
 
         {/* Sin resultados */}
         {!loading && !error && origin && flights.length === 0 && (
-          <div className="text-center py-20 bg-surface rounded-3xl border border-outline-variant/30 max-w-md mx-auto">
-            <Plane className="w-12 h-12 text-outline mx-auto mb-4 opacity-40" />
-            <h3 className="font-headline text-lg font-bold">No encontramos vuelos para esta ruta</h3>
-            <p className="text-on-surface-variant text-xs mt-1">
+          <div className="text-center py-20 glass-card rounded-3xl border border-white/20 max-w-md mx-auto space-y-3">
+            <Plane className="w-12 h-12 text-gray-500 mx-auto mb-2 opacity-50" />
+            <h3 className="font-outfit text-xl font-bold text-white">No encontramos vuelos para esta ruta</h3>
+            <p className="text-gray-400 text-xs font-sans">
               Intenta cambiar las fechas o buscar con ciudades cercanas.
             </p>
           </div>

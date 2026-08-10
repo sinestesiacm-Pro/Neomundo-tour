@@ -3,7 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { experiences } from '../data/experiences';
 import InnovativeGallery from '../components/InnovativeGallery';
 import AvailabilityCalendar from '../components/AvailabilityCalendar';
-import { MapPin, Users, CalendarDays, Compass, Star, Check, DollarSign, Route, Plane, CircleDot } from 'lucide-react';
+import { MapPin, Users, CalendarDays, Compass, Star, Check, Route, Plane, CircleDot } from 'lucide-react';
 
 export default function BookingDetail() {
   const { id } = useParams<{ id: string }>();
@@ -70,18 +70,15 @@ export default function BookingDetail() {
                 </div>
               )}
             </div>
-            <h1 className="flex flex-wrap items-baseline gap-3 mb-2">
-              <span className="font-handwriting text-5xl md:text-6xl lg:text-7xl text-primary -rotate-2">{experience.title.split(' ')[0]}</span>
-              <span className="font-display text-4xl md:text-5xl lg:text-6xl text-on-surface tracking-wide uppercase translate-y-1">
-                {experience.title.split(' ').slice(1).join(' ')}
-              </span>
+            <h1 className="font-outfit font-black text-4xl sm:text-5xl lg:text-6xl text-on-surface uppercase tracking-tight mb-2">
+              {experience.title}
             </h1>
             
             {/* Core statistics badges */}
             <div className="flex flex-wrap gap-4 text-on-surface-variant text-sm font-semibold">
               {experience.features && experience.features.length > 0 ? (
                 experience.features.map((feat, idx) => (
-                  <span key={idx} className="flex items-center gap-1.5 bg-surface-container-high px-4 py-1.5 rounded-full">
+                  <span key={idx} className="flex items-center gap-1.5 bg-surface-container-high px-4 py-1.5 rounded-full font-outfit font-extrabold text-xs uppercase tracking-wider">
                     {idx === 0 && <Users className="w-4 h-4 text-primary shrink-0" />}
                     {idx === 1 && <CalendarDays className="w-4 h-4 text-primary shrink-0" />}
                     {idx === 2 && <Compass className="w-4 h-4 text-primary shrink-0" />}
@@ -90,11 +87,11 @@ export default function BookingDetail() {
                 ))
               ) : (
                 <>
-                  <span className="flex items-center gap-1.5 bg-surface-container-high px-4 py-1.5 rounded-full">
+                  <span className="flex items-center gap-1.5 bg-surface-container-high px-4 py-1.5 rounded-full font-outfit font-extrabold text-xs uppercase tracking-wider">
                     <Users className="w-4 h-4 text-primary shrink-0" />
                     <span>Hasta {isStay ? 12 : 15} Pax</span>
                   </span>
-                  <span className="flex items-center gap-1.5 bg-surface-container-high px-4 py-1.5 rounded-full">
+                  <span className="flex items-center gap-1.5 bg-surface-container-high px-4 py-1.5 rounded-full font-outfit font-extrabold text-xs uppercase tracking-wider">
                     <CalendarDays className="w-4 h-4 text-primary shrink-0" />
                     <span>Reserva Premium</span>
                   </span>
@@ -107,9 +104,8 @@ export default function BookingDetail() {
 
           {/* Description Block */}
           <div className="space-y-6">
-            <h2 className="flex flex-wrap items-end gap-2 border-b-2 border-primary-container/30 pb-2">
-              <span className="font-sans font-bold text-2xl text-on-surface">Acerca de</span>
-              <span className="font-handwriting text-4xl text-secondary -rotate-2 translate-y-1">esta experiencia</span>
+            <h2 className="font-outfit font-black text-3xl text-on-surface uppercase border-b-2 border-primary/20 pb-3">
+              Acerca de <span className="text-gradient-cyan font-syne lowercase italic">esta experiencia</span>
             </h2>
             <div className="space-y-4">
               {experience.longDescription.split('\n\n').map((block, blockIdx) => {
@@ -123,44 +119,18 @@ export default function BookingDetail() {
                         <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
                           <Plane className="w-5 h-5 text-primary" strokeWidth={2.5} />
                         </div>
-                        <h3 className="font-display text-xl tracking-wider text-on-surface uppercase">{title}</h3>
+                        <h3 className="font-outfit font-extrabold text-lg tracking-wider text-on-surface uppercase">{title}</h3>
                       </div>
                       {lines.length > 0 && (
                         <div className="space-y-2 pl-[52px]">
                           {lines.map((line, lineIdx) => {
                             const trimmed = line.trim();
-                            if (!trimmed) return null;
-                            if (trimmed.startsWith('•')) {
-                              const content = trimmed.replace('•', '').trim();
-                              const isDollar = content.toLowerCase().includes('pasajero') || content.toLowerCase().includes('privado') || content.toLowerCase().includes('minuto') || content.toLowerCase().includes('hora');
+                            if (trimmed.startsWith('•') || trimmed.startsWith('-')) {
                               return (
-                                <div key={lineIdx} className="flex items-start gap-2.5 text-on-surface-variant">
-                                  <div className="w-5 h-5 rounded-full bg-secondary/10 flex items-center justify-center shrink-0 mt-0.5">
-                                    {isDollar ? <DollarSign className="w-3 h-3 text-secondary" strokeWidth={3} /> : <CircleDot className="w-3 h-3 text-secondary" strokeWidth={3} />}
-                                  </div>
-                                  <span className="text-sm font-medium leading-relaxed">{content}</span>
+                                <div key={lineIdx} className="flex items-start gap-2 text-sm text-on-surface-variant">
+                                  <CircleDot className="w-3.5 h-3.5 text-primary shrink-0 mt-1" />
+                                  <span>{trimmed.replace(/^[•-]\s*/, '')}</span>
                                 </div>
-                              );
-                            }
-                            if (trimmed.toLowerCase().startsWith('precio')) {
-                              return (
-                                <div key={lineIdx} className="flex items-center gap-2 text-xs font-bold text-primary uppercase tracking-wider">
-                                  <DollarSign className="w-3.5 h-3.5" strokeWidth={3} />
-                                  <span>{trimmed}</span>
-                                </div>
-                              );
-                            }
-                            if (trimmed.toLowerCase().startsWith('recorrido')) {
-                              return (
-                                <div key={lineIdx} className="flex items-start gap-2.5 text-on-surface-variant mt-2">
-                                  <Route className="w-4 h-4 text-primary shrink-0 mt-0.5" strokeWidth={2.5} />
-                                  <span className="text-sm leading-relaxed">{trimmed}</span>
-                                </div>
-                              );
-                            }
-                            if (trimmed.toLowerCase().startsWith('contáctanos')) {
-                              return (
-                                <p key={lineIdx} className="text-sm font-semibold text-primary">{trimmed}</p>
                               );
                             }
                             return <p key={lineIdx} className="text-sm text-on-surface-variant leading-relaxed">{trimmed}</p>;
@@ -171,61 +141,19 @@ export default function BookingDetail() {
                   );
                 }
 
-                // Bullet list blocks
-                const lines = block.split('\n');
-                const hasBullets = lines.some(l => l.trim().startsWith('•'));
-                if (hasBullets) {
-                  return (
-                    <div key={blockIdx} className="space-y-2">
-                      {lines.map((line, lineIdx) => {
-                        const trimmed = line.trim();
-                        if (!trimmed) return null;
-                        if (trimmed.startsWith('•')) {
-                          const content = trimmed.replace('•', '').trim();
-                          return (
-                            <div key={lineIdx} className="flex items-start gap-2.5 text-on-surface-variant">
-                              <div className="w-5 h-5 rounded-full bg-primary-container/10 flex items-center justify-center shrink-0 mt-0.5">
-                                <CircleDot className="w-3 h-3 text-primary-container" strokeWidth={3} />
-                              </div>
-                              <span className="text-sm font-medium leading-relaxed">{content}</span>
-                            </div>
-                          );
-                        }
-                        // Sub-headers within bullet blocks (e.g. "Incluye:", "Horarios:")
-                        if (trimmed.endsWith(':')) {
-                          return (
-                            <h4 key={lineIdx} className="font-bold text-on-surface text-sm uppercase tracking-wider mt-3 first:mt-0">{trimmed}</h4>
-                          );
-                        }
-                        return <p key={lineIdx} className="text-sm text-on-surface-variant leading-relaxed">{trimmed}</p>;
-                      })}
-                    </div>
-                  );
-                }
-
                 // Section labels like "MEDELLÍN — PEÑOL — MEDELLÍN"  
                 if (block === block.toUpperCase() && block.includes('—')) {
                   return (
                     <div key={blockIdx} className="flex items-center gap-3 bg-primary/5 rounded-xl px-5 py-3 border border-primary/10">
                       <Route className="w-5 h-5 text-primary shrink-0" strokeWidth={2.5} />
-                      <span className="font-display text-lg text-primary tracking-wider">{block}</span>
-                    </div>
-                  );
-                }
-
-                // "Importante:" or warning blocks
-                if (block.toLowerCase().startsWith('importante')) {
-                  return (
-                    <div key={blockIdx} className="bg-error/5 border border-error/15 rounded-xl p-4 text-sm text-on-surface-variant leading-relaxed">
-                      <span className="font-bold text-error text-xs uppercase tracking-wider block mb-1">Importante</span>
-                      {block.replace(/^importante:\s*/i, '')}
+                      <span className="font-outfit font-extrabold text-base text-primary tracking-wider">{block}</span>
                     </div>
                   );
                 }
 
                 // Regular paragraph text
                 return (
-                  <p key={blockIdx} className="text-on-surface-variant leading-relaxed">
+                  <p key={blockIdx} className="text-on-surface-variant leading-relaxed font-sans">
                     {block}
                   </p>
                 );
@@ -237,9 +165,8 @@ export default function BookingDetail() {
 
           {/* Amenities/Offerings Lists */}
           <div className="space-y-8">
-            <h2 className="flex flex-wrap items-baseline gap-2 border-b-2 border-secondary/30 pb-2">
-              <span className="font-display text-3xl text-on-surface tracking-wider">Qué</span>
-              <span className="font-serif italic font-black text-3xl text-primary">incluye</span>
+            <h2 className="font-outfit font-black text-3xl text-on-surface uppercase border-b-2 border-primary/20 pb-3">
+              Qué <span className="text-gradient-emerald font-syne lowercase italic">incluye</span>
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {(experience.amenities || ["Equipo de Seguridad", "Capitán Experto", "Nevera Premium", "Guía Bilingüe", "Combustible e Impuestos", "Experiencia VIP"]).map((item, idx) => (
@@ -247,7 +174,7 @@ export default function BookingDetail() {
                   <div className="w-8 h-8 rounded-lg bg-primary-container/15 flex items-center justify-center text-primary-container shrink-0 group-hover:bg-primary-container/25 transition-colors">
                     <Check className="w-4.5 h-4.5" strokeWidth={3} />
                   </div>
-                  <span className="font-semibold text-sm text-on-surface">{item}</span>
+                  <span className="font-sans font-bold text-sm text-on-surface">{item}</span>
                 </div>
               ))}
             </div>
@@ -262,10 +189,10 @@ export default function BookingDetail() {
             {/* Top pricing info block */}
             <div className="flex justify-between items-baseline">
               <div>
-                <span className="font-headline text-3xl font-black text-primary">${experience.price}</span>
+                <span className="font-outfit font-black text-4xl text-primary">${experience.price.toLocaleString('es-CO')}</span>
                 <span className="text-on-surface-variant text-sm font-semibold"> / {experience.priceUnit}</span>
               </div>
-              <span className="text-xs text-outline font-bold tracking-widest uppercase">
+              <span className="text-xs font-outfit font-extrabold text-emerald-600 tracking-widest uppercase">
                 Confirmación instantánea
               </span>
             </div>

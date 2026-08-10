@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Camera, MessageSquare, MapPin, Phone, ShieldCheck, Award } from 'lucide-react';
+import { Camera, MessageSquare, MapPin, Phone, ShieldCheck, Award, UserCheck } from 'lucide-react';
 
 export default function Footer() {
   return (
@@ -13,13 +13,17 @@ export default function Footer() {
             <span className="text-gradient-cyan">Tour</span>
           </Link>
           <div className="flex flex-wrap gap-2 text-xs font-outfit font-bold">
-            <span className="bg-white/10 px-3 py-1 rounded-full border border-white/15 text-emerald-400 flex items-center gap-1">
+            <span className="bg-white/10 px-3 py-1 rounded-full border border-white/15 text-emerald-400 flex items-center gap-1.5">
               <ShieldCheck className="w-3.5 h-3.5" />
               <span>NIT: 11228303-7</span>
             </span>
-            <span className="bg-white/10 px-3 py-1 rounded-full border border-white/15 text-cyan-400 flex items-center gap-1">
+            <span className="bg-white/10 px-3 py-1 rounded-full border border-white/15 text-cyan-400 flex items-center gap-1.5">
               <Award className="w-3.5 h-3.5" />
               <span>RNT: 209737</span>
+            </span>
+            <span className="bg-white/10 px-3 py-1 rounded-full border border-white/15 text-purple-300 flex items-center gap-1.5">
+              <UserCheck className="w-3.5 h-3.5 text-purple-400" />
+              <span>Atendido por Ramiro Tocora</span>
             </span>
           </div>
           <p className="font-sans text-sm text-gray-400 leading-relaxed">
@@ -118,12 +122,15 @@ export default function Footer() {
                 +57 322 6054919
               </a>
             </div>
+            <div className="text-xs text-emerald-400/90 font-outfit font-extrabold pt-1">
+              Atención Personal: Ramiro Tocora
+            </div>
           </div>
         </div>
       </div>
 
       <div className="mt-16 pt-8 border-t border-white/10 text-center px-margin-mobile text-gray-500 font-sans text-xs flex flex-col sm:flex-row items-center justify-between max-w-container-max mx-auto gap-4">
-        <p>© 2026 Neomundo Tour. Todos los derechos reservados. Registrados en RNT No. 209737.</p>
+        <p>© 2026 Neomundo Tour — Atendido por <strong>Ramiro Tocora</strong>. Todos los derechos reservados (RNT No. 209737).</p>
         <div className="flex gap-4 text-gray-400 font-outfit text-xs font-bold uppercase tracking-wider">
           <span>Guatapé</span>
           <span>•</span>

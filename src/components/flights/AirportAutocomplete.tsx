@@ -106,7 +106,7 @@ export default function AirportAutocomplete({
 
   return (
     <div ref={wrapperRef} className="relative w-full">
-      <label className="block text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-1">
+      <label className="block text-xs font-outfit font-extrabold text-slate-700 uppercase tracking-wider mb-1.5">
         {label}
       </label>
       <div className="relative flex items-center">
@@ -120,35 +120,35 @@ export default function AirportAutocomplete({
           }}
           onFocus={() => setIsOpen(true)}
           placeholder={placeholder}
-          className="w-full pl-11 pr-9 py-3 bg-surface-container-low dark:bg-surface-container-high rounded-xl border border-outline-variant/30 text-on-surface font-semibold text-sm focus:outline-none focus:ring-2 focus:ring-primary transition-all"
+          className="w-full pl-11 pr-9 py-3.5 bg-white/90 rounded-2xl border border-slate-200/80 text-slate-900 font-sans font-semibold text-sm focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/10 transition-all placeholder-slate-400 shadow-sm"
         />
         {loading && <Loader2 className="w-4 h-4 animate-spin text-primary absolute right-3" />}
       </div>
 
       {isOpen && (
-        <div className="absolute top-full left-0 w-full mt-2 bg-surface dark:bg-inverse-surface border border-outline-variant/30 rounded-2xl shadow-xl z-50 overflow-hidden max-h-64 overflow-y-auto animate-fade-in-up">
+        <div className="absolute top-full left-0 w-full mt-2 bg-white/95 backdrop-blur-2xl border border-slate-200 rounded-2xl shadow-2xl z-50 overflow-hidden max-h-64 overflow-y-auto animate-fade-in-up">
           {suggestions.length > 0 ? (
             <div>
-              <div className="px-4 py-2 text-[10px] font-bold text-outline uppercase tracking-wider bg-surface-container-low/50">
-                Resultados coincidentes
+              <div className="px-4 py-2 text-[10px] font-outfit font-extrabold text-primary uppercase tracking-wider bg-slate-50 border-b border-slate-100">
+                Resultados Coincidentes
               </div>
               {suggestions.map((item) => (
                 <button
                   key={`${item.iataCode}-${item.name}`}
                   type="button"
                   onClick={() => handleSelect(item)}
-                  className="w-full px-4 py-3 text-left hover:bg-primary-container/10 flex items-center justify-between border-b border-outline-variant/10 last:border-0 transition-colors"
+                  className="w-full px-4 py-3 text-left hover:bg-slate-100/80 flex items-center justify-between border-b border-slate-100 last:border-0 transition-colors"
                 >
                   <div className="flex items-center gap-3">
                     <MapPin className="w-4 h-4 text-primary shrink-0" />
                     <div>
-                      <span className="font-bold text-on-surface text-sm block">
+                      <span className="font-outfit font-bold text-slate-900 text-sm block">
                         {item.cityName} {item.countryCode ? `(${item.countryCode})` : ''}
                       </span>
-                      <span className="text-xs text-on-surface-variant line-clamp-1">{item.name}</span>
+                      <span className="text-xs text-slate-500 line-clamp-1">{item.name}</span>
                     </div>
                   </div>
-                  <span className="font-black text-xs px-2.5 py-1 bg-surface-variant rounded-md text-on-surface font-mono">
+                  <span className="font-black text-xs px-2.5 py-1 bg-primary/10 rounded-md text-primary font-mono border border-primary/20">
                     {item.iataCode}
                   </span>
                 </button>
@@ -156,7 +156,7 @@ export default function AirportAutocomplete({
             </div>
           ) : (
             <div>
-              <div className="px-4 py-2 text-[10px] font-bold text-outline uppercase tracking-wider bg-surface-container-low/50">
+              <div className="px-4 py-2 text-[10px] font-outfit font-extrabold text-primary uppercase tracking-wider bg-slate-50 border-b border-slate-100">
                 Aeropuertos Populares
               </div>
               {POPULAR_AIRPORTS.map((item) => (
@@ -164,16 +164,16 @@ export default function AirportAutocomplete({
                   key={item.iataCode}
                   type="button"
                   onClick={() => handleSelect(item)}
-                  className="w-full px-4 py-3 text-left hover:bg-primary-container/10 flex items-center justify-between border-b border-outline-variant/10 last:border-0 transition-colors"
+                  className="w-full px-4 py-3 text-left hover:bg-slate-100/80 flex items-center justify-between border-b border-slate-100 last:border-0 transition-colors"
                 >
                   <div className="flex items-center gap-3">
                     <MapPin className="w-4 h-4 text-primary shrink-0" />
                     <div>
-                      <span className="font-bold text-on-surface text-sm block">{item.cityName}</span>
-                      <span className="text-xs text-on-surface-variant">{item.name}</span>
+                      <span className="font-outfit font-bold text-slate-900 text-sm block">{item.cityName}</span>
+                      <span className="text-xs text-slate-500">{item.name}</span>
                     </div>
                   </div>
-                  <span className="font-black text-xs px-2.5 py-1 bg-surface-variant rounded-md text-on-surface font-mono">
+                  <span className="font-black text-xs px-2.5 py-1 bg-primary/10 rounded-md text-primary font-mono border border-primary/20">
                     {item.iataCode}
                   </span>
                 </button>
